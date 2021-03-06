@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SisFact
 {
-    public partial class Form1 : Form
+    public partial class frmLogeo : Form
     {
-        public Form1()
+        public frmLogeo()
         {
             InitializeComponent();
         }

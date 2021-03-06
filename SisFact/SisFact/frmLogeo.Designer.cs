@@ -1,7 +1,7 @@
 ﻿
 namespace SisFact
 {
-    partial class Form1
+    partial class frmLogeo
     {
         /// <summary>
         /// Variable del diseñador necesaria.
