@@ -12,9 +12,17 @@ namespace SisFact
 {
     public partial class frmProductos : Form
     {
+        Acceso A = new Acceso();
         public frmProductos()
         {
             InitializeComponent();
         }
+
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }
