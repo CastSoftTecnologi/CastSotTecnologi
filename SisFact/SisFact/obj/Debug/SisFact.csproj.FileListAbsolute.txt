@@ -8,3 +8,6 @@ C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csproj.GenerateResource.
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csproj.CoreCompileInputs.cache
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.exe
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.pdb
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmMenuPrincipal.resources
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmInicio.resources
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmProductos.resources
