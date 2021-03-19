@@ -1,0 +1,10 @@
+C:\Desarrollo\SisFact\SisFact\SisFact\bin\Debug\SisFact.exe.config
+C:\Desarrollo\SisFact\SisFact\SisFact\bin\Debug\SisFact.exe
+C:\Desarrollo\SisFact\SisFact\SisFact\bin\Debug\SisFact.pdb
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csprojAssemblyReference.cache
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmLogeo.resources
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.Properties.Resources.resources
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csproj.GenerateResource.cache
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csproj.CoreCompileInputs.cache
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.exe
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.pdb
