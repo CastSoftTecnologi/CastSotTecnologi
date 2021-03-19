@@ -17,6 +17,8 @@ namespace SisFact
         public SqlDataReader dr;
         public SqlCommand comando;
 
+        public static string x_usuario;
+
 
         public void Lectura(string sql)
         {

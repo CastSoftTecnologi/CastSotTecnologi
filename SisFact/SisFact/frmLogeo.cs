@@ -38,20 +38,21 @@ namespace SisFact
                 return;
             }
 
-            A.Lectura("SP_Valida_Usario @Usuario = '" + txtUsuario.Text + "',@Clave ='" + txtClave.Text  + "'");
-            if (A.dr.Read()) {
-                if (A.dr[0].ToString() == "1")
-                {
-                    MessageBox.Show("Clave Correcta", "Aviso...");
+            A.Lectura("loginDB @xc_usuario = '" + txtUsuario.Text + "',@x_password ='" + txtClave.Text  + "'");
+            if (A.dr.Read())
+            {
+                frmMenuPrincipal Menu = new frmMenuPrincipal();
 
-                }
-                else
-                {
-                    MessageBox.Show("Clave incorrecta", "Aviso...");
-                }
-
+                Acceso.x_usuario = A.dr["xc_usuario"].ToString();
+                Menu.Show();
+                A.conexion.Close();
+                return;
             }
-            A.conexion.Close();
+            else
+            { 
+                A.conexion.Close();
+                MessageBox.Show("Usuario o clave incorrecto","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }
