@@ -18,11 +18,7 @@ namespace SisFact
             InitializeComponent();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Dispose();
-            Close();
-        }
+
 
         private void frmLogeo_KeyDown(object sender, KeyEventArgs e)
         {
@@ -52,6 +48,56 @@ namespace SisFact
             { 
                 A.conexion.Close();
                 MessageBox.Show("Usuario o clave incorrecto","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtClave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "Usuario") {
+                txtUsuario.Text = "";
+                txtUsuario.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "") {
+                txtUsuario.Text = "Usuario";
+                txtUsuario.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtClave_Enter(object sender, EventArgs e)
+        {
+            if (txtClave.Text == "PASS")
+            {
+                txtClave.Text = "";
+                txtClave.ForeColor = Color.LightGray;
+                txtClave.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtClave_Leave(object sender, EventArgs e)
+        {
+            if (txtClave.Text == "") {
+                txtClave.Text = "PASS";
+                txtClave.UseSystemPasswordChar = false;
+                txtClave.ForeColor = Color.Gray;
             }
         }
     }
