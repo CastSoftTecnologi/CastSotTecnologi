@@ -55,9 +55,9 @@ namespace SisFact
             this.panel2.Controls.Add(this.btnModificar);
             this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(4, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 174);
+            this.panel2.Size = new System.Drawing.Size(792, 174);
             this.panel2.TabIndex = 4;
             // 
             // lbbusqueda
@@ -82,7 +82,7 @@ namespace SisFact
             // btnImprimir
             // 
             this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimir.Location = new System.Drawing.Point(677, 148);
+            this.btnImprimir.Location = new System.Drawing.Point(685, 148);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(104, 23);
             this.btnImprimir.TabIndex = 5;
@@ -92,7 +92,7 @@ namespace SisFact
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(677, 119);
+            this.btnModificar.Location = new System.Drawing.Point(685, 119);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(104, 23);
             this.btnModificar.TabIndex = 4;
@@ -102,7 +102,7 @@ namespace SisFact
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.Location = new System.Drawing.Point(677, 90);
+            this.btnAgregar.Location = new System.Drawing.Point(685, 90);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(104, 23);
             this.btnAgregar.TabIndex = 3;
@@ -133,10 +133,10 @@ namespace SisFact
             this.x_producto,
             this.i_precioUnitario,
             this.m_activo});
-            this.LProductos.Location = new System.Drawing.Point(12, 192);
+            this.LProductos.Location = new System.Drawing.Point(4, 192);
             this.LProductos.Name = "LProductos";
             this.LProductos.ReadOnly = true;
-            this.LProductos.Size = new System.Drawing.Size(784, 337);
+            this.LProductos.Size = new System.Drawing.Size(792, 337);
             this.LProductos.TabIndex = 7;
             this.LProductos.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.LProductos_ColumnHeaderMouseClick);
             // 
