@@ -55,6 +55,15 @@ namespace SisFact
             Campo = LProductos.Columns[e.ColumnIndex].Name.ToString();
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmABMProductos FProductos = new frmABMProductos();
 
+         
+
+
+
+
+        }
     }
 }

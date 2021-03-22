@@ -181,7 +181,7 @@ namespace SisFact
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogeo";
-            this.Opacity = 0.8D;
+            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SisFact Ver: 1.0 ";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogeo_KeyDown);

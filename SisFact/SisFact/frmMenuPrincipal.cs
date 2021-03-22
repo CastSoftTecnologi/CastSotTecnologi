@@ -13,12 +13,13 @@ namespace SisFact
 {
     public partial class frmMenuPrincipal : Form
     {
+        public string llamadasForm;
         public frmMenuPrincipal()
         {
             InitializeComponent();
         }
 
-        private void AbrirFormularios(object formhijos) {//funcion para llamar a los formuliarios como Hijos
+        public void AbrirFormularios(object formhijos) {//funcion para llamar a los formuliarios como Hijos
             if (PanelContenedor.Controls.Count > 0) {
                 PanelContenedor.Controls.RemoveAt(0);
             }
@@ -95,5 +96,7 @@ namespace SisFact
         {
             AbrirFormularios(new frmInicio());
         }
+
+        
     }
 }

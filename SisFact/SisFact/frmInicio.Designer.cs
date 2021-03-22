@@ -37,10 +37,11 @@ namespace SisFact
             // 
             // LbHora
             // 
+            this.LbHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LbHora.AutoSize = true;
             this.LbHora.Font = new System.Drawing.Font("Yu Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbHora.ForeColor = System.Drawing.Color.White;
-            this.LbHora.Location = new System.Drawing.Point(161, 145);
+            this.LbHora.Location = new System.Drawing.Point(12, 282);
             this.LbHora.Name = "LbHora";
             this.LbHora.Size = new System.Drawing.Size(319, 124);
             this.LbHora.TabIndex = 0;
@@ -54,10 +55,11 @@ namespace SisFact
             // 
             // LbFecha
             // 
+            this.LbFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LbFecha.AutoSize = true;
             this.LbFecha.Font = new System.Drawing.Font("Yu Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbFecha.ForeColor = System.Drawing.Color.Gray;
-            this.LbFecha.Location = new System.Drawing.Point(176, 256);
+            this.LbFecha.Location = new System.Drawing.Point(27, 406);
             this.LbFecha.Name = "LbFecha";
             this.LbFecha.Size = new System.Drawing.Size(90, 35);
             this.LbFecha.TabIndex = 1;

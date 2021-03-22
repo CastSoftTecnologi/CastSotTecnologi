@@ -14,3 +14,4 @@ C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmProductos.resources
 C:\Desarrollo\SisFact\SisFact\SisFact\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Desarrollo\SisFact\SisFact\SisFact\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csproj.CopyComplete
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmABMProductos.resources
