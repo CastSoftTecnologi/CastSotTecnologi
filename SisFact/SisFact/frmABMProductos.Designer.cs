@@ -40,14 +40,20 @@ namespace SisFact
             this.cboUnidad = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnsalir = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.chkVenta = new System.Windows.Forms.CheckBox();
+            this.chkFormula = new System.Windows.Forms.CheckBox();
             this.LbProceso = new System.Windows.Forms.Label();
             this.btnGuradar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrecioU = new System.Windows.Forms.TextBox();
             this.cboIVA = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chkVisible = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtcBarra = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -59,7 +65,7 @@ namespace SisFact
             this.txtCodigo.Location = new System.Drawing.Point(113, 46);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(108, 25);
-            this.txtCodigo.TabIndex = 7;
+            this.txtCodigo.TabIndex = 0;
             // 
             // lbbusqueda
             // 
@@ -79,8 +85,8 @@ namespace SisFact
             this.txtNombre.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(113, 77);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(262, 25);
-            this.txtNombre.TabIndex = 9;
+            this.txtNombre.Size = new System.Drawing.Size(394, 25);
+            this.txtNombre.TabIndex = 1;
             // 
             // txtNombreCorto
             // 
@@ -90,7 +96,7 @@ namespace SisFact
             this.txtNombreCorto.Location = new System.Drawing.Point(113, 108);
             this.txtNombreCorto.Name = "txtNombreCorto";
             this.txtNombreCorto.Size = new System.Drawing.Size(108, 25);
-            this.txtNombreCorto.TabIndex = 10;
+            this.txtNombreCorto.TabIndex = 2;
             // 
             // label1
             // 
@@ -119,7 +125,7 @@ namespace SisFact
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 139);
+            this.label3.Location = new System.Drawing.Point(9, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 13;
@@ -132,10 +138,10 @@ namespace SisFact
             this.cboCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboCategoria.ForeColor = System.Drawing.Color.Gray;
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(113, 139);
+            this.cboCategoria.Location = new System.Drawing.Point(113, 166);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(108, 21);
-            this.cboCategoria.TabIndex = 14;
+            this.cboCategoria.TabIndex = 5;
             // 
             // cboUnidad
             // 
@@ -144,17 +150,17 @@ namespace SisFact
             this.cboUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboUnidad.ForeColor = System.Drawing.Color.Gray;
             this.cboUnidad.FormattingEnabled = true;
-            this.cboUnidad.Location = new System.Drawing.Point(113, 166);
+            this.cboUnidad.Location = new System.Drawing.Point(113, 193);
             this.cboUnidad.Name = "cboUnidad";
             this.cboUnidad.Size = new System.Drawing.Size(108, 21);
-            this.cboUnidad.TabIndex = 16;
+            this.cboUnidad.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(9, 166);
+            this.label4.Location = new System.Drawing.Point(9, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 15;
@@ -168,34 +174,34 @@ namespace SisFact
             this.btnsalir.Location = new System.Drawing.Point(539, 457);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(104, 25);
-            this.btnsalir.TabIndex = 17;
+            this.btnsalir.TabIndex = 14;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
             this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
-            // checkBox1
+            // chkVenta
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(9, 203);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 17);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "Venta   ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkVenta.AutoSize = true;
+            this.chkVenta.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkVenta.ForeColor = System.Drawing.Color.White;
+            this.chkVenta.Location = new System.Drawing.Point(9, 230);
+            this.chkVenta.Name = "chkVenta";
+            this.chkVenta.Size = new System.Drawing.Size(63, 17);
+            this.chkVenta.TabIndex = 7;
+            this.chkVenta.Text = "Venta   ";
+            this.chkVenta.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkFormula
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(9, 226);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(63, 17);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "Formula";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkFormula.AutoSize = true;
+            this.chkFormula.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkFormula.ForeColor = System.Drawing.Color.White;
+            this.chkFormula.Location = new System.Drawing.Point(9, 253);
+            this.chkFormula.Name = "chkFormula";
+            this.chkFormula.Size = new System.Drawing.Size(63, 17);
+            this.chkFormula.TabIndex = 8;
+            this.chkFormula.Text = "Formula";
+            this.chkFormula.UseVisualStyleBackColor = true;
             // 
             // LbProceso
             // 
@@ -215,16 +221,17 @@ namespace SisFact
             this.btnGuradar.Location = new System.Drawing.Point(429, 457);
             this.btnGuradar.Name = "btnGuradar";
             this.btnGuradar.Size = new System.Drawing.Size(104, 25);
-            this.btnGuradar.TabIndex = 21;
+            this.btnGuradar.TabIndex = 13;
             this.btnGuradar.Text = "Guardar";
             this.btnGuradar.UseVisualStyleBackColor = true;
+            this.btnGuradar.Click += new System.EventHandler(this.btnGuradar_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(9, 259);
+            this.label5.Location = new System.Drawing.Point(9, 325);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 17);
             this.label5.TabIndex = 23;
@@ -235,10 +242,10 @@ namespace SisFact
             this.txtPrecioU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtPrecioU.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecioU.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioU.Location = new System.Drawing.Point(113, 259);
+            this.txtPrecioU.Location = new System.Drawing.Point(113, 325);
             this.txtPrecioU.Name = "txtPrecioU";
             this.txtPrecioU.Size = new System.Drawing.Size(108, 25);
-            this.txtPrecioU.TabIndex = 22;
+            this.txtPrecioU.TabIndex = 11;
             // 
             // cboIVA
             // 
@@ -247,21 +254,89 @@ namespace SisFact
             this.cboIVA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboIVA.ForeColor = System.Drawing.Color.Gray;
             this.cboIVA.FormattingEnabled = true;
-            this.cboIVA.Location = new System.Drawing.Point(113, 290);
+            this.cboIVA.Location = new System.Drawing.Point(113, 356);
             this.cboIVA.Name = "cboIVA";
             this.cboIVA.Size = new System.Drawing.Size(108, 21);
-            this.cboIVA.TabIndex = 25;
+            this.cboIVA.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(9, 290);
+            this.label6.Location = new System.Drawing.Point(9, 356);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 17);
             this.label6.TabIndex = 24;
             this.label6.Text = "IVA:";
+            // 
+            // chkActivo
+            // 
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkActivo.ForeColor = System.Drawing.Color.White;
+            this.chkActivo.Location = new System.Drawing.Point(10, 276);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(62, 17);
+            this.chkActivo.TabIndex = 9;
+            this.chkActivo.Text = "Activo  ";
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboMarca.ForeColor = System.Drawing.Color.Gray;
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(113, 139);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(108, 21);
+            this.cboMarca.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(9, 139);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 17);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Marca:";
+            // 
+            // chkVisible
+            // 
+            this.chkVisible.AutoSize = true;
+            this.chkVisible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkVisible.ForeColor = System.Drawing.Color.White;
+            this.chkVisible.Location = new System.Drawing.Point(10, 299);
+            this.chkVisible.Name = "chkVisible";
+            this.chkVisible.Size = new System.Drawing.Size(62, 17);
+            this.chkVisible.TabIndex = 10;
+            this.chkVisible.Text = "Visible  ";
+            this.chkVisible.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(235, 108);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 17);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Código Barra:";
+            // 
+            // txtcBarra
+            // 
+            this.txtcBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtcBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcBarra.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcBarra.Location = new System.Drawing.Point(339, 108);
+            this.txtcBarra.Name = "txtcBarra";
+            this.txtcBarra.Size = new System.Drawing.Size(168, 25);
+            this.txtcBarra.TabIndex = 3;
             // 
             // frmABMProductos
             // 
@@ -269,14 +344,20 @@ namespace SisFact
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(655, 494);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtcBarra);
+            this.Controls.Add(this.chkVisible);
+            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.cboIVA);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPrecioU);
             this.Controls.Add(this.btnGuradar);
             this.Controls.Add(this.LbProceso);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkFormula);
+            this.Controls.Add(this.chkVenta);
             this.Controls.Add(this.btnsalir);
             this.Controls.Add(this.cboUnidad);
             this.Controls.Add(this.label4);
@@ -311,13 +392,19 @@ namespace SisFact
         private System.Windows.Forms.ComboBox cboUnidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnsalir;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox chkVenta;
+        private System.Windows.Forms.CheckBox chkFormula;
         public System.Windows.Forms.Label LbProceso;
         private System.Windows.Forms.Button btnGuradar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPrecioU;
         private System.Windows.Forms.ComboBox cboIVA;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox chkActivo;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chkVisible;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtcBarra;
     }
 }

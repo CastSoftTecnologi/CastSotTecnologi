@@ -38,8 +38,9 @@ namespace SisFact
             if (A.dr.Read())
             {
                 frmMenuPrincipal Menu = new frmMenuPrincipal();
-
+                //Aqui capturamos los valores de los usuarios
                 Acceso.x_usuario = A.dr["xc_usuario"].ToString();
+                Acceso.c_usuario = int.Parse(A.dr["c_usuario"].ToString());
                 Menu.Show();
                 A.conexion.Close();
                 return;

@@ -47,7 +47,56 @@ namespace SisFact
             cboIVA.ValueMember = "Codigo";
             A.conexion.Close();
 
+            A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cMarca, x_marca Des from BMarca", "R");
+            cboMarca.DataSource = A.ds.Tables["R"];
+            cboMarca.DisplayMember = "Des";
+            cboMarca.ValueMember = "Codigo";
+            A.conexion.Close();
+
         }
 
+        private void btnGuradar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "") {
+                MessageBox.Show("Debe Indicar el Nombre", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtNombreCorto.Text == "") {
+                MessageBox.Show("Debe Indicar el Nombre Corto", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (chkVenta.Checked == true) {
+                if (txtPrecioU.Text == "") {
+                    MessageBox.Show("Debe Indicar el Precio Unitario", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (int.Parse(cboIVA.SelectedValue.ToString()) == 0) {
+                    MessageBox.Show("Debe Indicar el IVA", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+            if (int.Parse(cboCategoria.SelectedValue.ToString()) == 0) {
+                return;
+            }
+
+            if (txtCodigo.Text == "") { 
+            A.Ejecuta("exec INS_TPRODUCTO @x_producto = '" + txtNombre.Text + "'" +
+            ", @xl_producto      = '" + txtNombreCorto.Text + "'" +
+            ", @i_precioUnitario = " + txtPrecioU.Text +
+            ", @cCategoria       = " + cboCategoria.SelectedValue.ToString() +
+            ", @cUnidaMedida     = " + cboUnidad.SelectedValue.ToString() +
+            ", @cMarca           = " + cboMarca.SelectedValue.ToString() +
+            ", @c_usuario        = " + Acceso.c_usuario.ToString() +
+            ", @m_activo         = " + (chkActivo.Checked == true?"1":"0") +
+            ", @m_visible        = " + (chkActivo.Checked == true?"1":"0") +
+            ", @m_venta          = " + (chkVenta.Checked  == true?"1":"0") +
+            ", @m_formula        = " + (chkVenta.Checked == true ? "1" : "0") +
+            ", @cBarra           = " + txtcBarra.Text +
+            ", @cIva             = " + cboIVA.SelectedValue.ToString());
+            }
+            MessageBox.Show("Datos Gargados","Aviso...",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            Dispose();
+            Close();
+        }
     }
 }

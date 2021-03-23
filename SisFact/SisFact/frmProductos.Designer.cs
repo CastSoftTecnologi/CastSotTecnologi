@@ -191,6 +191,7 @@ namespace SisFact
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProductos";
             this.Text = "frmProductos";
+            this.Activated += new System.EventHandler(this.frmProductos_Activated);
             this.Load += new System.EventHandler(this.frmProductos_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -205,12 +206,12 @@ namespace SisFact
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView LProductos;
         private System.Windows.Forms.Label lbbusqueda;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.DataGridViewTextBoxColumn cProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn x_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn i_precioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn m_activo;
+        public System.Windows.Forms.DataGridView LProductos;
     }
 }

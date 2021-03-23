@@ -32,9 +32,9 @@ namespace SisFact
             Campo = LProductos.Columns[0].Name.ToString();//aqui indico a la variable campo por cual campo debe filtrar
             LProductos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-        private void buscar_Registros() {
+        public void buscar_Registros() {
 
-            string Sql = "select top 100 cProducto,x_producto,i_precioUnitario,m_activo from TPRODUCTO";
+            string Sql = "select top 100 cProducto,x_producto,i_precioUnitario,(case when m_activo = 1 then 'SI' else 'NO' end) m_activo from TPRODUCTO";
             if (txtBusqueda.Text != "") { 
                 Sql = Sql + " where " + Campo  + " like '%" + txtBusqueda.Text  + "%'";
             }
@@ -76,6 +76,11 @@ namespace SisFact
             if (LProductos.Rows.Count > 0) { 
                 ABM_Producto("Regístro de Productos: Proceso - Modificar");
             }
+        }
+
+        private void frmProductos_Activated(object sender, EventArgs e)
+        {
+            buscar_Registros();
         }
     }
 }

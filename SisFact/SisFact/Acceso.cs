@@ -18,6 +18,7 @@ namespace SisFact
         public SqlCommand comando;
 
         public static string x_usuario;
+        public static int c_usuario;
 
 
         public void Lectura(string sql)
