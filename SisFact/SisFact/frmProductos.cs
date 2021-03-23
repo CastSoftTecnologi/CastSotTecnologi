@@ -57,13 +57,25 @@ namespace SisFact
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmABMProductos FProductos = new frmABMProductos();
+            ABM_Producto("Regístro de Productos: Proceso - Agregar");
+        }
+        private void ABM_Producto(string titulo,string Proceso = "") {
+            frmABMProductos FP = new frmABMProductos();
+            AddOwnedForm(FP);
+            FP.TopLevel = false;
+            FP.Dock = DockStyle.Fill;
+            this.Controls.Add(FP);
+            this.Tag = FP;
+            FP.BringToFront();
+            FP.LbProceso.Text = titulo;
+            FP.Show();
+        }
 
-         
-
-
-
-
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (LProductos.Rows.Count > 0) { 
+                ABM_Producto("Regístro de Productos: Proceso - Modificar");
+            }
         }
     }
 }
