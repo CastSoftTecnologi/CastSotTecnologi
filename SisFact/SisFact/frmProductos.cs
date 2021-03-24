@@ -22,13 +22,19 @@ namespace SisFact
         private void frmProductos_Load(object sender, EventArgs e)
         {
             Diseno_grilla();
+            Cargar_Combo();
             buscar_Registros();
            
         }
-
+        private void Cargar_Combo() {
+            lbbusqueda.Items.Add("Código");
+            lbbusqueda.Items.Add("Descripción");
+            lbbusqueda.Items.Add("Precio U.");
+            lbbusqueda.DropDownStyle = ComboBoxStyle.DropDownList;
+            lbbusqueda.SelectedIndex = 0;
+        }
         private void Diseno_grilla() {
             // esto pasa también cuando toco la cabezera de la columna  --- solo aqui queda por difault la primera columna
-            lbbusqueda.Text = LProductos.Columns[0].HeaderText;//aqui indico al usuario por cual campo estoy filtrando
             Campo = LProductos.Columns[0].Name.ToString();//aqui indico a la variable campo por cual campo debe filtrar
             LProductos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
@@ -81,6 +87,11 @@ namespace SisFact
         private void frmProductos_Activated(object sender, EventArgs e)
         {
             buscar_Registros();
+        }
+
+        private void lbbusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Campo = LProductos.Columns[lbbusqueda.SelectedIndex].Name.ToString();
         }
     }
 }

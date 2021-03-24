@@ -54,6 +54,8 @@ namespace SisFact
             this.chkVisible = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtcBarra = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtStockMin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -187,7 +189,7 @@ namespace SisFact
             this.chkVenta.Location = new System.Drawing.Point(9, 230);
             this.chkVenta.Name = "chkVenta";
             this.chkVenta.Size = new System.Drawing.Size(63, 17);
-            this.chkVenta.TabIndex = 7;
+            this.chkVenta.TabIndex = 8;
             this.chkVenta.Text = "Venta   ";
             this.chkVenta.UseVisualStyleBackColor = true;
             // 
@@ -199,7 +201,7 @@ namespace SisFact
             this.chkFormula.Location = new System.Drawing.Point(9, 253);
             this.chkFormula.Name = "chkFormula";
             this.chkFormula.Size = new System.Drawing.Size(63, 17);
-            this.chkFormula.TabIndex = 8;
+            this.chkFormula.TabIndex = 9;
             this.chkFormula.Text = "Formula";
             this.chkFormula.UseVisualStyleBackColor = true;
             // 
@@ -245,7 +247,8 @@ namespace SisFact
             this.txtPrecioU.Location = new System.Drawing.Point(113, 325);
             this.txtPrecioU.Name = "txtPrecioU";
             this.txtPrecioU.Size = new System.Drawing.Size(108, 25);
-            this.txtPrecioU.TabIndex = 11;
+            this.txtPrecioU.TabIndex = 12;
+            this.txtPrecioU.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrecioU.TextChanged += new System.EventHandler(this.txtPrecioU_TextChanged);
             // 
             // cboIVA
@@ -279,7 +282,7 @@ namespace SisFact
             this.chkActivo.Location = new System.Drawing.Point(10, 276);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(62, 17);
-            this.chkActivo.TabIndex = 9;
+            this.chkActivo.TabIndex = 10;
             this.chkActivo.Text = "Activo  ";
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
@@ -314,7 +317,7 @@ namespace SisFact
             this.chkVisible.Location = new System.Drawing.Point(10, 299);
             this.chkVisible.Name = "chkVisible";
             this.chkVisible.Size = new System.Drawing.Size(62, 17);
-            this.chkVisible.TabIndex = 10;
+            this.chkVisible.TabIndex = 11;
             this.chkVisible.Text = "Visible  ";
             this.chkVisible.UseVisualStyleBackColor = true;
             // 
@@ -339,12 +342,37 @@ namespace SisFact
             this.txtcBarra.Size = new System.Drawing.Size(168, 25);
             this.txtcBarra.TabIndex = 3;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(235, 143);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 17);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Stock. Min:";
+            // 
+            // txtStockMin
+            // 
+            this.txtStockMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtStockMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStockMin.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStockMin.Location = new System.Drawing.Point(339, 139);
+            this.txtStockMin.Name = "txtStockMin";
+            this.txtStockMin.Size = new System.Drawing.Size(108, 25);
+            this.txtStockMin.TabIndex = 7;
+            this.txtStockMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtStockMin.TextChanged += new System.EventHandler(this.txtStockMin_TextChanged);
+            // 
             // frmABMProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(655, 494);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtStockMin);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtcBarra);
             this.Controls.Add(this.chkVisible);
@@ -407,5 +435,7 @@ namespace SisFact
         private System.Windows.Forms.CheckBox chkVisible;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtcBarra;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtStockMin;
     }
 }

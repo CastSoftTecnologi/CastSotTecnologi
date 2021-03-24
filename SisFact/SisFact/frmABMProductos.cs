@@ -78,6 +78,11 @@ namespace SisFact
             if (int.Parse(cboCategoria.SelectedValue.ToString()) == 0) {
                 return;
             }
+            if (txtStockMin.Text == "")
+            {
+                MessageBox.Show("Debe Indicar el Stock Minimo", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (txtCodigo.Text == "") { 
             A.Ejecuta("exec INS_TPRODUCTO @x_producto = '" + txtNombre.Text + "'" +
@@ -92,11 +97,12 @@ namespace SisFact
             ", @m_venta          = " + (chkVenta.Checked  == true?"1":"0") +
             ", @m_formula        = " + (chkVenta.Checked == true ? "1" : "0") +
             ", @cBarra           = '" + txtcBarra.Text + "'" +
-            ", @cIva             = " + cboIVA.SelectedValue.ToString());
+            ", @cIva             = " + cboIVA.SelectedValue.ToString() +
+            ", @nUnidadesMin     = " + int.Parse(txtStockMin.Text));
             }
             MessageBox.Show("Datos Gargados","Aviso...",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            frmProductos FP = Owner as frmProductos;
-            FP.buscar_Registros();
+            frmProductos FP = Owner as frmProductos;//Este permite actulizar la grilla haciendo que padre acepte la peticion de hijo
+            FP.buscar_Registros();//esta funcion es de PAdre frmProductos pero la peticion de viene de frmABMProductos
             Dispose();
             Close();
         }
@@ -105,6 +111,14 @@ namespace SisFact
         {
             if (A.IsNumeric(txtPrecioU.Text) == false) {
                 txtPrecioU.Text = "";
+            }
+        }
+
+        private void txtStockMin_TextChanged(object sender, EventArgs e)
+        {
+            if (A.IsNumeric(txtStockMin.Text) == false)
+            {
+                txtStockMin.Text = "";
             }
         }
     }
