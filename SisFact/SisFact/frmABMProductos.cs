@@ -91,12 +91,21 @@ namespace SisFact
             ", @m_visible        = " + (chkActivo.Checked == true?"1":"0") +
             ", @m_venta          = " + (chkVenta.Checked  == true?"1":"0") +
             ", @m_formula        = " + (chkVenta.Checked == true ? "1" : "0") +
-            ", @cBarra           = " + txtcBarra.Text +
+            ", @cBarra           = '" + txtcBarra.Text + "'" +
             ", @cIva             = " + cboIVA.SelectedValue.ToString());
             }
             MessageBox.Show("Datos Gargados","Aviso...",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            frmProductos FP = Owner as frmProductos;
+            FP.buscar_Registros();
             Dispose();
             Close();
+        }
+
+        private void txtPrecioU_TextChanged(object sender, EventArgs e)
+        {
+            if (A.IsNumeric(txtPrecioU.Text) == false) {
+                txtPrecioU.Text = "";
+            }
         }
     }
 }

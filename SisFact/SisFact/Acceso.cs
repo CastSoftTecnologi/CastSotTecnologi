@@ -56,5 +56,19 @@ namespace SisFact
                 return false;
             }
         }
+        public bool IsNumeric(string numero) {
+            double Num;
+            try
+            {
+                Num = double.Parse(numero);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        
+        }
     }
 }

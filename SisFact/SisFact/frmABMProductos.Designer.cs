@@ -246,6 +246,7 @@ namespace SisFact
             this.txtPrecioU.Name = "txtPrecioU";
             this.txtPrecioU.Size = new System.Drawing.Size(108, 25);
             this.txtPrecioU.TabIndex = 11;
+            this.txtPrecioU.TextChanged += new System.EventHandler(this.txtPrecioU_TextChanged);
             // 
             // cboIVA
             // 

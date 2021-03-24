@@ -29,6 +29,7 @@ namespace SisFact
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbbusqueda = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -169,6 +170,10 @@ namespace SisFact
             // i_precioUnitario
             // 
             this.i_precioUnitario.DataPropertyName = "i_precioUnitario";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.i_precioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
             this.i_precioUnitario.HeaderText = "Precio.U";
             this.i_precioUnitario.Name = "i_precioUnitario";
             this.i_precioUnitario.ReadOnly = true;
@@ -208,10 +213,10 @@ namespace SisFact
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lbbusqueda;
         private System.Windows.Forms.TextBox txtBusqueda;
+        public System.Windows.Forms.DataGridView LProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn cProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn x_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn i_precioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn m_activo;
-        public System.Windows.Forms.DataGridView LProductos;
     }
 }
