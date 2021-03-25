@@ -27,6 +27,26 @@ namespace SisFact
         private void frmABMProductos_Load(object sender, EventArgs e)
         {
             Carga_Combos();
+            if (txtCodigo.Text != "") {
+
+                A.Lectura("Select * from TProducto where cProducto = " + txtCodigo.Text );
+                if (A.dr.Read()) {
+                    txtNombre.Text = A.dr["xl_producto"].ToString();
+                    txtNombreCorto.Text = A.dr["x_producto"].ToString();
+                    txtPrecioU.Text = A.dr["i_precioUnitario"].ToString();
+                    txtcBarra.Text = A.dr["cBarra"].ToString();
+                    txtStockMin.Text = A.dr["nUnidadesMin"].ToString();
+                    cboCategoria.SelectedValue  = A.dr["cCategoria"];
+                    cboIVA.SelectedValue = A.dr["cIva"];
+                    cboUnidad.SelectedValue = A.dr["cUnidaMedida"];
+                    cboMarca.SelectedValue = A.dr["cMarca"];
+                    chkVenta.Checked = bool.Parse(A.dr["m_venta"].ToString());
+                    chkFormula.Checked = bool.Parse(A.dr["m_formula"].ToString());
+                    chkActivo.Checked = bool.Parse(A.dr["m_activo"].ToString());
+                    chkVisible.Checked = bool.Parse(A.dr["m_visible"].ToString());
+                }
+                A.conexion.Close();
+            }
         }
         private void Carga_Combos() {
             A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cCategoria, x_categoria from BCategoria", "R");
@@ -52,7 +72,6 @@ namespace SisFact
             cboMarca.DisplayMember = "Des";
             cboMarca.ValueMember = "Codigo";
             A.conexion.Close();
-
         }
 
         private void btnGuradar_Click(object sender, EventArgs e)
@@ -85,17 +104,17 @@ namespace SisFact
             }
 
             if (txtCodigo.Text == "") { 
-            A.Ejecuta("exec INS_TPRODUCTO @x_producto = '" + txtNombre.Text + "'" +
-            ", @xl_producto      = '" + txtNombreCorto.Text + "'" +
+            A.Ejecuta("exec INS_TPRODUCTO @xl_producto = '" + txtNombre.Text + "'" +
+            ", @x_producto      = '" + txtNombreCorto.Text + "'" +
             ", @i_precioUnitario = " + txtPrecioU.Text +
             ", @cCategoria       = " + cboCategoria.SelectedValue.ToString() +
             ", @cUnidaMedida     = " + cboUnidad.SelectedValue.ToString() +
             ", @cMarca           = " + cboMarca.SelectedValue.ToString() +
             ", @c_usuario        = " + Acceso.c_usuario.ToString() +
             ", @m_activo         = " + (chkActivo.Checked == true?"1":"0") +
-            ", @m_visible        = " + (chkActivo.Checked == true?"1":"0") +
+            ", @m_visible        = " + (chkVisible.Checked == true?"1":"0") +
             ", @m_venta          = " + (chkVenta.Checked  == true?"1":"0") +
-            ", @m_formula        = " + (chkVenta.Checked == true ? "1" : "0") +
+            ", @m_formula        = " + (chkFormula.Checked == true ? "1" : "0") +
             ", @cBarra           = '" + txtcBarra.Text + "'" +
             ", @cIva             = " + cboIVA.SelectedValue.ToString() +
             ", @nUnidadesMin     = " + int.Parse(txtStockMin.Text));

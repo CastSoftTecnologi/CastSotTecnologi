@@ -65,7 +65,7 @@ namespace SisFact
         {
             ABM_Producto("Regístro de Productos: Proceso - Agregar");
         }
-        private void ABM_Producto(string titulo,string Proceso = "") {
+        private void ABM_Producto(string titulo,bool Proceso = false) {
             frmABMProductos FP = new frmABMProductos();
             AddOwnedForm(FP);
             FP.TopLevel = false;
@@ -74,13 +74,19 @@ namespace SisFact
             this.Tag = FP;
             FP.BringToFront();
             FP.LbProceso.Text = titulo;
+            if (Proceso == true) {
+
+                FP.txtCodigo.Text = LProductos.CurrentRow.Cells["cProducto"].Value.ToString();
+            
+            }
+
             FP.Show();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (LProductos.Rows.Count > 0) { 
-                ABM_Producto("Regístro de Productos: Proceso - Modificar");
+                ABM_Producto("Regístro de Productos: Proceso - Modificar",true);
             }
         }
 
