@@ -163,5 +163,19 @@ namespace SisFact
                 txtNfactnum.Text = "";
             }
         }
+
+        private void txtCant_TextChanged(object sender, EventArgs e)
+        {
+            if (A.IsNumeric(txtCant.Text) == false)
+            {
+                txtCant.Text = "";
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            browserProductosNoVentas FB = new browserProductosNoVentas();
+            FB.ShowDialog();
+        }
     }
 }

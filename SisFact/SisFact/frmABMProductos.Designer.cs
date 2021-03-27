@@ -29,11 +29,16 @@ namespace SisFact
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnsalir = new System.Windows.Forms.Button();
             this.LbProceso = new System.Windows.Forms.Label();
             this.btnGuradar = new System.Windows.Forms.Button();
             this.TabProdutos = new System.Windows.Forms.TabControl();
             this.TbGenerales = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtNfactnum = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtStockMin = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,10 +64,22 @@ namespace SisFact
             this.lbbusqueda = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.TbDetalle = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtNfactnum = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCant = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCod = new System.Windows.Forms.TextBox();
+            this.FProducto = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabProdutos.SuspendLayout();
             this.TbGenerales.SuspendLayout();
+            this.TbDetalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnsalir
@@ -151,6 +168,31 @@ namespace SisFact
             this.TbGenerales.Size = new System.Drawing.Size(623, 398);
             this.TbGenerales.TabIndex = 0;
             this.TbGenerales.Text = "Datos Generales";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(254, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 17);
+            this.label10.TabIndex = 59;
+            this.label10.Text = "F. Numérico";
+            // 
+            // txtNfactnum
+            // 
+            this.txtNfactnum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtNfactnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNfactnum.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNfactnum.ForeColor = System.Drawing.Color.White;
+            this.txtNfactnum.Location = new System.Drawing.Point(358, 151);
+            this.txtNfactnum.Name = "txtNfactnum";
+            this.txtNfactnum.Size = new System.Drawing.Size(108, 25);
+            this.txtNfactnum.TabIndex = 5;
+            this.txtNfactnum.Text = "1";
+            this.txtNfactnum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNfactnum.TextChanged += new System.EventHandler(this.txtNfactnum_TextChanged);
             // 
             // label9
             // 
@@ -429,6 +471,15 @@ namespace SisFact
             // TbDetalle
             // 
             this.TbDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.TbDetalle.Controls.Add(this.btnAgregar);
+            this.TbDetalle.Controls.Add(this.btnBuscar);
+            this.TbDetalle.Controls.Add(this.label11);
+            this.TbDetalle.Controls.Add(this.label12);
+            this.TbDetalle.Controls.Add(this.txtCant);
+            this.TbDetalle.Controls.Add(this.txtDesc);
+            this.TbDetalle.Controls.Add(this.label13);
+            this.TbDetalle.Controls.Add(this.txtCod);
+            this.TbDetalle.Controls.Add(this.FProducto);
             this.TbDetalle.Location = new System.Drawing.Point(4, 22);
             this.TbDetalle.Name = "TbDetalle";
             this.TbDetalle.Padding = new System.Windows.Forms.Padding(3);
@@ -436,30 +487,166 @@ namespace SisFact
             this.TbDetalle.TabIndex = 1;
             this.TbDetalle.Text = "Detalles de Producto";
             // 
-            // label10
+            // btnAgregar
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(254, 155);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 17);
-            this.label10.TabIndex = 59;
-            this.label10.Text = "F. Numérico";
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAgregar.Location = new System.Drawing.Point(513, 117);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(104, 25);
+            this.btnAgregar.TabIndex = 57;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // txtNfactnum
+            // btnBuscar
             // 
-            this.txtNfactnum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtNfactnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNfactnum.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNfactnum.ForeColor = System.Drawing.Color.White;
-            this.txtNfactnum.Location = new System.Drawing.Point(358, 151);
-            this.txtNfactnum.Name = "txtNfactnum";
-            this.txtNfactnum.Size = new System.Drawing.Size(108, 25);
-            this.txtNfactnum.TabIndex = 5;
-            this.txtNfactnum.Text = "1";
-            this.txtNfactnum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtNfactnum.TextChanged += new System.EventHandler(this.txtNfactnum_TextChanged);
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnBuscar.Location = new System.Drawing.Point(228, 44);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(52, 25);
+            this.btnBuscar.TabIndex = 56;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(10, 106);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 17);
+            this.label11.TabIndex = 54;
+            this.label11.Text = "Cantidad:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(10, 75);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 17);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "Nombre:";
+            // 
+            // txtCant
+            // 
+            this.txtCant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtCant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCant.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCant.ForeColor = System.Drawing.Color.White;
+            this.txtCant.Location = new System.Drawing.Point(114, 106);
+            this.txtCant.Name = "txtCant";
+            this.txtCant.Size = new System.Drawing.Size(108, 25);
+            this.txtCant.TabIndex = 51;
+            this.txtCant.TextChanged += new System.EventHandler(this.txtCant_TextChanged);
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDesc.Enabled = false;
+            this.txtDesc.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.ForeColor = System.Drawing.Color.White;
+            this.txtDesc.Location = new System.Drawing.Point(114, 75);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(394, 25);
+            this.txtDesc.TabIndex = 50;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(10, 44);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 17);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "Codigo";
+            // 
+            // txtCod
+            // 
+            this.txtCod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtCod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCod.Enabled = false;
+            this.txtCod.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCod.Location = new System.Drawing.Point(114, 44);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(108, 25);
+            this.txtCod.TabIndex = 49;
+            // 
+            // FProducto
+            // 
+            this.FProducto.AllowUserToAddRows = false;
+            this.FProducto.AllowUserToDeleteRows = false;
+            this.FProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FProducto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.FProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.FProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Descripcion,
+            this.Cantidad});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FProducto.DefaultCellStyle = dataGridViewCellStyle5;
+            this.FProducto.EnableHeadersVisualStyles = false;
+            this.FProducto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.FProducto.Location = new System.Drawing.Point(6, 148);
+            this.FProducto.Name = "FProducto";
+            this.FProducto.ReadOnly = true;
+            this.FProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.FProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.FProducto.Size = new System.Drawing.Size(611, 244);
+            this.FProducto.TabIndex = 0;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // frmABMProductos
             // 
@@ -479,6 +666,9 @@ namespace SisFact
             this.TabProdutos.ResumeLayout(false);
             this.TbGenerales.ResumeLayout(false);
             this.TbGenerales.PerformLayout();
+            this.TbDetalle.ResumeLayout(false);
+            this.TbDetalle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,5 +707,17 @@ namespace SisFact
         public System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TextBox txtNfactnum;
+        private System.Windows.Forms.DataGridView FProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox txtCant;
+        public System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.TextBox txtCod;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
