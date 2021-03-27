@@ -36,6 +36,7 @@ namespace SisFact
                     txtPrecioU.Text = A.dr["i_precioUnitario"].ToString();
                     txtcBarra.Text = A.dr["cBarra"].ToString();
                     txtStockMin.Text = A.dr["nUnidadesMin"].ToString();
+                    txtNfactnum.Text = A.dr["nFactornumerico"].ToString();
                     cboCategoria.SelectedValue  = A.dr["cCategoria"];
                     cboIVA.SelectedValue = A.dr["cIva"];
                     cboUnidad.SelectedValue = A.dr["cUnidaMedida"];
@@ -76,6 +77,7 @@ namespace SisFact
 
         private void btnGuradar_Click(object sender, EventArgs e)
         {
+            string sSql = "";
             if (txtNombre.Text == "") {
                 MessageBox.Show("Debe Indicar el Nombre", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -102,11 +104,23 @@ namespace SisFact
                 MessageBox.Show("Debe Indicar el Stock Minimo", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (txtNfactnum.Text == "") {
+                txtNfactnum.Text = "1";
+            }
 
-            if (txtCodigo.Text == "") { 
-            A.Ejecuta("exec INS_TPRODUCTO @xl_producto = '" + txtNombre.Text + "'" +
+            if (txtCodigo.Text == "")
+            {
+                sSql = "exec INS_TPRODUCTO ";
+            }
+            else
+            {
+                sSql = "exec UPD_TPRODUCTO @cProducto = " + txtCodigo.Text + "," ;
+            }
+
+            A.Ejecuta(sSql + 
+            "  @xl_producto     = '" + txtNombre.Text + "'" +
             ", @x_producto      = '" + txtNombreCorto.Text + "'" +
-            ", @i_precioUnitario = " + txtPrecioU.Text +
+            ", @i_precioUnitario = " + double.Parse(txtPrecioU.Text) +
             ", @cCategoria       = " + cboCategoria.SelectedValue.ToString() +
             ", @cUnidaMedida     = " + cboUnidad.SelectedValue.ToString() +
             ", @cMarca           = " + cboMarca.SelectedValue.ToString() +
@@ -117,11 +131,12 @@ namespace SisFact
             ", @m_formula        = " + (chkFormula.Checked == true ? "1" : "0") +
             ", @cBarra           = '" + txtcBarra.Text + "'" +
             ", @cIva             = " + cboIVA.SelectedValue.ToString() +
-            ", @nUnidadesMin     = " + int.Parse(txtStockMin.Text));
-            }
+            ", @nUnidadesMin     = " + int.Parse(txtStockMin.Text) +
+            ", @nFactornumerico  = " + int.Parse(txtNfactnum.Text));
+            
             MessageBox.Show("Datos Gargados","Aviso...",MessageBoxButtons.OK,MessageBoxIcon.Information);
             frmProductos FP = Owner as frmProductos;//Este permite actulizar la grilla haciendo que padre acepte la peticion de hijo
-            FP.buscar_Registros();//esta funcion es de PAdre frmProductos pero la peticion de viene de frmABMProductos
+            FP.buscar_Registros();//esta funcion es de Padre frmProductos pero la peticion de viene de frmABMProductos
             Dispose();
             Close();
         }
@@ -138,6 +153,14 @@ namespace SisFact
             if (A.IsNumeric(txtStockMin.Text) == false)
             {
                 txtStockMin.Text = "";
+            }
+        }
+
+        private void txtNfactnum_TextChanged(object sender, EventArgs e)
+        {
+            if (A.IsNumeric(txtNfactnum.Text) == false)
+            {
+                txtNfactnum.Text = "";
             }
         }
     }

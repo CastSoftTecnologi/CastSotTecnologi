@@ -34,7 +34,6 @@ namespace SisFact
             this.btnGuradar = new System.Windows.Forms.Button();
             this.TabProdutos = new System.Windows.Forms.TabControl();
             this.TbGenerales = new System.Windows.Forms.TabPage();
-            this.TbDetalle = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.txtStockMin = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,6 +58,9 @@ namespace SisFact
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lbbusqueda = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.TbDetalle = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtNfactnum = new System.Windows.Forms.TextBox();
             this.TabProdutos.SuspendLayout();
             this.TbGenerales.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +73,7 @@ namespace SisFact
             this.btnsalir.Location = new System.Drawing.Point(539, 457);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(104, 25);
-            this.btnsalir.TabIndex = 14;
+            this.btnsalir.TabIndex = 16;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
             this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
@@ -94,7 +96,7 @@ namespace SisFact
             this.btnGuradar.Location = new System.Drawing.Point(429, 457);
             this.btnGuradar.Name = "btnGuradar";
             this.btnGuradar.Size = new System.Drawing.Size(104, 25);
-            this.btnGuradar.TabIndex = 13;
+            this.btnGuradar.TabIndex = 15;
             this.btnGuradar.Text = "Guardar";
             this.btnGuradar.UseVisualStyleBackColor = true;
             this.btnGuradar.Click += new System.EventHandler(this.btnGuradar_Click);
@@ -116,6 +118,8 @@ namespace SisFact
             // TbGenerales
             // 
             this.TbGenerales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.TbGenerales.Controls.Add(this.label10);
+            this.TbGenerales.Controls.Add(this.txtNfactnum);
             this.TbGenerales.Controls.Add(this.label9);
             this.TbGenerales.Controls.Add(this.txtStockMin);
             this.TbGenerales.Controls.Add(this.label8);
@@ -148,16 +152,6 @@ namespace SisFact
             this.TbGenerales.TabIndex = 0;
             this.TbGenerales.Text = "Datos Generales";
             // 
-            // TbDetalle
-            // 
-            this.TbDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.TbDetalle.Location = new System.Drawing.Point(4, 22);
-            this.TbDetalle.Name = "TbDetalle";
-            this.TbDetalle.Padding = new System.Windows.Forms.Padding(3);
-            this.TbDetalle.Size = new System.Drawing.Size(623, 398);
-            this.TbDetalle.TabIndex = 1;
-            this.TbDetalle.Text = "Detalles de Producto";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -174,10 +168,11 @@ namespace SisFact
             this.txtStockMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtStockMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStockMin.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStockMin.ForeColor = System.Drawing.Color.White;
             this.txtStockMin.Location = new System.Drawing.Point(358, 123);
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.Size = new System.Drawing.Size(108, 25);
-            this.txtStockMin.TabIndex = 41;
+            this.txtStockMin.TabIndex = 4;
             this.txtStockMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label8
@@ -196,10 +191,11 @@ namespace SisFact
             this.txtcBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtcBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcBarra.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcBarra.ForeColor = System.Drawing.Color.White;
             this.txtcBarra.Location = new System.Drawing.Point(358, 92);
             this.txtcBarra.Name = "txtcBarra";
             this.txtcBarra.Size = new System.Drawing.Size(168, 25);
-            this.txtcBarra.TabIndex = 37;
+            this.txtcBarra.TabIndex = 3;
             // 
             // chkVisible
             // 
@@ -209,7 +205,7 @@ namespace SisFact
             this.chkVisible.Location = new System.Drawing.Point(29, 283);
             this.chkVisible.Name = "chkVisible";
             this.chkVisible.Size = new System.Drawing.Size(62, 17);
-            this.chkVisible.TabIndex = 46;
+            this.chkVisible.TabIndex = 12;
             this.chkVisible.Text = "Visible  ";
             this.chkVisible.UseVisualStyleBackColor = true;
             // 
@@ -223,7 +219,7 @@ namespace SisFact
             this.cboMarca.Location = new System.Drawing.Point(132, 123);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(108, 21);
-            this.cboMarca.TabIndex = 38;
+            this.cboMarca.TabIndex = 6;
             // 
             // label7
             // 
@@ -244,7 +240,7 @@ namespace SisFact
             this.chkActivo.Location = new System.Drawing.Point(29, 260);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(62, 17);
-            this.chkActivo.TabIndex = 45;
+            this.chkActivo.TabIndex = 11;
             this.chkActivo.Text = "Activo  ";
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
@@ -258,7 +254,7 @@ namespace SisFact
             this.cboIVA.Location = new System.Drawing.Point(132, 340);
             this.cboIVA.Name = "cboIVA";
             this.cboIVA.Size = new System.Drawing.Size(108, 21);
-            this.cboIVA.TabIndex = 50;
+            this.cboIVA.TabIndex = 14;
             // 
             // label6
             // 
@@ -287,10 +283,11 @@ namespace SisFact
             this.txtPrecioU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtPrecioU.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecioU.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioU.ForeColor = System.Drawing.Color.White;
             this.txtPrecioU.Location = new System.Drawing.Point(132, 309);
             this.txtPrecioU.Name = "txtPrecioU";
             this.txtPrecioU.Size = new System.Drawing.Size(108, 25);
-            this.txtPrecioU.TabIndex = 49;
+            this.txtPrecioU.TabIndex = 13;
             this.txtPrecioU.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chkFormula
@@ -301,7 +298,7 @@ namespace SisFact
             this.chkFormula.Location = new System.Drawing.Point(28, 237);
             this.chkFormula.Name = "chkFormula";
             this.chkFormula.Size = new System.Drawing.Size(63, 17);
-            this.chkFormula.TabIndex = 44;
+            this.chkFormula.TabIndex = 10;
             this.chkFormula.Text = "Formula";
             this.chkFormula.UseVisualStyleBackColor = true;
             // 
@@ -313,7 +310,7 @@ namespace SisFact
             this.chkVenta.Location = new System.Drawing.Point(28, 214);
             this.chkVenta.Name = "chkVenta";
             this.chkVenta.Size = new System.Drawing.Size(63, 17);
-            this.chkVenta.TabIndex = 43;
+            this.chkVenta.TabIndex = 9;
             this.chkVenta.Text = "Venta   ";
             this.chkVenta.UseVisualStyleBackColor = true;
             // 
@@ -327,7 +324,7 @@ namespace SisFact
             this.cboUnidad.Location = new System.Drawing.Point(132, 177);
             this.cboUnidad.Name = "cboUnidad";
             this.cboUnidad.Size = new System.Drawing.Size(108, 21);
-            this.cboUnidad.TabIndex = 40;
+            this.cboUnidad.TabIndex = 8;
             // 
             // label4
             // 
@@ -350,7 +347,7 @@ namespace SisFact
             this.cboCategoria.Location = new System.Drawing.Point(132, 150);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(108, 21);
-            this.cboCategoria.TabIndex = 39;
+            this.cboCategoria.TabIndex = 7;
             // 
             // label3
             // 
@@ -390,20 +387,22 @@ namespace SisFact
             this.txtNombreCorto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtNombreCorto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreCorto.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCorto.ForeColor = System.Drawing.Color.White;
             this.txtNombreCorto.Location = new System.Drawing.Point(132, 92);
             this.txtNombreCorto.Name = "txtNombreCorto";
             this.txtNombreCorto.Size = new System.Drawing.Size(108, 25);
-            this.txtNombreCorto.TabIndex = 36;
+            this.txtNombreCorto.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.White;
             this.txtNombre.Location = new System.Drawing.Point(132, 61);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(394, 25);
-            this.txtNombre.TabIndex = 35;
+            this.txtNombre.TabIndex = 1;
             // 
             // lbbusqueda
             // 
@@ -425,7 +424,42 @@ namespace SisFact
             this.txtCodigo.Location = new System.Drawing.Point(132, 30);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(108, 25);
-            this.txtCodigo.TabIndex = 34;
+            this.txtCodigo.TabIndex = 0;
+            // 
+            // TbDetalle
+            // 
+            this.TbDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.TbDetalle.Location = new System.Drawing.Point(4, 22);
+            this.TbDetalle.Name = "TbDetalle";
+            this.TbDetalle.Padding = new System.Windows.Forms.Padding(3);
+            this.TbDetalle.Size = new System.Drawing.Size(623, 398);
+            this.TbDetalle.TabIndex = 1;
+            this.TbDetalle.Text = "Detalles de Producto";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(254, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 17);
+            this.label10.TabIndex = 59;
+            this.label10.Text = "F. Numérico";
+            // 
+            // txtNfactnum
+            // 
+            this.txtNfactnum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtNfactnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNfactnum.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNfactnum.ForeColor = System.Drawing.Color.White;
+            this.txtNfactnum.Location = new System.Drawing.Point(358, 151);
+            this.txtNfactnum.Name = "txtNfactnum";
+            this.txtNfactnum.Size = new System.Drawing.Size(108, 25);
+            this.txtNfactnum.TabIndex = 5;
+            this.txtNfactnum.Text = "1";
+            this.txtNfactnum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNfactnum.TextChanged += new System.EventHandler(this.txtNfactnum_TextChanged);
             // 
             // frmABMProductos
             // 
@@ -481,5 +515,7 @@ namespace SisFact
         public System.Windows.Forms.TextBox txtNombreCorto;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox txtNfactnum;
     }
 }
