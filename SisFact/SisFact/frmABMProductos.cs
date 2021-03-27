@@ -13,6 +13,7 @@ namespace SisFact
     public partial class frmABMProductos : Form
     {
         Acceso A = new Acceso();
+        
         public frmABMProductos()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace SisFact
                 if (A.dr.Read()) {
                     txtNombre.Text = A.dr["xl_producto"].ToString();
                     txtNombreCorto.Text = A.dr["x_producto"].ToString();
-                    txtPrecioU.Text = A.dr["i_precioUnitario"].ToString();
+                    txtPrecioU.Text = Math.Round(double.Parse(A.dr["i_precioUnitario"].ToString()),2).ToString();
                     txtcBarra.Text = A.dr["cBarra"].ToString();
                     txtStockMin.Text = A.dr["nUnidadesMin"].ToString();
                     txtNfactnum.Text = A.dr["nFactornumerico"].ToString();
@@ -108,19 +109,30 @@ namespace SisFact
                 txtNfactnum.Text = "1";
             }
 
+
+            if (txtPrecioU.Text == "") {
+                txtPrecioU.Text = "0";
+            }
+
+            if (chkFormula.Checked == true && FProducto.Rows.Count == 0) {
+                MessageBox.Show("Debe Indicar la composicion de la Formula", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (txtCodigo.Text == "")
             {
                 sSql = "exec INS_TPRODUCTO ";
             }
             else
             {
-                sSql = "exec UPD_TPRODUCTO @cProducto = " + txtCodigo.Text + "," ;
+                sSql = "exec UPD_TPRODUCTO @cProducto = " + txtCodigo.Text + ",";
             }
+
 
             A.Ejecuta(sSql + 
             "  @xl_producto     = '" + txtNombre.Text + "'" +
             ", @x_producto      = '" + txtNombreCorto.Text + "'" +
-            ", @i_precioUnitario = " + double.Parse(txtPrecioU.Text) +
+            ", @i_precioUnitario = " + txtPrecioU.Text.Replace(".","").Replace(",",".") +
             ", @cCategoria       = " + cboCategoria.SelectedValue.ToString() +
             ", @cUnidaMedida     = " + cboUnidad.SelectedValue.ToString() +
             ", @cMarca           = " + cboMarca.SelectedValue.ToString() +
