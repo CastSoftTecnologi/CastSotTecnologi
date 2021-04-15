@@ -29,34 +29,17 @@ namespace SisFact
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(browserProductosNoVentas));
-            this.Lproductos = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.Lproductos = new System.Windows.Forms.DataGridView();
             this.cProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xl_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Lproductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Lproductos
-            // 
-            this.Lproductos.AllowUserToAddRows = false;
-            this.Lproductos.AllowUserToDeleteRows = false;
-            this.Lproductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.Lproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Lproductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cProducto,
-            this.xl_producto});
-            this.Lproductos.EnableHeadersVisualStyles = false;
-            this.Lproductos.Location = new System.Drawing.Point(12, 83);
-            this.Lproductos.Name = "Lproductos";
-            this.Lproductos.ReadOnly = true;
-            this.Lproductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.Lproductos.Size = new System.Drawing.Size(439, 245);
-            this.Lproductos.TabIndex = 0;
             // 
             // txtBusqueda
             // 
@@ -86,23 +69,59 @@ namespace SisFact
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(259, 9);
+            this.label1.Location = new System.Drawing.Point(288, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 21);
             this.label1.TabIndex = 55;
             this.label1.Text = "Listados de Insumos";
             // 
-            // btnCerrar
+            // Lproductos
             // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(428, 8);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(23, 22);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrar.TabIndex = 56;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.Lproductos.AllowUserToAddRows = false;
+            this.Lproductos.AllowUserToDeleteRows = false;
+            this.Lproductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lproductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.Lproductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Lproductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Lproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Lproductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cProducto,
+            this.xl_producto});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Lproductos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Lproductos.EnableHeadersVisualStyles = false;
+            this.Lproductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.Lproductos.Location = new System.Drawing.Point(15, 83);
+            this.Lproductos.Name = "Lproductos";
+            this.Lproductos.ReadOnly = true;
+            this.Lproductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Lproductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.Lproductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Lproductos.Size = new System.Drawing.Size(436, 244);
+            this.Lproductos.TabIndex = 56;
+            this.Lproductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Lproductos_CellDoubleClick);
             // 
             // cProducto
             // 
@@ -110,7 +129,6 @@ namespace SisFact
             this.cProducto.HeaderText = "Código";
             this.cProducto.Name = "cProducto";
             this.cProducto.ReadOnly = true;
-            this.cProducto.Width = 80;
             // 
             // xl_producto
             // 
@@ -127,29 +145,25 @@ namespace SisFact
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(463, 338);
             this.ControlBox = false;
-            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.Lproductos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtBusqueda);
-            this.Controls.Add(this.Lproductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "browserProductosNoVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.browserProductosNoVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Lproductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView Lproductos;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.DataGridView Lproductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn cProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn xl_producto;
     }

@@ -35,10 +35,26 @@ namespace SisFact
             Cargar_Grilla();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+
+
+        private void Lproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void Lproductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Lproductos.Rows.Count > 0) {
+                frmABMProductos FP = Owner as frmABMProductos;
+                FP.txtCod.Text  = Lproductos.CurrentRow.Cells[0].Value.ToString();
+                FP.txtDesc.Text  = Lproductos.CurrentRow.Cells[1].Value.ToString();
+                FP.txtCant.Text = "1";
+                FP.txtCant.Focus();
+            }
             Dispose();
             Close();
         }
+
+
     }
 }

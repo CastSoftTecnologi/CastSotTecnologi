@@ -178,6 +178,7 @@ namespace SisFact
             this.LProductos.EnableHeadersVisualStyles = false;
             this.LProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.LProductos.Location = new System.Drawing.Point(4, 192);
+            this.LProductos.MultiSelect = false;
             this.LProductos.Name = "LProductos";
             this.LProductos.ReadOnly = true;
             this.LProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;

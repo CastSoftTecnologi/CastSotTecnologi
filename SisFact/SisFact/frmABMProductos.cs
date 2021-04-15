@@ -13,7 +13,7 @@ namespace SisFact
     public partial class frmABMProductos : Form
     {
         Acceso A = new Acceso();
-        
+        int pestana;
         public frmABMProductos()
         {
             InitializeComponent();
@@ -28,27 +28,38 @@ namespace SisFact
         private void frmABMProductos_Load(object sender, EventArgs e)
         {
             Carga_Combos();
+            btnAgregar.Enabled = false;
+            btnBuscar.Enabled = false;
             if (txtCodigo.Text != "") {
-
-                A.Lectura("Select * from TProducto where cProducto = " + txtCodigo.Text );
-                if (A.dr.Read()) {
-                    txtNombre.Text = A.dr["xl_producto"].ToString();
-                    txtNombreCorto.Text = A.dr["x_producto"].ToString();
-                    txtPrecioU.Text = Math.Round(double.Parse(A.dr["i_precioUnitario"].ToString()),2).ToString();
-                    txtcBarra.Text = A.dr["cBarra"].ToString();
-                    txtStockMin.Text = A.dr["nUnidadesMin"].ToString();
-                    txtNfactnum.Text = A.dr["nFactornumerico"].ToString();
-                    cboCategoria.SelectedValue  = A.dr["cCategoria"];
-                    cboIVA.SelectedValue = A.dr["cIva"];
-                    cboUnidad.SelectedValue = A.dr["cUnidaMedida"];
-                    cboMarca.SelectedValue = A.dr["cMarca"];
-                    chkVenta.Checked = bool.Parse(A.dr["m_venta"].ToString());
-                    chkFormula.Checked = bool.Parse(A.dr["m_formula"].ToString());
-                    chkActivo.Checked = bool.Parse(A.dr["m_activo"].ToString());
-                    chkVisible.Checked = bool.Parse(A.dr["m_visible"].ToString());
-                }
-                A.conexion.Close();
+                Carga_Data(txtCodigo.Text);
             }
+        }
+        private void Carga_Data(string Cod) {
+            A.Lectura("Select * from TProducto where cProducto = " + Cod);
+            if (A.dr.Read())
+            {
+                txtNombre.Text = A.dr["xl_producto"].ToString();
+                txtNombreCorto.Text = A.dr["x_producto"].ToString();
+                txtPrecioU.Text = Math.Round(double.Parse(A.dr["i_precioUnitario"].ToString()), 2).ToString();
+                txtcBarra.Text = A.dr["cBarra"].ToString();
+                txtStockMin.Text = A.dr["nUnidadesMin"].ToString();
+                txtNfactnum.Text = A.dr["nFactornumerico"].ToString();
+                cboCategoria.SelectedValue = A.dr["cCategoria"];
+                cboIVA.SelectedValue = A.dr["cIva"];
+                cboUnidad.SelectedValue = A.dr["cUnidaMedida"];
+                cboMarca.SelectedValue = A.dr["cMarca"];
+                chkVenta.Checked = bool.Parse(A.dr["m_venta"].ToString());
+                chkFormula.Checked = bool.Parse(A.dr["m_formula"].ToString());
+                chkActivo.Checked = bool.Parse(A.dr["m_activo"].ToString());
+                chkVisible.Checked = bool.Parse(A.dr["m_visible"].ToString());
+            }
+            A.conexion.Close();
+
+            A.Lectura("Select * from V_Formula_Productos where cProducto = " + txtCodigo.Text);
+            while (A.dr.Read() == true) {
+                FProducto.Rows.Add(A.dr["codigo"].ToString(),A.dr["Descripcion"].ToString(),A.dr["Cantidad"].ToString());
+            }
+            A.conexion.Close();
         }
         private void Carga_Combos() {
             A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cCategoria, x_categoria from BCategoria", "R");
@@ -79,6 +90,7 @@ namespace SisFact
         private void btnGuradar_Click(object sender, EventArgs e)
         {
             string sSql = "";
+            string codprod = "";
             if (txtNombre.Text == "") {
                 MessageBox.Show("Debe Indicar el Nombre", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -98,6 +110,7 @@ namespace SisFact
                 }
             }
             if (int.Parse(cboCategoria.SelectedValue.ToString()) == 0) {
+                MessageBox.Show("Debe Indicar la categoria", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (txtStockMin.Text == "")
@@ -129,7 +142,7 @@ namespace SisFact
             }
 
 
-            A.Ejecuta(sSql + 
+            A.Lectura(sSql + 
             "  @xl_producto     = '" + txtNombre.Text + "'" +
             ", @x_producto      = '" + txtNombreCorto.Text + "'" +
             ", @i_precioUnitario = " + txtPrecioU.Text.Replace(".","").Replace(",",".") +
@@ -145,6 +158,22 @@ namespace SisFact
             ", @cIva             = " + cboIVA.SelectedValue.ToString() +
             ", @nUnidadesMin     = " + int.Parse(txtStockMin.Text) +
             ", @nFactornumerico  = " + int.Parse(txtNfactnum.Text));
+            if (A.dr.Read()) {
+                if (A.dr[0].ToString() != "1") {
+                    return;
+                }
+                codprod = A.dr["Codigo"].ToString();
+            }
+            A.conexion.Close();
+            A.Ejecuta("Delete from TPRODUCTO_FORMULA where cProducto = " + codprod);
+
+            foreach (DataGridViewRow Fila in FProducto.Rows)
+            {
+                A.Ejecuta("exec INS_TPRODUCTO_FORMULA " +
+                          " @cProducto = " + codprod +
+                          ",@cProducto_Insumo = " + Fila.Cells["Codigo"].Value.ToString() +
+                          ",@Cantidad = " + Fila.Cells["Cantidad"].Value.ToString());
+            }
             
             MessageBox.Show("Datos Gargados","Aviso...",MessageBoxButtons.OK,MessageBoxIcon.Information);
             frmProductos FP = Owner as frmProductos;//Este permite actulizar la grilla haciendo que padre acepte la peticion de hijo
@@ -186,8 +215,39 @@ namespace SisFact
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            browserProductosNoVentas FB = new browserProductosNoVentas();
-            FB.ShowDialog();
+            browserProductosNoVentas FP = new browserProductosNoVentas();
+            AddOwnedForm(FP);
+            FP.TopLevel = false;
+            FP.Dock = DockStyle.Fill;
+            this.Controls.Add(FP);
+            this.Tag = FP;
+            FP.BringToFront();
+            FP.Show();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (txtCod.Text != "" && txtCant.Text != "") {
+                foreach (DataGridViewRow fila in FProducto.Rows)
+                {
+                    if (fila.Cells["Codigo"].Value.ToString() == txtCod.Text) {
+                        MessageBox.Show("Ya se agrego este insumo " + txtDesc.Text , "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                FProducto.Rows.Add(txtCod.Text, txtDesc.Text, txtCant.Text);
+                txtCod.Text = "";
+                txtDesc.Text = "";
+                txtCant.Text = "";
+            }
+        }
+
+        private void chkFormula_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkFormula.Checked == true) {
+                btnAgregar.Enabled = true;
+                btnBuscar.Enabled = true; 
+            }
         }
     }
 }
