@@ -159,12 +159,13 @@ namespace SisFact
             ", @nUnidadesMin     = " + int.Parse(txtStockMin.Text) +
             ", @nFactornumerico  = " + int.Parse(txtNfactnum.Text));
             if (A.dr.Read()) {
-                if (A.dr[0].ToString() != "1") {
+                if (A.dr["exito"].ToString() != "TRUE") {
                     return;
                 }
                 codprod = A.dr["Codigo"].ToString();
             }
             A.conexion.Close();
+
             A.Ejecuta("Delete from TPRODUCTO_FORMULA where cProducto = " + codprod);
 
             foreach (DataGridViewRow Fila in FProducto.Rows)
