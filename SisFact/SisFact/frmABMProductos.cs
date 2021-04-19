@@ -249,5 +249,15 @@ namespace SisFact
                 btnBuscar.Enabled = true; 
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (FProducto.Rows.Count == 0) { return; }
+            string Mensaje = "Desea elimiar este insumo " + FProducto.CurrentRow.Cells["Descripcion"].Value.ToString() + "?";
+            if (MessageBox.Show(Mensaje, "Aviso...", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                FProducto.Rows.RemoveAt(FProducto.CurrentRow.Index);
+            }
+            
+        }
     }
 }
