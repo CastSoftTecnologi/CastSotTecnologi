@@ -193,6 +193,7 @@ namespace SisFact
             this.LProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.LProductos.Size = new System.Drawing.Size(792, 337);
             this.LProductos.TabIndex = 7;
+            this.LProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LProductos_CellContentClick);
             this.LProductos.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.LProductos_ColumnHeaderMouseClick);
             // 
             // cProducto

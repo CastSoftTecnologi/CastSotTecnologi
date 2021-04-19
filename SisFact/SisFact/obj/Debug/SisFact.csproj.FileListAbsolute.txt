@@ -16,3 +16,4 @@ C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csproj.CopyComplete
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.exe
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.pdb
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csprojAssemblyReference.cache
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmUsuarios.resources

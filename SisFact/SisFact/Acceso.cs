@@ -11,7 +11,7 @@ namespace SisFact
 {
     public class Acceso
     {
-        public SqlConnection conexion = new SqlConnection("data source = " + Dns.GetHostName() + @"\SQLEXPRESS; initial catalog = CastDb; user id = sa; password = 1234567");
+        public SqlConnection conexion = new SqlConnection("data source = " + Dns.GetHostName() + @"\SQLEXPRESS; initial catalog = CastDb; user id = sa; password = hiper574dark*");
         public DataSet ds = new DataSet();
         public SqlDataAdapter da;
         public SqlDataReader dr;

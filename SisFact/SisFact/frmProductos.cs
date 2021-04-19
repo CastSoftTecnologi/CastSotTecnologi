@@ -99,5 +99,10 @@ namespace SisFact
         {
             Campo = LProductos.Columns[lbbusqueda.SelectedIndex].Name.ToString();
         }
+
+        private void LProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

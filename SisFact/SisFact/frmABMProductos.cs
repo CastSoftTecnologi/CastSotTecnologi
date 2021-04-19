@@ -166,7 +166,7 @@ namespace SisFact
             }
             A.conexion.Close();
 
-            A.Ejecuta("Delete from TPRODUCTO_FORMULA where cProducto = " + codprod);
+            A.Ejecuta("DEL_TPRODUCTO_FORMULA " + codprod);
 
             foreach (DataGridViewRow Fila in FProducto.Rows)
             {

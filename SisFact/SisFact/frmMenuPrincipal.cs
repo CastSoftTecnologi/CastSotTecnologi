@@ -28,6 +28,7 @@ namespace SisFact
             fm.Dock = DockStyle.Fill; //Esto acopla el fomilario al ancho y largo del contenedor
             this.PanelContenedor.Controls.Add(fm);//Es aqui cuando lo agregamos al contenedor
             this.PanelContenedor.Tag = fm;
+ 
             fm.Show();
             
         }
@@ -98,6 +99,18 @@ namespace SisFact
             Logeo.Dispose();
             Logeo.Close();
             AbrirFormularios(new frmInicio());
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmUsuarios.TUsuario = 2;
+            AbrirFormularios(new frmUsuarios());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            frmUsuarios.TUsuario = 1;
+            AbrirFormularios(new frmUsuarios());
         }
     }
 }

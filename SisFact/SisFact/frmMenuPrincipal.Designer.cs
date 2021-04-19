@@ -313,6 +313,7 @@ namespace SisFact
             this.btnUsuarios.TabIndex = 7;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // panel4
             // 
@@ -386,6 +387,7 @@ namespace SisFact
             this.btnClientes.TabIndex = 1;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // PanelContenedor
             // 
@@ -399,7 +401,6 @@ namespace SisFact
             // timer1
             // 
             this.timer1.Enabled = true;
-
             // 
             // frmMenuPrincipal
             // 
