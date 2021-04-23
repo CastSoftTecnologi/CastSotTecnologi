@@ -33,10 +33,7 @@ namespace SisFact
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Lclientes = new System.Windows.Forms.DataGridView();
-            this.c_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.x_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.x_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lpersonas = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LbTusuario = new System.Windows.Forms.Label();
             this.lbbusqueda = new System.Windows.Forms.ComboBox();
@@ -44,21 +41,24 @@ namespace SisFact
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Lclientes)).BeginInit();
+            this.c_persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.x_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.x_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.lpersonas)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Lclientes
+            // lpersonas
             // 
-            this.Lclientes.AllowUserToAddRows = false;
-            this.Lclientes.AllowUserToDeleteRows = false;
+            this.lpersonas.AllowUserToAddRows = false;
+            this.lpersonas.AllowUserToDeleteRows = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.Lclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.Lclientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lpersonas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.lpersonas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lclientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.Lclientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.lpersonas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.lpersonas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,9 +66,9 @@ namespace SisFact
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Lclientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.Lclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Lclientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lpersonas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.lpersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lpersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c_persona,
             this.x_nombre,
             this.x_apellido});
@@ -79,14 +79,14 @@ namespace SisFact
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Lclientes.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Lclientes.EnableHeadersVisualStyles = false;
-            this.Lclientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.Lclientes.Location = new System.Drawing.Point(12, 192);
-            this.Lclientes.MultiSelect = false;
-            this.Lclientes.Name = "Lclientes";
-            this.Lclientes.ReadOnly = true;
-            this.Lclientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.lpersonas.DefaultCellStyle = dataGridViewCellStyle7;
+            this.lpersonas.EnableHeadersVisualStyles = false;
+            this.lpersonas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.lpersonas.Location = new System.Drawing.Point(12, 192);
+            this.lpersonas.MultiSelect = false;
+            this.lpersonas.Name = "lpersonas";
+            this.lpersonas.ReadOnly = true;
+            this.lpersonas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,31 +94,11 @@ namespace SisFact
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Lclientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.Lclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Lclientes.Size = new System.Drawing.Size(939, 297);
-            this.Lclientes.TabIndex = 8;
-            this.Lclientes.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Lclientes_ColumnHeaderMouseClick);
-            // 
-            // c_persona
-            // 
-            this.c_persona.HeaderText = "Código";
-            this.c_persona.Name = "c_persona";
-            this.c_persona.ReadOnly = true;
-            // 
-            // x_nombre
-            // 
-            this.x_nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.x_nombre.HeaderText = "Nombre";
-            this.x_nombre.Name = "x_nombre";
-            this.x_nombre.ReadOnly = true;
-            // 
-            // x_apellido
-            // 
-            this.x_apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.x_apellido.HeaderText = "Apellido";
-            this.x_apellido.Name = "x_apellido";
-            this.x_apellido.ReadOnly = true;
+            this.lpersonas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.lpersonas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.lpersonas.Size = new System.Drawing.Size(939, 297);
+            this.lpersonas.TabIndex = 8;
+            this.lpersonas.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Lclientes_ColumnHeaderMouseClick);
             // 
             // panel2
             // 
@@ -169,6 +149,7 @@ namespace SisFact
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(345, 25);
             this.txtBusqueda.TabIndex = 6;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // btnImprimir
             // 
@@ -206,6 +187,29 @@ namespace SisFact
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
+            // c_persona
+            // 
+            this.c_persona.DataPropertyName = "c_persona";
+            this.c_persona.HeaderText = "Código";
+            this.c_persona.Name = "c_persona";
+            this.c_persona.ReadOnly = true;
+            // 
+            // x_nombre
+            // 
+            this.x_nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.x_nombre.DataPropertyName = "x_nombre";
+            this.x_nombre.HeaderText = "Nombre";
+            this.x_nombre.Name = "x_nombre";
+            this.x_nombre.ReadOnly = true;
+            // 
+            // x_apellido
+            // 
+            this.x_apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.x_apellido.DataPropertyName = "x_apellido";
+            this.x_apellido.HeaderText = "Apellido";
+            this.x_apellido.Name = "x_apellido";
+            this.x_apellido.ReadOnly = true;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,13 +217,13 @@ namespace SisFact
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(963, 501);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.Lclientes);
+            this.Controls.Add(this.lpersonas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Lclientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lpersonas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -228,10 +232,7 @@ namespace SisFact
 
         #endregion
 
-        public System.Windows.Forms.DataGridView Lclientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c_persona;
-        private System.Windows.Forms.DataGridViewTextBoxColumn x_nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn x_apellido;
+        public System.Windows.Forms.DataGridView lpersonas;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LbTusuario;
         private System.Windows.Forms.ComboBox lbbusqueda;
@@ -239,5 +240,8 @@ namespace SisFact
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c_persona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn x_nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn x_apellido;
     }
 }

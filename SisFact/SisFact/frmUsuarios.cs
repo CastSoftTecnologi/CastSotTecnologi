@@ -51,25 +51,27 @@ namespace SisFact
         public void buscar_Registros()
         {
 
-            string Sql = "select c_persona, x_nombre, x_apellido from Bpersona";
+            string Sql = "select c_persona, x_nombre, x_apellido from Bpersona where c_tipo_persona = " + TUsuario;
             if (txtBusqueda.Text != "")
             {
-                Sql = Sql + " where " + Campo + " like '%" + txtBusqueda.Text + "%'";
+                Sql = Sql + " and " + Campo + " like '%" + txtBusqueda.Text + "%'";
             }
 
             A.Consulta(Sql, "R");
-            Lclientes.DataSource = A.ds.Tables["R"];
+            lpersonas.DataSource = A.ds.Tables["R"];
             A.conexion.Close();
         }
 
         private void Lclientes_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            lbbusqueda.Text = Lclientes.Columns[e.ColumnIndex].HeaderText;
-            Campo = Lclientes.Columns[e.ColumnIndex].Name.ToString();
+            lbbusqueda.Text = lpersonas.Columns[e.ColumnIndex].HeaderText;
+            Campo = lpersonas.Columns[e.ColumnIndex].Name.ToString();
         }
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             buscar_Registros();
         }
+
     }
 }
+

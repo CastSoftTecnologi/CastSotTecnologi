@@ -56,6 +56,12 @@
     <Compile Include="browserProductosNoVentas.Designer.cs">
       <DependentUpon>browserProductosNoVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmABMpersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMpersonas.Designer.cs">
+      <DependentUpon>frmABMpersonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABMProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="browserProductosNoVentas.resx">
       <DependentUpon>browserProductosNoVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmABMpersonas.resx">
+      <DependentUpon>frmABMpersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmABMProductos.resx">
       <DependentUpon>frmABMProductos.cs</DependentUpon>
