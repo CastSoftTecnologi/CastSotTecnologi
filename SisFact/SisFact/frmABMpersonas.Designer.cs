@@ -35,6 +35,8 @@ namespace SisFact
             this.label13 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.GDetalle = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNombreFantacias = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.Fnacimiento = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,9 +53,9 @@ namespace SisFact
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lbbusqueda = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtNombreFantacias = new System.Windows.Forms.TextBox();
             this.LbProceso = new System.Windows.Forms.Label();
+            this.btnGuradar = new System.Windows.Forms.Button();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.GUsuario.SuspendLayout();
             this.GDetalle.SuspendLayout();
             this.SuspendLayout();
@@ -145,6 +147,28 @@ namespace SisFact
             this.GDetalle.TabIndex = 89;
             this.GDetalle.TabStop = false;
             this.GDetalle.Text = "Datos Generales";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(6, 263);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 17);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "Nom. Fantacia:";
+            // 
+            // txtNombreFantacias
+            // 
+            this.txtNombreFantacias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtNombreFantacias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreFantacias.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreFantacias.ForeColor = System.Drawing.Color.White;
+            this.txtNombreFantacias.Location = new System.Drawing.Point(110, 263);
+            this.txtNombreFantacias.Name = "txtNombreFantacias";
+            this.txtNombreFantacias.Size = new System.Drawing.Size(212, 25);
+            this.txtNombreFantacias.TabIndex = 100;
             // 
             // label11
             // 
@@ -323,28 +347,6 @@ namespace SisFact
             this.txtCodigo.Size = new System.Drawing.Size(108, 25);
             this.txtCodigo.TabIndex = 84;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(6, 263);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 17);
-            this.label6.TabIndex = 101;
-            this.label6.Text = "Nom. Fantacia:";
-            // 
-            // txtNombreFantacias
-            // 
-            this.txtNombreFantacias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtNombreFantacias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreFantacias.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreFantacias.ForeColor = System.Drawing.Color.White;
-            this.txtNombreFantacias.Location = new System.Drawing.Point(110, 263);
-            this.txtNombreFantacias.Name = "txtNombreFantacias";
-            this.txtNombreFantacias.Size = new System.Drawing.Size(212, 25);
-            this.txtNombreFantacias.TabIndex = 100;
-            // 
             // LbProceso
             // 
             this.LbProceso.AutoSize = true;
@@ -355,12 +357,39 @@ namespace SisFact
             this.LbProceso.Size = new System.Drawing.Size(0, 21);
             this.LbProceso.TabIndex = 90;
             // 
+            // btnGuradar
+            // 
+            this.btnGuradar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuradar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuradar.ForeColor = System.Drawing.Color.Gray;
+            this.btnGuradar.Location = new System.Drawing.Point(272, 495);
+            this.btnGuradar.Name = "btnGuradar";
+            this.btnGuradar.Size = new System.Drawing.Size(104, 25);
+            this.btnGuradar.TabIndex = 91;
+            this.btnGuradar.Text = "Guardar";
+            this.btnGuradar.UseVisualStyleBackColor = true;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsalir.ForeColor = System.Drawing.Color.Gray;
+            this.btnsalir.Location = new System.Drawing.Point(382, 495);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(104, 25);
+            this.btnsalir.TabIndex = 92;
+            this.btnsalir.Text = "Salir";
+            this.btnsalir.UseVisualStyleBackColor = true;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
+            // 
             // frmABMpersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(498, 455);
+            this.ClientSize = new System.Drawing.Size(498, 532);
+            this.Controls.Add(this.btnGuradar);
+            this.Controls.Add(this.btnsalir);
             this.Controls.Add(this.LbProceso);
             this.Controls.Add(this.GDetalle);
             this.Controls.Add(this.GUsuario);
@@ -379,8 +408,6 @@ namespace SisFact
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox GUsuario;
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label label13;
@@ -405,5 +432,8 @@ namespace SisFact
         private System.Windows.Forms.Label lbbusqueda;
         public System.Windows.Forms.TextBox txtCodigo;
         public System.Windows.Forms.Label LbProceso;
+        public System.Windows.Forms.GroupBox GUsuario;
+        private System.Windows.Forms.Button btnGuradar;
+        private System.Windows.Forms.Button btnsalir;
     }
 }

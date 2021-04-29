@@ -78,13 +78,13 @@ namespace SisFact
             switch (TUsuario)
             {
                 case 1:
-                    titulo = "Agregar Usuarios";
+                    titulo = "Registro de Productos: Proceso - Agregar ";
                     break;
                 case 2:
-                    titulo = "Agregar Clientes";
+                    titulo = "Registro de Clientes:Proceso - Agregar ";
                     break;
                 default:
-                    titulo = "Agregar Proveedores";
+                    titulo = "Registro de Proveedores: Proceso - Agregar ";
                     break;
             }
             ABM_Usuarios(titulo);
@@ -98,6 +98,8 @@ namespace SisFact
             this.Tag = FP;
             FP.BringToFront();
             FP.LbProceso.Text = titulo;
+            FP.GUsuario.Visible = true;
+            if (TUsuario != 1) { FP.GUsuario.Visible = false; }
             
 
             FP.Show();

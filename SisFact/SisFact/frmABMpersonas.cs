@@ -20,8 +20,10 @@ namespace SisFact
 
         private void frmABMpersonas_Load(object sender, EventArgs e)
         {
+
             Carga_combo();
         }
+
         private void Carga_combo() {
             A.Consulta("Select 0 c_tipo_documento ,'<Seleccione>' x_sigla UNION select c_tipo_documento, x_sigla  from BTIPO_DOCUMENTO", "R");
             cboDoc.DataSource = A.ds.Tables["R"];
@@ -38,6 +40,12 @@ namespace SisFact
             cboPais.ValueMember = "c_pais";
             cboPais.ValueMember = "x_pais";
             A.conexion.Close();
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Close();
         }
     }
 }

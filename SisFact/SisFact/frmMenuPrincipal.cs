@@ -112,5 +112,11 @@ namespace SisFact
             frmUsuarios.TUsuario = 1;
             AbrirFormularios(new frmUsuarios());
         }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            frmUsuarios.TUsuario = 3;
+            AbrirFormularios(new frmUsuarios());
+        }
     }
 }
