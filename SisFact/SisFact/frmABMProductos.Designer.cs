@@ -64,6 +64,7 @@ namespace SisFact
             this.lbbusqueda = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.TbDetalle = new System.Windows.Forms.TabPage();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.FProducto = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +77,6 @@ namespace SisFact
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.TabProdutos.SuspendLayout();
             this.TbGenerales.SuspendLayout();
             this.TbDetalle.SuspendLayout();
@@ -88,7 +88,7 @@ namespace SisFact
             this.btnsalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.ForeColor = System.Drawing.Color.Gray;
-            this.btnsalir.Location = new System.Drawing.Point(539, 457);
+            this.btnsalir.Location = new System.Drawing.Point(539, 485);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(104, 25);
             this.btnsalir.TabIndex = 16;
@@ -111,7 +111,7 @@ namespace SisFact
             this.btnGuradar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuradar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuradar.ForeColor = System.Drawing.Color.Gray;
-            this.btnGuradar.Location = new System.Drawing.Point(429, 457);
+            this.btnGuradar.Location = new System.Drawing.Point(429, 485);
             this.btnGuradar.Name = "btnGuradar";
             this.btnGuradar.Size = new System.Drawing.Size(104, 25);
             this.btnGuradar.TabIndex = 15;
@@ -127,10 +127,10 @@ namespace SisFact
             this.TabProdutos.Controls.Add(this.TbGenerales);
             this.TabProdutos.Controls.Add(this.TbDetalle);
             this.TabProdutos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TabProdutos.Location = new System.Drawing.Point(12, 12);
+            this.TabProdutos.Location = new System.Drawing.Point(12, 47);
             this.TabProdutos.Name = "TabProdutos";
             this.TabProdutos.SelectedIndex = 0;
-            this.TabProdutos.Size = new System.Drawing.Size(631, 424);
+            this.TabProdutos.Size = new System.Drawing.Size(631, 432);
             this.TabProdutos.TabIndex = 34;
             // 
             // TbGenerales
@@ -166,7 +166,7 @@ namespace SisFact
             this.TbGenerales.Location = new System.Drawing.Point(4, 22);
             this.TbGenerales.Name = "TbGenerales";
             this.TbGenerales.Padding = new System.Windows.Forms.Padding(3);
-            this.TbGenerales.Size = new System.Drawing.Size(623, 398);
+            this.TbGenerales.Size = new System.Drawing.Size(623, 406);
             this.TbGenerales.TabIndex = 0;
             this.TbGenerales.Text = "Datos Generales";
             // 
@@ -486,9 +486,23 @@ namespace SisFact
             this.TbDetalle.Location = new System.Drawing.Point(4, 22);
             this.TbDetalle.Name = "TbDetalle";
             this.TbDetalle.Padding = new System.Windows.Forms.Padding(3);
-            this.TbDetalle.Size = new System.Drawing.Size(623, 398);
+            this.TbDetalle.Size = new System.Drawing.Size(623, 406);
             this.TbDetalle.TabIndex = 1;
             this.TbDetalle.Text = "Detalles de Producto";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Red;
+            this.btnEliminar.Location = new System.Drawing.Point(403, 117);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(104, 25);
+            this.btnEliminar.TabIndex = 59;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FProducto
             // 
@@ -536,7 +550,7 @@ namespace SisFact
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.FProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.FProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FProducto.Size = new System.Drawing.Size(611, 244);
+            this.FProducto.Size = new System.Drawing.Size(611, 252);
             this.FProducto.TabIndex = 0;
             // 
             // Codigo
@@ -654,26 +668,12 @@ namespace SisFact
             this.txtCod.Size = new System.Drawing.Size(108, 25);
             this.txtCod.TabIndex = 49;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Red;
-            this.btnEliminar.Location = new System.Drawing.Point(403, 117);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(104, 25);
-            this.btnEliminar.TabIndex = 59;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // frmABMProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(655, 494);
+            this.ClientSize = new System.Drawing.Size(655, 522);
             this.Controls.Add(this.TabProdutos);
             this.Controls.Add(this.btnGuradar);
             this.Controls.Add(this.LbProceso);

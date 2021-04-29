@@ -17,3 +17,4 @@ C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.exe
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.pdb
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.csprojAssemblyReference.cache
 C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmUsuarios.resources
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmABMpersonas.resources

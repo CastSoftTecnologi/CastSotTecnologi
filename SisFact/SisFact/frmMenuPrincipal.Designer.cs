@@ -58,6 +58,8 @@ namespace SisFact
             this.btnClientes = new System.Windows.Forms.Button();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnProveedores = new System.Windows.Forms.Button();
             this.Bartitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarV)).BeginInit();
@@ -139,6 +141,8 @@ namespace SisFact
             // BarMenu
             // 
             this.BarMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.BarMenu.Controls.Add(this.panel2);
+            this.BarMenu.Controls.Add(this.btnProveedores);
             this.BarMenu.Controls.Add(this.btncloseMenu);
             this.BarMenu.Controls.Add(this.SubMenuReportes);
             this.BarMenu.Controls.Add(this.Logo);
@@ -157,14 +161,14 @@ namespace SisFact
             this.BarMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.BarMenu.Location = new System.Drawing.Point(0, 35);
             this.BarMenu.Name = "BarMenu";
-            this.BarMenu.Size = new System.Drawing.Size(220, 504);
+            this.BarMenu.Size = new System.Drawing.Size(220, 541);
             this.BarMenu.TabIndex = 1;
             // 
             // btncloseMenu
             // 
             this.btncloseMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btncloseMenu.Image = ((System.Drawing.Image)(resources.GetObject("btncloseMenu.Image")));
-            this.btncloseMenu.Location = new System.Drawing.Point(35, 435);
+            this.btncloseMenu.Location = new System.Drawing.Point(35, 472);
             this.btncloseMenu.Name = "btncloseMenu";
             this.btncloseMenu.Size = new System.Drawing.Size(58, 57);
             this.btncloseMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,7 +182,7 @@ namespace SisFact
             this.SubMenuReportes.Controls.Add(this.btnReportCompras);
             this.SubMenuReportes.Controls.Add(this.panel9);
             this.SubMenuReportes.Controls.Add(this.btnReportVentas);
-            this.SubMenuReportes.Location = new System.Drawing.Point(35, 314);
+            this.SubMenuReportes.Location = new System.Drawing.Point(35, 351);
             this.SubMenuReportes.Name = "SubMenuReportes";
             this.SubMenuReportes.Size = new System.Drawing.Size(185, 72);
             this.SubMenuReportes.TabIndex = 14;
@@ -244,7 +248,7 @@ namespace SisFact
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel7.Location = new System.Drawing.Point(3, 277);
+            this.panel7.Location = new System.Drawing.Point(3, 314);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(6, 31);
             this.panel7.TabIndex = 12;
@@ -258,7 +262,7 @@ namespace SisFact
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(12, 277);
+            this.btnReportes.Location = new System.Drawing.Point(12, 314);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(202, 31);
             this.btnReportes.TabIndex = 11;
@@ -269,7 +273,7 @@ namespace SisFact
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel6.Location = new System.Drawing.Point(3, 240);
+            this.panel6.Location = new System.Drawing.Point(3, 277);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(6, 31);
             this.panel6.TabIndex = 10;
@@ -283,7 +287,7 @@ namespace SisFact
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(12, 240);
+            this.btnCompras.Location = new System.Drawing.Point(12, 277);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(202, 31);
             this.btnCompras.TabIndex = 9;
@@ -395,18 +399,42 @@ namespace SisFact
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenedor.Location = new System.Drawing.Point(220, 35);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(649, 504);
+            this.PanelContenedor.Size = new System.Drawing.Size(649, 541);
             this.PanelContenedor.TabIndex = 2;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel2.Location = new System.Drawing.Point(3, 240);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(6, 31);
+            this.panel2.TabIndex = 17;
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.ForeColor = System.Drawing.Color.White;
+            this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
+            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.Location = new System.Drawing.Point(12, 240);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(202, 31);
+            this.btnProveedores.TabIndex = 16;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 539);
+            this.ClientSize = new System.Drawing.Size(869, 576);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.BarMenu);
             this.Controls.Add(this.Bartitulo);
@@ -457,5 +485,7 @@ namespace SisFact
         private System.Windows.Forms.PictureBox btncloseMenu;
         public System.Windows.Forms.Panel PanelContenedor;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnProveedores;
     }
 }

@@ -72,6 +72,36 @@ namespace SisFact
             buscar_Registros();
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string titulo = "";
+            switch (TUsuario)
+            {
+                case 1:
+                    titulo = "Agregar Usuarios";
+                    break;
+                case 2:
+                    titulo = "Agregar Clientes";
+                    break;
+                default:
+                    titulo = "Agregar Proveedores";
+                    break;
+            }
+            ABM_Usuarios(titulo);
+        }
+        private void ABM_Usuarios(string titulo) {
+            frmABMpersonas FP = new frmABMpersonas();
+            AddOwnedForm(FP);
+            FP.TopLevel = false;
+            FP.Dock = DockStyle.Fill;
+            this.Controls.Add(FP);
+            this.Tag = FP;
+            FP.BringToFront();
+            FP.LbProceso.Text = titulo;
+            
+
+            FP.Show();
+        }
     }
 }
 
