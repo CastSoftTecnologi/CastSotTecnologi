@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace SisFact
 {
-    public partial class frmUsuarios : Form
+    public partial class frmPersonas : Form
     {
         string Campo;
         public static int TUsuario;
         Acceso A = new Acceso();
-        public frmUsuarios()
+        public frmPersonas()
         {
             InitializeComponent();
         }
@@ -100,7 +100,7 @@ namespace SisFact
             FP.LbProceso.Text = titulo;
             FP.GUsuario.Visible = true;
             if (TUsuario != 1) { FP.GUsuario.Visible = false; }
-            
+            if (TUsuario != 3) { FP.txtNombreFantacias.Visible = false;FP.LbNfantasia.Visible = false; }
 
             FP.Show();
         }

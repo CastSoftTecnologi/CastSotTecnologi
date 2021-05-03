@@ -1,7 +1,7 @@
 ﻿
 namespace SisFact
 {
-    partial class frmUsuarios
+    partial class frmPersonas
     {
         /// <summary>
         /// Required designer variable.

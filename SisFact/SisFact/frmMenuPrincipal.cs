@@ -103,20 +103,20 @@ namespace SisFact
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            frmUsuarios.TUsuario = 2;
-            AbrirFormularios(new frmUsuarios());
+            frmPersonas.TUsuario = 2;
+            AbrirFormularios(new frmPersonas());
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            frmUsuarios.TUsuario = 1;
-            AbrirFormularios(new frmUsuarios());
+            frmPersonas.TUsuario = 1;
+            AbrirFormularios(new frmPersonas());
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            frmUsuarios.TUsuario = 3;
-            AbrirFormularios(new frmUsuarios());
+            frmPersonas.TUsuario = 3;
+            AbrirFormularios(new frmPersonas());
         }
     }
 }

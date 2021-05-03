@@ -35,7 +35,8 @@ namespace SisFact
             this.label13 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.GDetalle = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
+            this.LbNfantasia = new System.Windows.Forms.Label();
             this.txtNombreFantacias = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.Fnacimiento = new System.Windows.Forms.DateTimePicker();
@@ -56,21 +57,25 @@ namespace SisFact
             this.LbProceso = new System.Windows.Forms.Label();
             this.btnGuradar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
+            this.cboNivel = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.GUsuario.SuspendLayout();
             this.GDetalle.SuspendLayout();
             this.SuspendLayout();
             // 
             // GUsuario
             // 
+            this.GUsuario.Controls.Add(this.cboNivel);
+            this.GUsuario.Controls.Add(this.label6);
             this.GUsuario.Controls.Add(this.label12);
             this.GUsuario.Controls.Add(this.txtClave);
             this.GUsuario.Controls.Add(this.label13);
             this.GUsuario.Controls.Add(this.txtUsuario);
             this.GUsuario.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GUsuario.ForeColor = System.Drawing.Color.White;
-            this.GUsuario.Location = new System.Drawing.Point(23, 341);
+            this.GUsuario.Location = new System.Drawing.Point(23, 364);
             this.GUsuario.Name = "GUsuario";
-            this.GUsuario.Size = new System.Drawing.Size(347, 87);
+            this.GUsuario.Size = new System.Drawing.Size(347, 125);
             this.GUsuario.TabIndex = 88;
             this.GUsuario.TabStop = false;
             this.GUsuario.Text = "Datos de Sesion:";
@@ -121,7 +126,8 @@ namespace SisFact
             // 
             // GDetalle
             // 
-            this.GDetalle.Controls.Add(this.label6);
+            this.GDetalle.Controls.Add(this.chkActivo);
+            this.GDetalle.Controls.Add(this.LbNfantasia);
             this.GDetalle.Controls.Add(this.txtNombreFantacias);
             this.GDetalle.Controls.Add(this.label11);
             this.GDetalle.Controls.Add(this.Fnacimiento);
@@ -143,21 +149,33 @@ namespace SisFact
             this.GDetalle.ForeColor = System.Drawing.Color.White;
             this.GDetalle.Location = new System.Drawing.Point(23, 40);
             this.GDetalle.Name = "GDetalle";
-            this.GDetalle.Size = new System.Drawing.Size(347, 295);
+            this.GDetalle.Size = new System.Drawing.Size(347, 318);
             this.GDetalle.TabIndex = 89;
             this.GDetalle.TabStop = false;
             this.GDetalle.Text = "Datos Generales";
             // 
-            // label6
+            // chkActivo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(6, 263);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 17);
-            this.label6.TabIndex = 101;
-            this.label6.Text = "Nom. Fantacia:";
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkActivo.ForeColor = System.Drawing.Color.White;
+            this.chkActivo.Location = new System.Drawing.Point(6, 292);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(67, 20);
+            this.chkActivo.TabIndex = 102;
+            this.chkActivo.Text = "Activo  ";
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
+            // LbNfantasia
+            // 
+            this.LbNfantasia.AutoSize = true;
+            this.LbNfantasia.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbNfantasia.ForeColor = System.Drawing.Color.White;
+            this.LbNfantasia.Location = new System.Drawing.Point(6, 263);
+            this.LbNfantasia.Name = "LbNfantasia";
+            this.LbNfantasia.Size = new System.Drawing.Size(98, 17);
+            this.LbNfantasia.TabIndex = 101;
+            this.LbNfantasia.Text = "Nom. Fantacia:";
             // 
             // txtNombreFantacias
             // 
@@ -368,6 +386,7 @@ namespace SisFact
             this.btnGuradar.TabIndex = 91;
             this.btnGuradar.Text = "Guardar";
             this.btnGuradar.UseVisualStyleBackColor = true;
+            this.btnGuradar.Click += new System.EventHandler(this.btnGuradar_Click);
             // 
             // btnsalir
             // 
@@ -381,6 +400,29 @@ namespace SisFact
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
             this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
+            // 
+            // cboNivel
+            // 
+            this.cboNivel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cboNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboNivel.ForeColor = System.Drawing.Color.Gray;
+            this.cboNivel.FormattingEnabled = true;
+            this.cboNivel.Location = new System.Drawing.Point(114, 81);
+            this.cboNivel.Name = "cboNivel";
+            this.cboNivel.Size = new System.Drawing.Size(212, 24);
+            this.cboNivel.TabIndex = 96;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(26, 83);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 17);
+            this.label6.TabIndex = 97;
+            this.label6.Text = "Nivel:";
             // 
             // frmABMpersonas
             // 
@@ -413,7 +455,6 @@ namespace SisFact
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.GroupBox GDetalle;
-        private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtNombreFantacias;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker Fnacimiento;
@@ -435,5 +476,9 @@ namespace SisFact
         public System.Windows.Forms.GroupBox GUsuario;
         private System.Windows.Forms.Button btnGuradar;
         private System.Windows.Forms.Button btnsalir;
+        public System.Windows.Forms.CheckBox chkActivo;
+        public System.Windows.Forms.Label LbNfantasia;
+        public System.Windows.Forms.ComboBox cboNivel;
+        private System.Windows.Forms.Label label6;
     }
 }
