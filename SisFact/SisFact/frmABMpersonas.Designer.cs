@@ -30,6 +30,8 @@ namespace SisFact
         private void InitializeComponent()
         {
             this.GUsuario = new System.Windows.Forms.GroupBox();
+            this.cboNivel = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@ namespace SisFact
             this.LbProceso = new System.Windows.Forms.Label();
             this.btnGuradar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
-            this.cboNivel = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.GUsuario.SuspendLayout();
             this.GDetalle.SuspendLayout();
             this.SuspendLayout();
@@ -76,9 +76,33 @@ namespace SisFact
             this.GUsuario.Location = new System.Drawing.Point(23, 364);
             this.GUsuario.Name = "GUsuario";
             this.GUsuario.Size = new System.Drawing.Size(347, 125);
-            this.GUsuario.TabIndex = 88;
+            this.GUsuario.TabIndex = 12;
             this.GUsuario.TabStop = false;
             this.GUsuario.Text = "Datos de Sesion:";
+            // 
+            // cboNivel
+            // 
+            this.cboNivel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cboNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboNivel.ForeColor = System.Drawing.Color.Gray;
+            this.cboNivel.FormattingEnabled = true;
+            this.cboNivel.ItemHeight = 16;
+            this.cboNivel.Location = new System.Drawing.Point(114, 81);
+            this.cboNivel.Name = "cboNivel";
+            this.cboNivel.Size = new System.Drawing.Size(212, 24);
+            this.cboNivel.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(26, 83);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 17);
+            this.label6.TabIndex = 97;
+            this.label6.Text = "Nivel:";
             // 
             // label12
             // 
@@ -100,7 +124,7 @@ namespace SisFact
             this.txtClave.Location = new System.Drawing.Point(114, 50);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(212, 25);
-            this.txtClave.TabIndex = 90;
+            this.txtClave.TabIndex = 14;
             // 
             // label13
             // 
@@ -122,7 +146,7 @@ namespace SisFact
             this.txtUsuario.Location = new System.Drawing.Point(114, 19);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(212, 25);
-            this.txtUsuario.TabIndex = 88;
+            this.txtUsuario.TabIndex = 13;
             // 
             // GDetalle
             // 
@@ -150,7 +174,7 @@ namespace SisFact
             this.GDetalle.Location = new System.Drawing.Point(23, 40);
             this.GDetalle.Name = "GDetalle";
             this.GDetalle.Size = new System.Drawing.Size(347, 318);
-            this.GDetalle.TabIndex = 89;
+            this.GDetalle.TabIndex = 0;
             this.GDetalle.TabStop = false;
             this.GDetalle.Text = "Datos Generales";
             // 
@@ -162,7 +186,7 @@ namespace SisFact
             this.chkActivo.Location = new System.Drawing.Point(6, 292);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(67, 20);
-            this.chkActivo.TabIndex = 102;
+            this.chkActivo.TabIndex = 10;
             this.chkActivo.Text = "Activo  ";
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
@@ -186,7 +210,7 @@ namespace SisFact
             this.txtNombreFantacias.Location = new System.Drawing.Point(110, 263);
             this.txtNombreFantacias.Name = "txtNombreFantacias";
             this.txtNombreFantacias.Size = new System.Drawing.Size(212, 25);
-            this.txtNombreFantacias.TabIndex = 100;
+            this.txtNombreFantacias.TabIndex = 9;
             // 
             // label11
             // 
@@ -206,7 +230,7 @@ namespace SisFact
             this.Fnacimiento.Location = new System.Drawing.Point(110, 233);
             this.Fnacimiento.Name = "Fnacimiento";
             this.Fnacimiento.Size = new System.Drawing.Size(108, 27);
-            this.Fnacimiento.TabIndex = 98;
+            this.Fnacimiento.TabIndex = 8;
             // 
             // label5
             // 
@@ -228,7 +252,7 @@ namespace SisFact
             this.txtApellido.Location = new System.Drawing.Point(110, 90);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(212, 25);
-            this.txtApellido.TabIndex = 96;
+            this.txtApellido.TabIndex = 3;
             // 
             // cboDoc
             // 
@@ -237,10 +261,11 @@ namespace SisFact
             this.cboDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDoc.ForeColor = System.Drawing.Color.Gray;
             this.cboDoc.FormattingEnabled = true;
+            this.cboDoc.ItemHeight = 16;
             this.cboDoc.Location = new System.Drawing.Point(110, 121);
             this.cboDoc.Name = "cboDoc";
             this.cboDoc.Size = new System.Drawing.Size(108, 24);
-            this.cboDoc.TabIndex = 87;
+            this.cboDoc.TabIndex = 4;
             // 
             // label7
             // 
@@ -260,10 +285,11 @@ namespace SisFact
             this.cboPais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboPais.ForeColor = System.Drawing.Color.Gray;
             this.cboPais.FormattingEnabled = true;
+            this.cboPais.ItemHeight = 16;
             this.cboPais.Location = new System.Drawing.Point(110, 206);
             this.cboPais.Name = "cboPais";
             this.cboPais.Size = new System.Drawing.Size(108, 24);
-            this.cboPais.TabIndex = 89;
+            this.cboPais.TabIndex = 7;
             // 
             // label4
             // 
@@ -283,10 +309,11 @@ namespace SisFact
             this.cboSexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboSexo.ForeColor = System.Drawing.Color.Gray;
             this.cboSexo.FormattingEnabled = true;
+            this.cboSexo.ItemHeight = 16;
             this.cboSexo.Location = new System.Drawing.Point(110, 179);
             this.cboSexo.Name = "cboSexo";
             this.cboSexo.Size = new System.Drawing.Size(108, 24);
-            this.cboSexo.TabIndex = 88;
+            this.cboSexo.TabIndex = 6;
             // 
             // label3
             // 
@@ -330,7 +357,8 @@ namespace SisFact
             this.txtNroDoc.Location = new System.Drawing.Point(110, 148);
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(108, 25);
-            this.txtNroDoc.TabIndex = 86;
+            this.txtNroDoc.TabIndex = 5;
+            this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             // 
             // txtNombre
             // 
@@ -341,7 +369,7 @@ namespace SisFact
             this.txtNombre.Location = new System.Drawing.Point(110, 59);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(212, 25);
-            this.txtNombre.TabIndex = 85;
+            this.txtNombre.TabIndex = 2;
             // 
             // lbbusqueda
             // 
@@ -363,7 +391,7 @@ namespace SisFact
             this.txtCodigo.Location = new System.Drawing.Point(110, 28);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(108, 25);
-            this.txtCodigo.TabIndex = 84;
+            this.txtCodigo.TabIndex = 1;
             // 
             // LbProceso
             // 
@@ -383,7 +411,7 @@ namespace SisFact
             this.btnGuradar.Location = new System.Drawing.Point(272, 495);
             this.btnGuradar.Name = "btnGuradar";
             this.btnGuradar.Size = new System.Drawing.Size(104, 25);
-            this.btnGuradar.TabIndex = 91;
+            this.btnGuradar.TabIndex = 16;
             this.btnGuradar.Text = "Guardar";
             this.btnGuradar.UseVisualStyleBackColor = true;
             this.btnGuradar.Click += new System.EventHandler(this.btnGuradar_Click);
@@ -396,33 +424,10 @@ namespace SisFact
             this.btnsalir.Location = new System.Drawing.Point(382, 495);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(104, 25);
-            this.btnsalir.TabIndex = 92;
+            this.btnsalir.TabIndex = 17;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
             this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
-            // 
-            // cboNivel
-            // 
-            this.cboNivel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cboNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboNivel.ForeColor = System.Drawing.Color.Gray;
-            this.cboNivel.FormattingEnabled = true;
-            this.cboNivel.Location = new System.Drawing.Point(114, 81);
-            this.cboNivel.Name = "cboNivel";
-            this.cboNivel.Size = new System.Drawing.Size(212, 24);
-            this.cboNivel.TabIndex = 96;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(26, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 17);
-            this.label6.TabIndex = 97;
-            this.label6.Text = "Nivel:";
             // 
             // frmABMpersonas
             // 
