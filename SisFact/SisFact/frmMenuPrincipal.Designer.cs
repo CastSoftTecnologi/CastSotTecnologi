@@ -37,6 +37,8 @@ namespace SisFact
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BarMenu = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnMesas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btncloseMenu = new System.Windows.Forms.PictureBox();
@@ -81,7 +83,7 @@ namespace SisFact
             this.Bartitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Bartitulo.Location = new System.Drawing.Point(0, 0);
             this.Bartitulo.Name = "Bartitulo";
-            this.Bartitulo.Size = new System.Drawing.Size(869, 35);
+            this.Bartitulo.Size = new System.Drawing.Size(1024, 35);
             this.Bartitulo.TabIndex = 0;
             this.Bartitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Bartitulo_MouseDown);
             // 
@@ -90,7 +92,7 @@ namespace SisFact
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(813, 9);
+            this.btnRestaurar.Location = new System.Drawing.Point(968, 9);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(20, 20);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -104,7 +106,7 @@ namespace SisFact
             this.brnCerrarV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.brnCerrarV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.brnCerrarV.Image = ((System.Drawing.Image)(resources.GetObject("brnCerrarV.Image")));
-            this.brnCerrarV.Location = new System.Drawing.Point(839, 9);
+            this.brnCerrarV.Location = new System.Drawing.Point(994, 9);
             this.brnCerrarV.Name = "brnCerrarV";
             this.brnCerrarV.Size = new System.Drawing.Size(20, 20);
             this.brnCerrarV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +119,7 @@ namespace SisFact
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(787, 9);
+            this.btnMinimizar.Location = new System.Drawing.Point(942, 9);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(20, 20);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +132,7 @@ namespace SisFact
             this.BtnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMaximizar.Image")));
-            this.BtnMaximizar.Location = new System.Drawing.Point(813, 9);
+            this.BtnMaximizar.Location = new System.Drawing.Point(968, 9);
             this.BtnMaximizar.Name = "BtnMaximizar";
             this.BtnMaximizar.Size = new System.Drawing.Size(20, 20);
             this.BtnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -141,6 +143,8 @@ namespace SisFact
             // BarMenu
             // 
             this.BarMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.BarMenu.Controls.Add(this.panel8);
+            this.BarMenu.Controls.Add(this.btnMesas);
             this.BarMenu.Controls.Add(this.panel2);
             this.BarMenu.Controls.Add(this.btnProveedores);
             this.BarMenu.Controls.Add(this.btncloseMenu);
@@ -161,8 +165,33 @@ namespace SisFact
             this.BarMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.BarMenu.Location = new System.Drawing.Point(0, 35);
             this.BarMenu.Name = "BarMenu";
-            this.BarMenu.Size = new System.Drawing.Size(220, 541);
+            this.BarMenu.Size = new System.Drawing.Size(220, 753);
             this.BarMenu.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Location = new System.Drawing.Point(3, 314);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(6, 31);
+            this.panel8.TabIndex = 19;
+            // 
+            // btnMesas
+            // 
+            this.btnMesas.FlatAppearance.BorderSize = 0;
+            this.btnMesas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesas.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMesas.ForeColor = System.Drawing.Color.White;
+            this.btnMesas.Image = ((System.Drawing.Image)(resources.GetObject("btnMesas.Image")));
+            this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMesas.Location = new System.Drawing.Point(12, 314);
+            this.btnMesas.Name = "btnMesas";
+            this.btnMesas.Size = new System.Drawing.Size(202, 31);
+            this.btnMesas.TabIndex = 18;
+            this.btnMesas.Text = "Mesas";
+            this.btnMesas.UseVisualStyleBackColor = true;
+            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // panel2
             // 
@@ -193,7 +222,7 @@ namespace SisFact
             // 
             this.btncloseMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btncloseMenu.Image = ((System.Drawing.Image)(resources.GetObject("btncloseMenu.Image")));
-            this.btncloseMenu.Location = new System.Drawing.Point(35, 472);
+            this.btncloseMenu.Location = new System.Drawing.Point(35, 684);
             this.btncloseMenu.Name = "btncloseMenu";
             this.btncloseMenu.Size = new System.Drawing.Size(58, 57);
             this.btncloseMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -207,7 +236,7 @@ namespace SisFact
             this.SubMenuReportes.Controls.Add(this.btnReportCompras);
             this.SubMenuReportes.Controls.Add(this.panel9);
             this.SubMenuReportes.Controls.Add(this.btnReportVentas);
-            this.SubMenuReportes.Location = new System.Drawing.Point(35, 351);
+            this.SubMenuReportes.Location = new System.Drawing.Point(35, 388);
             this.SubMenuReportes.Name = "SubMenuReportes";
             this.SubMenuReportes.Size = new System.Drawing.Size(185, 72);
             this.SubMenuReportes.TabIndex = 14;
@@ -273,7 +302,7 @@ namespace SisFact
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel7.Location = new System.Drawing.Point(3, 314);
+            this.panel7.Location = new System.Drawing.Point(3, 351);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(6, 31);
             this.panel7.TabIndex = 12;
@@ -287,7 +316,7 @@ namespace SisFact
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(12, 314);
+            this.btnReportes.Location = new System.Drawing.Point(12, 351);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(202, 31);
             this.btnReportes.TabIndex = 11;
@@ -424,7 +453,7 @@ namespace SisFact
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenedor.Location = new System.Drawing.Point(220, 35);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(649, 541);
+            this.PanelContenedor.Size = new System.Drawing.Size(804, 753);
             this.PanelContenedor.TabIndex = 2;
             // 
             // timer1
@@ -435,7 +464,7 @@ namespace SisFact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 576);
+            this.ClientSize = new System.Drawing.Size(1024, 788);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.BarMenu);
             this.Controls.Add(this.Bartitulo);
@@ -443,6 +472,7 @@ namespace SisFact
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenuPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.Bartitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
@@ -488,5 +518,7 @@ namespace SisFact
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnMesas;
     }
 }

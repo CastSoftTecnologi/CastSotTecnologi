@@ -118,5 +118,10 @@ namespace SisFact
             frmPersonas.TUsuario = 3;
             AbrirFormularios(new frmPersonas());
         }
+
+        private void btnMesas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios(new frmMesas());
+        }
     }
 }
