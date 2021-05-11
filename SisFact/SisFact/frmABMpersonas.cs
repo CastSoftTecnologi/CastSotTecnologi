@@ -63,8 +63,9 @@ namespace SisFact
 
         private void btnGuradar_Click(object sender, EventArgs e)
         {
-
+            string sSql = "";
             int tpersona = 3;
+            bool Proceso = true;
 
             if (GUsuario.Visible == true)
             {
@@ -94,36 +95,65 @@ namespace SisFact
                 MessageBox.Show("Debe seleccionar el Sexo", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (GUsuario.Visible == true && txtUsuario.Text == "")
+            {
+                MessageBox.Show("Debe indicar el nombre de Usuario", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (GUsuario.Visible == true && txtClave.Text =="")
+            {
+                MessageBox.Show("Debe indicar la clave", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GUsuario.Visible == true && int.Parse(cboNivel.SelectedValue.ToString()) == 0)
             {
                 MessageBox.Show("Debe seleccionar el Nivel de Usuario", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            A.Lectura("INS_BPERSONA " +
+
+            if (txtCodigo.Text == "")
+            {
+                sSql = "exec INS_BPERSONA ";
+            }
+            else
+            {
+                sSql = "exec UPD_BPERSONA @c_persona = " + txtCodigo.Text + ",";
+            }
+
+            A.Lectura(sSql +
               "@c_tipo_persona	    = " + tpersona +
-              //",@c_estado		    = " +
               ",@x_nombre			= '" + txtNombre.Text + "'" +
               ",@x_apellido		    = '" + txtApellido.Text + "'" +
               ",@x_nombre_fantasia  = '" + txtNombreFantacias.Text + "'" +
               ",@c_tipo_documento	= " + cboDoc.SelectedValue.ToString() +
-              ",@n_documento		= '" + txtNroDoc.Text + "'" +
-              //",@x_cuil			    = " +
+              ",@n_documento		= " + txtNroDoc.Text + 
               ",@f_nacimiento		= '" + Fnacimiento.Value.ToString("yyyyMMdd") + "'" +
               ",@t_sexo			    = '" + (cboSexo.Text == "<Seleccione>" ? "Null" : cboSexo.Text) + "'" +
               ",@c_nacionalidad	    = " + (int.Parse(cboPais.SelectedValue.ToString()) == 0 ? "NULL" : cboPais.SelectedValue.ToString()) +
-              //",@n_legajo			= "  +
               ",@b_esUsuario		= " + (tpersona == 1 ? 1 : 0) +
               ",@xc_usuario		    = '" + txtUsuario.Text + "'" +
               ",@x_password		    = '" + txtClave.Text + "'" +
               ",@c_rol				= " + (int.Parse(cboNivel.SelectedValue.ToString()) == 0 ? "NULL" : cboNivel.SelectedValue.ToString()) +
-              ",@m_habilitado = " + (chkActivo.Checked == true ? 1 : 0));
+              ",@c_estado = " + (chkActivo.Checked == true ? 1 : 0));
+
+            if (A.dr.Read()) {
+                Proceso = A.dr[0].ToString() == "1" ? true : false;
+            }
+
             A.conexion.Close();
-            MessageBox.Show("Datos Gargados", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            frmPersonas FP = Owner as frmPersonas;//Este permite actulizar la grilla haciendo que padre acepte la peticion de hijo
-            FP.buscar_Registros();//esta funcion es de Padre frmPersonas pero la peticion de viene de frmABMProductos
-            Dispose();
-            Close();
+            if (Proceso == true)
+            {
+                MessageBox.Show("Datos Gargados", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmPersonas FP = Owner as frmPersonas;//Este permite actulizar la grilla haciendo que padre acepte la peticion de hijo
+                FP.buscar_Registros();//esta funcion es de Padre frmPersonas pero la peticion de viene de frmABMProductos
+                Dispose();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Error Interno no se cargaron los datos", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void Carga_Data(int Cod)
         {
@@ -149,10 +179,11 @@ namespace SisFact
                 txtNroDoc.Text = A.dr["n_documento"].ToString();
                 Fnacimiento.Value = DateTime.Parse(A.dr["f_nacimiento"].ToString());
                 cboSexo.Text = A.dr["t_sexo"].ToString();
-                cboPais.SelectedValue = int.Parse(A.dr[""].ToString());
-                txtUsuario.Text = A.dr["c_nacionalidad"].ToString();
-                txtClave.Text = "***********************";
-                cboNivel.SelectedValue = int.Parse(A.dr["c_rol"].ToString());
+                cboPais.SelectedValue = string.IsNullOrEmpty(A.dr["c_nacionalidad"].ToString()) == true?0:int.Parse(A.dr["c_nacionalidad"].ToString());
+                txtUsuario.Text = A.dr["xc_usuario"].ToString();
+                txtClave.Text = "";
+
+                cboNivel.SelectedValue = string.IsNullOrEmpty(A.dr["c_rol"].ToString()) == true? 0: int.Parse(A.dr["c_rol"].ToString());
                 chkActivo.Checked = int.Parse(A.dr["c_estado"].ToString()) == 1 ? true : false;
             }
             A.conexion.Close();

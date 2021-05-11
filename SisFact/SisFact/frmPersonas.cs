@@ -89,7 +89,7 @@ namespace SisFact
             }
             ABM_Usuarios(titulo);
         }
-        private void ABM_Usuarios(string titulo) {
+        private void ABM_Usuarios(string titulo,bool Proceso = false) {
             frmABMpersonas FP = new frmABMpersonas();
             AddOwnedForm(FP);
             FP.TopLevel = false;
@@ -101,8 +101,28 @@ namespace SisFact
             FP.GUsuario.Visible = true;
             if (TUsuario != 1) { FP.GUsuario.Visible = false; }
             if (TUsuario != 3) { FP.txtNombreFantacias.Visible = false;FP.LbNfantasia.Visible = false; }
-
+            if (Proceso == true) {
+                FP.txtCodigo.Text = lpersonas.CurrentRow.Cells[0].Value.ToString();
+            }
             FP.Show();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            string titulo = "";
+            switch (TUsuario)
+            {
+                case 1:
+                    titulo = "Registro de Productos: Proceso - Modificar ";
+                    break;
+                case 2:
+                    titulo = "Registro de Clientes:Proceso - Modificar ";
+                    break;
+                default:
+                    titulo = "Registro de Proveedores: Proceso - Modificar ";
+                    break;
+            }
+            ABM_Usuarios(titulo,true);
         }
     }
 }
