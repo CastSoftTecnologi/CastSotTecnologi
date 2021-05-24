@@ -85,6 +85,24 @@ namespace SisFact
                 MessageBox.Show("Debe Ingresar el Nombre", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (cboDoc.Text == "<Seleccione>") {
+                MessageBox.Show("Debe Seleccionar el tipo de Doc", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtNroDoc.Text == "")
+            {
+                MessageBox.Show("Debe indicar el número de Documento", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtNroDoc.Text != "" && txtCodigo.Text =="") {
+                A.Lectura("Select * from BPersona where c_tipo_documento = " + cboDoc.SelectedValue + " and  n_documento = " + txtNroDoc.Text);
+                if (A.dr.Read()) {
+                    MessageBox.Show("Esta Persona ya esta registrada con este documento", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    A.conexion.Close();
+                    return;
+                }
+                A.conexion.Close();
+            }
             if (txtNombreFantacias.Visible == true && txtNombreFantacias.Text == "")
             {
                 MessageBox.Show("Debe Ingresar el Nombre Fantasia del Proveedor", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,6 +117,15 @@ namespace SisFact
             {
                 MessageBox.Show("Debe indicar el nombre de Usuario", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            if (GUsuario.Visible == true && txtUsuario.Text != "" && txtCodigo.Text == "") {
+                A.Lectura("Select * from Busuario where xc_usuario = '" + txtUsuario.Text + "'");
+                if (A.dr.Read()) {
+                    MessageBox.Show("El nombre de Usuario ya esta registrado", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    A.conexion.Close();
+                    return;
+                }
+                A.conexion.Close();
             }
             if (GUsuario.Visible == true && txtClave.Text =="")
             {
