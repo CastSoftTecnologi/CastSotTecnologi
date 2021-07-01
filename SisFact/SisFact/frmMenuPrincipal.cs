@@ -123,5 +123,11 @@ namespace SisFact
         {
             AbrirFormularios(new frmMesas());
         }
+
+        private void BtnVentas_Click(object sender, EventArgs e)
+        {
+            frmVentas V = new frmVentas();
+            V.ShowDialog();
+        }
     }
 }

@@ -396,6 +396,7 @@ namespace SisFact
             this.BtnVentas.TabIndex = 5;
             this.BtnVentas.Text = "Ventas";
             this.BtnVentas.UseVisualStyleBackColor = true;
+            this.BtnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
             // 
             // panel3
             // 
