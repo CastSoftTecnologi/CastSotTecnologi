@@ -25,7 +25,7 @@ namespace SisFact
 
         private void frmVentas_Load(object sender, EventArgs e)
         {
-
+            AbrirFormularios(new frmInicio());
         }
         public void AbrirFormularios(object formhijos)
         {//funcion para llamar a los formuliarios como Hijos
@@ -46,6 +46,17 @@ namespace SisFact
         private void btnFacturar_Click(object sender, EventArgs e)
         {
             AbrirFormularios(new frmFacturacion());
+        }
+
+        private void btnMesas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios(new frmSalon());
+        }
+
+        private void Logo_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Close();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace SisFact
     public partial class frmFacturacion : Form
     {
 
-  
+
         Acceso A = new Acceso();
         public frmFacturacion()
         {
@@ -23,9 +23,11 @@ namespace SisFact
         private void frmFacturacion_Load(object sender, EventArgs e)
         {
             Carga_Producto();
+            lbFecha.Text = "Fecha: " + DateTime.Today.ToString("dd/MM/yyyy");
+            lbUsuario.Text = "Usuario: " + Acceso.x_usuario.ToString();
         }
         private void Carga_Producto() {
-            A.Lectura("Select cProducto, x_producto from Tproducto where m_activo =1 and m_visible= 1") ;
+            A.Lectura("Select cProducto, x_producto from Tproducto where m_activo =1 and m_visible= 1");
 
             Pproductos.Controls.Clear();
             while (A.dr.Read())
@@ -47,7 +49,41 @@ namespace SisFact
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-           
+
+            Button btnProductos = sender as Button;
+            Carga_Grilla_DFacturacion(int.Parse(btnProductos.Name.ToString()));
         }
+        private void Carga_Grilla_DFacturacion(int cProducto) {
+
+            A.Lectura("exec GET_PRODUCTOS @cProducto = " + cProducto.ToString());
+            if (A.dr.Read()) {
+                LDFactura.Rows.Add(LDFactura.Rows.Count + 1,
+                               A.dr["x_producto"].ToString(),
+                               1,
+                               double.Parse(A.dr["i_precioUnitario"].ToString()),
+                               double.Parse(A.dr["nIva"].ToString()),
+                               0,
+                               double.Parse(A.dr["i_precioUnitario"].ToString()),
+                               DateTime.Now.ToString("HH:MM:ss"));
+            }
+            A.conexion.Close();
+            Totalizo();
+        }
+
+        private void LDFactura_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            Totalizo();
+        }
+        private void Totalizo() {
+            int i = 1;
+            double vtotal = 0;
+            foreach (DataGridViewRow Fila in LDFactura.Rows)
+            {
+                Fila.Cells[0].Value = i++;
+                vtotal = vtotal + double.Parse(Fila.Cells["Total"].Value.ToString());
+            }
+            txtTotal.Text = vtotal.ToString("#,##0.00");
+        }
+        
     }
 }

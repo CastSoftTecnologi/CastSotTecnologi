@@ -82,6 +82,7 @@ namespace SisFact
             this.btnMesas.TabIndex = 18;
             this.btnMesas.Text = "Mesas";
             this.btnMesas.UseVisualStyleBackColor = true;
+            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // Logo
             // 
@@ -92,6 +93,7 @@ namespace SisFact
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 13;
             this.Logo.TabStop = false;
+            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
             // panel5
             // 
