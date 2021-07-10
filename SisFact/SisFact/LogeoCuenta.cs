@@ -30,7 +30,8 @@ namespace SisFact
         {
             A.Lectura("loginDB @xc_usuario = '" + txtUsuario.Text + "'" +
                                         ",@x_password = '" + txtClave.Text  +"'");
-            if (A.dr.Read()) {
+            if (A.dr.Read())
+            {
                 Acceso.x_usuario = A.dr["xc_usuario"].ToString();
                 Acceso.c_usuario = int.Parse(A.dr["c_usuario"].ToString());
                 A.conexion.Close();
@@ -38,14 +39,12 @@ namespace SisFact
                 Dispose();
                 Close();
                 F.ShowDialog();
-                
+
+            }
+            else {
+                MessageBox.Show("Aviso", "Usuario y clave no registrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             A.conexion.Close();
-        }
-
-        private void LogeoCuenta_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void LogeoCuenta_KeyDown(object sender, KeyEventArgs e)

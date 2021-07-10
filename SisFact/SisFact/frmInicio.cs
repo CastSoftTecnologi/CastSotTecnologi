@@ -22,6 +22,7 @@ namespace SisFact
         {
             LbHora.Text = DateTime.Now.ToLongTimeString();
             LbFecha.Text = DateTime.Now.ToLongDateString();
+            
         }
 
         private void frmInicio_Load(object sender, EventArgs e)

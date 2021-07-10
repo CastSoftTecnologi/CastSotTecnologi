@@ -184,6 +184,7 @@ namespace SisFact
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SisFact Ver: 1.0 ";
+            this.Load += new System.EventHandler(this.frmLogeo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogeo_KeyDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtLogo)).EndInit();

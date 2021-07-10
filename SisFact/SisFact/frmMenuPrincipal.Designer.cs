@@ -29,7 +29,6 @@ namespace SisFact
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.Bartitulo = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
@@ -61,7 +60,6 @@ namespace SisFact
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.PanelContenedor = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Bartitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarV)).BeginInit();
@@ -167,6 +165,7 @@ namespace SisFact
             this.BarMenu.Name = "BarMenu";
             this.BarMenu.Size = new System.Drawing.Size(220, 753);
             this.BarMenu.TabIndex = 1;
+            this.BarMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.BarMenu_Paint);
             // 
             // panel8
             // 
@@ -457,10 +456,6 @@ namespace SisFact
             this.PanelContenedor.Size = new System.Drawing.Size(804, 753);
             this.PanelContenedor.TabIndex = 2;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,7 +511,6 @@ namespace SisFact
         private System.Windows.Forms.Button btnReportVentas;
         private System.Windows.Forms.PictureBox btncloseMenu;
         public System.Windows.Forms.Panel PanelContenedor;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Panel panel8;

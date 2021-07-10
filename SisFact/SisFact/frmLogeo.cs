@@ -13,6 +13,7 @@ namespace SisFact
     public partial class frmLogeo : Form
     {
         Acceso A = new Acceso();
+        frmMenuPrincipal F = new frmMenuPrincipal();
         public frmLogeo()
         {
             InitializeComponent();
@@ -29,9 +30,14 @@ namespace SisFact
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "" || txtClave.Text == "") {
+            if (txtUsuario.Text == "" || txtClave.Text == "" ) {
                 MessageBox.Show("Debe Ingresar el Usuario y Clave","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                Acceso.Entro = false;
+                Dispose();
+                Close();
+                F.Permiso();
                 return;
+                
             }
 
             A.Lectura("loginDB @xc_usuario = '" + txtUsuario.Text + "',@x_password ='" + txtClave.Text  + "'");
@@ -41,16 +47,19 @@ namespace SisFact
                 //Aqui capturamos los valores de los usuarios
                 Acceso.x_usuario = A.dr["xc_usuario"].ToString();
                 Acceso.c_usuario = int.Parse(A.dr["c_usuario"].ToString());
-                frmMenuPrincipal F = new frmMenuPrincipal();
                 A.conexion.Close();
-                F.Show();
                 Dispose();
                 Close();
+                F.Permiso();
             }
             else
             { 
                 A.conexion.Close();
                 MessageBox.Show("Usuario o clave incorrecto","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                Acceso.Entro = false;
+                Dispose();
+                Close();
+                F.Permiso();
             }
         }
 
@@ -102,6 +111,11 @@ namespace SisFact
                 txtClave.UseSystemPasswordChar = false;
                 txtClave.ForeColor = Color.Gray;
             }
+        }
+
+        private void frmLogeo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

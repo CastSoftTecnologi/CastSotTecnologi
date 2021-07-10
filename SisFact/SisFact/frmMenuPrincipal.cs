@@ -95,8 +95,11 @@ namespace SisFact
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            AbrirFormularios(new frmInicio());
 
+            Permiso();
+
+        }
+        public void Permiso() {
             if (Acceso.Entro == false)
             {
                 this.Visible = false;
@@ -104,10 +107,11 @@ namespace SisFact
                 frmLogeo f = new frmLogeo();
                 f.ShowDialog();
             }
-            else {
+            else
+            {
                 this.Visible = true;
+                AbrirFormularios(new frmInicio());
             }
-
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -138,5 +142,12 @@ namespace SisFact
             frmVentas V = new frmVentas();
             V.ShowDialog();
         }
+
+        private void BarMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -168,7 +168,6 @@ namespace SisFact
             this.Name = "LogeoCuenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogeoCuenta";
-            this.Load += new System.EventHandler(this.LogeoCuenta_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LogeoCuenta_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
