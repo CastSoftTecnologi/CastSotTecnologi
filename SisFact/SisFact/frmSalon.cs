@@ -54,7 +54,11 @@ namespace SisFact
 
         private void CmdMesas_Click(object sender, EventArgs e)
         {
-
+            Button btnMesa = sender as Button;
+            LogeoCuenta F = new LogeoCuenta();
+            Acceso.c_mesa = int.Parse(btnMesa.Name.ToString());
+            Acceso.c_piso = Vpiso;
+            F.ShowDialog();
         }
         private void BtnPiso1_Click(object sender, EventArgs e)
         {

@@ -122,6 +122,7 @@ namespace SisFact
             this.txtClave.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.ForeColor = System.Drawing.Color.White;
             this.txtClave.Location = new System.Drawing.Point(114, 50);
+            this.txtClave.MaxLength = 15;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(212, 25);
             this.txtClave.TabIndex = 14;
@@ -144,6 +145,7 @@ namespace SisFact
             this.txtUsuario.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.White;
             this.txtUsuario.Location = new System.Drawing.Point(114, 19);
+            this.txtUsuario.MaxLength = 15;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(212, 25);
             this.txtUsuario.TabIndex = 13;

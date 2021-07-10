@@ -23,8 +23,11 @@ namespace SisFact
         private void frmFacturacion_Load(object sender, EventArgs e)
         {
             Carga_Producto();
-            lbFecha.Text = "Fecha: " + DateTime.Today.ToString("dd/MM/yyyy");
-            lbUsuario.Text = "Usuario: " + Acceso.x_usuario.ToString();
+            lbFecha.Text = "Fecha: " + DateTime.Today.ToString("dd/MM/yyyy") +
+           " Usuario: " + Acceso.x_usuario.ToString();
+            if (Acceso.c_piso > 0) { 
+                LbMesaPiso.Text = "Mesa: " + Acceso.c_mesa + " - Piso: " + Acceso.c_piso;
+            }
         }
         private void Carga_Producto() {
             A.Lectura("Select cProducto, x_producto from Tproducto where m_activo =1 and m_visible= 1");
@@ -83,6 +86,14 @@ namespace SisFact
                 vtotal = vtotal + double.Parse(Fila.Cells["Total"].Value.ToString());
             }
             txtTotal.Text = vtotal.ToString("#,##0.00");
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            Acceso.c_mesa = 0;
+            Acceso.c_piso = 0;
+            Dispose();
+            Close();
         }
         
     }

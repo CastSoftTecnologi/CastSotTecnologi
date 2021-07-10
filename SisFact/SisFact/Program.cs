@@ -16,7 +16,7 @@ namespace SisFact
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogeo());
+            Application.Run(new frmMenuPrincipal());
         }
     }
 }

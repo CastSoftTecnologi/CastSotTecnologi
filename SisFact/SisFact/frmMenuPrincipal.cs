@@ -95,10 +95,19 @@ namespace SisFact
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            frmLogeo Logeo = new frmLogeo();//Instancio el logeo para cerrarlo
-            Logeo.Dispose();
-            Logeo.Close();
             AbrirFormularios(new frmInicio());
+
+            if (Acceso.Entro == false)
+            {
+                this.Visible = false;
+                Acceso.Entro = true;
+                frmLogeo f = new frmLogeo();
+                f.ShowDialog();
+            }
+            else {
+                this.Visible = true;
+            }
+
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

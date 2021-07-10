@@ -51,10 +51,13 @@ namespace SisFact
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbFecha = new System.Windows.Forms.Label();
-            this.lbUsuario = new System.Windows.Forms.Label();
-            this.btnCerrarCuenta = new System.Windows.Forms.Button();
             this.btnAnularCuenta = new System.Windows.Forms.Button();
+            this.btnCerrarCuenta = new System.Windows.Forms.Button();
+            this.lbFecha = new System.Windows.Forms.Label();
+            this.LbMesaPiso = new System.Windows.Forms.Label();
+            this.btnCambioMesa = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LDFactura)).BeginInit();
             this.panel2.SuspendLayout();
@@ -129,6 +132,7 @@ namespace SisFact
             this.btnsalir.TabIndex = 20;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // LDFactura
             // 
@@ -238,46 +242,15 @@ namespace SisFact
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnCambioMesa);
             this.panel2.Controls.Add(this.btnAnularCuenta);
             this.panel2.Controls.Add(this.btnCerrarCuenta);
             this.panel2.Location = new System.Drawing.Point(580, 473);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(473, 73);
             this.panel2.TabIndex = 21;
-            // 
-            // lbFecha
-            // 
-            this.lbFecha.AutoSize = true;
-            this.lbFecha.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbFecha.Location = new System.Drawing.Point(12, 9);
-            this.lbFecha.Name = "lbFecha";
-            this.lbFecha.Size = new System.Drawing.Size(71, 25);
-            this.lbFecha.TabIndex = 24;
-            this.lbFecha.Text = "Fecha:";
-            // 
-            // lbUsuario
-            // 
-            this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbUsuario.Location = new System.Drawing.Point(12, 44);
-            this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(86, 25);
-            this.lbUsuario.TabIndex = 25;
-            this.lbUsuario.Text = "Usuario:";
-            // 
-            // btnCerrarCuenta
-            // 
-            this.btnCerrarCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarCuenta.ForeColor = System.Drawing.Color.Gray;
-            this.btnCerrarCuenta.Location = new System.Drawing.Point(3, 4);
-            this.btnCerrarCuenta.Name = "btnCerrarCuenta";
-            this.btnCerrarCuenta.Size = new System.Drawing.Size(85, 57);
-            this.btnCerrarCuenta.TabIndex = 21;
-            this.btnCerrarCuenta.Text = "Cerrar Cuenta";
-            this.btnCerrarCuenta.UseVisualStyleBackColor = true;
             // 
             // btnAnularCuenta
             // 
@@ -291,13 +264,83 @@ namespace SisFact
             this.btnAnularCuenta.Text = "Anular Cuenta";
             this.btnAnularCuenta.UseVisualStyleBackColor = true;
             // 
+            // btnCerrarCuenta
+            // 
+            this.btnCerrarCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarCuenta.ForeColor = System.Drawing.Color.Gray;
+            this.btnCerrarCuenta.Location = new System.Drawing.Point(3, 4);
+            this.btnCerrarCuenta.Name = "btnCerrarCuenta";
+            this.btnCerrarCuenta.Size = new System.Drawing.Size(85, 57);
+            this.btnCerrarCuenta.TabIndex = 21;
+            this.btnCerrarCuenta.Text = "Cerrar Cuenta";
+            this.btnCerrarCuenta.UseVisualStyleBackColor = true;
+            // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbFecha.Location = new System.Drawing.Point(12, 9);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(71, 25);
+            this.lbFecha.TabIndex = 24;
+            this.lbFecha.Text = "Fecha:";
+            // 
+            // LbMesaPiso
+            // 
+            this.LbMesaPiso.AutoSize = true;
+            this.LbMesaPiso.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbMesaPiso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.LbMesaPiso.Location = new System.Drawing.Point(12, 54);
+            this.LbMesaPiso.Name = "LbMesaPiso";
+            this.LbMesaPiso.Size = new System.Drawing.Size(0, 25);
+            this.LbMesaPiso.TabIndex = 25;
+            this.LbMesaPiso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnCambioMesa
+            // 
+            this.btnCambioMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambioMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioMesa.ForeColor = System.Drawing.Color.Gray;
+            this.btnCambioMesa.Location = new System.Drawing.Point(185, 4);
+            this.btnCambioMesa.Name = "btnCambioMesa";
+            this.btnCambioMesa.Size = new System.Drawing.Size(85, 57);
+            this.btnCambioMesa.TabIndex = 23;
+            this.btnCambioMesa.Text = "Cambio de Mesa";
+            this.btnCambioMesa.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gray;
+            this.button1.Location = new System.Drawing.Point(276, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 57);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Unir Mesas";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Gray;
+            this.button2.Location = new System.Drawing.Point(367, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 57);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Movimiento de Caja";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1065, 559);
-            this.Controls.Add(this.lbUsuario);
+            this.Controls.Add(this.LbMesaPiso);
             this.Controls.Add(this.lbFecha);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -306,6 +349,7 @@ namespace SisFact
             this.Name = "frmFacturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFacturacion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmFacturacion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -334,8 +378,11 @@ namespace SisFact
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lbFecha;
-        private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.Button btnAnularCuenta;
         private System.Windows.Forms.Button btnCerrarCuenta;
+        private System.Windows.Forms.Label LbMesaPiso;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCambioMesa;
     }
 }

@@ -37,13 +37,15 @@ namespace SisFact
             A.Lectura("loginDB @xc_usuario = '" + txtUsuario.Text + "',@x_password ='" + txtClave.Text  + "'");
             if (A.dr.Read())
             {
-                frmMenuPrincipal Menu = new frmMenuPrincipal();
+                
                 //Aqui capturamos los valores de los usuarios
                 Acceso.x_usuario = A.dr["xc_usuario"].ToString();
                 Acceso.c_usuario = int.Parse(A.dr["c_usuario"].ToString());
-                Menu.Show();
+                frmMenuPrincipal F = new frmMenuPrincipal();
                 A.conexion.Close();
-                return;
+                F.Show();
+                Dispose();
+                Close();
             }
             else
             { 
