@@ -39,6 +39,9 @@ namespace SisFact
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPiso = new System.Windows.Forms.TextBox();
+            this.c_cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.x_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.f_carga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Lcuentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,9 +93,18 @@ namespace SisFact
             // 
             // Lcuentas
             // 
+            this.Lcuentas.AllowUserToAddRows = false;
+            this.Lcuentas.AllowUserToDeleteRows = false;
             this.Lcuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Lcuentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.c_cuenta,
+            this.x_estado,
+            this.f_carga});
             this.Lcuentas.Location = new System.Drawing.Point(12, 112);
             this.Lcuentas.Name = "Lcuentas";
+            this.Lcuentas.ReadOnly = true;
+            this.Lcuentas.RowHeadersWidth = 25;
+            this.Lcuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Lcuentas.Size = new System.Drawing.Size(403, 224);
             this.Lcuentas.TabIndex = 102;
             // 
@@ -157,6 +169,25 @@ namespace SisFact
             this.txtPiso.Size = new System.Drawing.Size(38, 25);
             this.txtPiso.TabIndex = 107;
             // 
+            // c_cuenta
+            // 
+            this.c_cuenta.DataPropertyName = "c_cuenta";
+            this.c_cuenta.HeaderText = "N.Cuenta";
+            this.c_cuenta.Name = "c_cuenta";
+            // 
+            // x_estado
+            // 
+            this.x_estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.x_estado.DataPropertyName = "x_estado";
+            this.x_estado.HeaderText = "Estado";
+            this.x_estado.Name = "x_estado";
+            // 
+            // f_carga
+            // 
+            this.f_carga.DataPropertyName = "f_carga";
+            this.f_carga.HeaderText = "F.Carga";
+            this.f_carga.Name = "f_carga";
+            // 
             // frmCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,5 +228,8 @@ namespace SisFact
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtPiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c_cuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn x_estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn f_carga;
     }
 }

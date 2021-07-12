@@ -42,22 +42,24 @@ namespace SisFact
             this.btnGuradar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
             this.LDFactura = new System.Windows.Forms.DataGridView();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.x_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pdes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCambioMesa = new System.Windows.Forms.Button();
             this.btnAnularCuenta = new System.Windows.Forms.Button();
             this.btnCerrarCuenta = new System.Windows.Forms.Button();
             this.lbFecha = new System.Windows.Forms.Label();
             this.LbMesaPiso = new System.Windows.Forms.Label();
-            this.btnCambioMesa = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.x_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c_iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LDFactura)).BeginInit();
             this.panel2.SuspendLayout();
@@ -120,6 +122,7 @@ namespace SisFact
             this.btnGuradar.TabIndex = 19;
             this.btnGuradar.Text = "Guardar";
             this.btnGuradar.UseVisualStyleBackColor = true;
+            this.btnGuradar.Click += new System.EventHandler(this.btnGuradar_Click);
             // 
             // btnsalir
             // 
@@ -148,9 +151,11 @@ namespace SisFact
             this.LDFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LDFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Item,
+            this.c_producto,
             this.x_descripcion,
             this.Cant,
             this.PUnitario,
+            this.c_iva,
             this.Iva,
             this.Pdes,
             this.Total,
@@ -162,81 +167,6 @@ namespace SisFact
             this.LDFactura.Size = new System.Drawing.Size(562, 356);
             this.LDFactura.TabIndex = 2;
             this.LDFactura.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.LDFactura_RowsRemoved);
-            // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            this.Item.Width = 35;
-            // 
-            // x_descripcion
-            // 
-            this.x_descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.x_descripcion.HeaderText = "Descripción";
-            this.x_descripcion.Name = "x_descripcion";
-            this.x_descripcion.ReadOnly = true;
-            // 
-            // Cant
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Cant.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Cant.HeaderText = "Cant.";
-            this.Cant.Name = "Cant";
-            this.Cant.ReadOnly = true;
-            this.Cant.Width = 40;
-            // 
-            // PUnitario
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.PUnitario.DefaultCellStyle = dataGridViewCellStyle3;
-            this.PUnitario.HeaderText = "P.Unitario";
-            this.PUnitario.Name = "PUnitario";
-            this.PUnitario.ReadOnly = true;
-            this.PUnitario.Width = 75;
-            // 
-            // Iva
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Iva.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Iva.HeaderText = "Iva";
-            this.Iva.Name = "Iva";
-            this.Iva.ReadOnly = true;
-            this.Iva.Width = 40;
-            // 
-            // Pdes
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Pdes.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Pdes.HeaderText = "P.Desc";
-            this.Pdes.Name = "Pdes";
-            this.Pdes.ReadOnly = true;
-            this.Pdes.Width = 40;
-            // 
-            // Total
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 75;
-            // 
-            // Hora
-            // 
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
             // 
             // panel2
             // 
@@ -251,6 +181,42 @@ namespace SisFact
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(473, 73);
             this.panel2.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Gray;
+            this.button2.Location = new System.Drawing.Point(367, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 57);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Movimiento de Caja";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gray;
+            this.button1.Location = new System.Drawing.Point(276, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 57);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Unir Mesas";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnCambioMesa
+            // 
+            this.btnCambioMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambioMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioMesa.ForeColor = System.Drawing.Color.Gray;
+            this.btnCambioMesa.Location = new System.Drawing.Point(185, 4);
+            this.btnCambioMesa.Name = "btnCambioMesa";
+            this.btnCambioMesa.Size = new System.Drawing.Size(85, 57);
+            this.btnCambioMesa.TabIndex = 23;
+            this.btnCambioMesa.Text = "Cambio de Mesa";
+            this.btnCambioMesa.UseVisualStyleBackColor = true;
             // 
             // btnAnularCuenta
             // 
@@ -298,41 +264,94 @@ namespace SisFact
             this.LbMesaPiso.TabIndex = 25;
             this.LbMesaPiso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnCambioMesa
+            // Item
             // 
-            this.btnCambioMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCambioMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambioMesa.ForeColor = System.Drawing.Color.Gray;
-            this.btnCambioMesa.Location = new System.Drawing.Point(185, 4);
-            this.btnCambioMesa.Name = "btnCambioMesa";
-            this.btnCambioMesa.Size = new System.Drawing.Size(85, 57);
-            this.btnCambioMesa.TabIndex = 23;
-            this.btnCambioMesa.Text = "Cambio de Mesa";
-            this.btnCambioMesa.UseVisualStyleBackColor = true;
+            this.Item.HeaderText = "Item";
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
+            this.Item.Width = 35;
             // 
-            // button1
+            // c_producto
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gray;
-            this.button1.Location = new System.Drawing.Point(276, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 57);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Unir Mesas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.c_producto.HeaderText = "c_producto";
+            this.c_producto.Name = "c_producto";
+            this.c_producto.ReadOnly = true;
+            this.c_producto.Visible = false;
             // 
-            // button2
+            // x_descripcion
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Gray;
-            this.button2.Location = new System.Drawing.Point(367, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 57);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Movimiento de Caja";
-            this.button2.UseVisualStyleBackColor = true;
+            this.x_descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.x_descripcion.HeaderText = "Descripción";
+            this.x_descripcion.Name = "x_descripcion";
+            this.x_descripcion.ReadOnly = true;
+            // 
+            // Cant
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Cant.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Cant.HeaderText = "Cant.";
+            this.Cant.Name = "Cant";
+            this.Cant.ReadOnly = true;
+            this.Cant.Width = 40;
+            // 
+            // PUnitario
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.PUnitario.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PUnitario.HeaderText = "P.Unitario";
+            this.PUnitario.Name = "PUnitario";
+            this.PUnitario.ReadOnly = true;
+            this.PUnitario.Width = 75;
+            // 
+            // c_iva
+            // 
+            this.c_iva.HeaderText = "c_iva";
+            this.c_iva.Name = "c_iva";
+            this.c_iva.ReadOnly = true;
+            this.c_iva.Visible = false;
+            // 
+            // Iva
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Iva.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Iva.HeaderText = "Iva";
+            this.Iva.Name = "Iva";
+            this.Iva.ReadOnly = true;
+            this.Iva.Width = 40;
+            // 
+            // Pdes
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Pdes.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Pdes.HeaderText = "P.Desc";
+            this.Pdes.Name = "Pdes";
+            this.Pdes.ReadOnly = true;
+            this.Pdes.Width = 40;
+            // 
+            // Total
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 75;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
             // 
             // frmFacturacion
             // 
@@ -367,14 +386,6 @@ namespace SisFact
         private System.Windows.Forms.Button btnsalir;
         private System.Windows.Forms.DataGridView LDFactura;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn x_descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Iva;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lbFecha;
@@ -384,5 +395,15 @@ namespace SisFact
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCambioMesa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn x_descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c_iva;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Iva;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
     }
 }

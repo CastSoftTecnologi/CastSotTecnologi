@@ -12,6 +12,7 @@ namespace SisFact
 {
     public partial class frmCuentas : Form
     {
+        Acceso A = new Acceso();
         public frmCuentas()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace SisFact
             txtMesa.Text = Acceso.c_mesa.ToString();
             txtPiso.Text = Acceso.c_piso.ToString();
             txtMoso.Text = Acceso.x_usuario;
+            Carga_grilla();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -38,6 +40,12 @@ namespace SisFact
             F.ShowDialog();
             Dispose();
             Close();
+        }
+        private void Carga_grilla() {
+            A.Consulta("exec Get_Cuentas @c_mesa = " + Acceso.c_mesa +
+                        ",@c_piso = " + Acceso.c_piso, "R");
+
+            Lcuentas.DataSource = A.ds.Tables["R"];
         }
     }
 }

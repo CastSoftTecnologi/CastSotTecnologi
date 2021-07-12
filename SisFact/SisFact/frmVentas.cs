@@ -45,6 +45,8 @@ namespace SisFact
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
+            Acceso.c_piso = 0;
+            Acceso.c_mesa = 0;
             AbrirFormularios(new frmFacturacion());
         }
 

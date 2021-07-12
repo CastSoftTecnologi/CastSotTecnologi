@@ -61,13 +61,15 @@ namespace SisFact
             A.Lectura("exec GET_PRODUCTOS @cProducto = " + cProducto.ToString());
             if (A.dr.Read()) {
                 LDFactura.Rows.Add(LDFactura.Rows.Count + 1,
+                               A.dr["cProducto"].ToString(),
                                A.dr["x_producto"].ToString(),
                                1,
                                double.Parse(A.dr["i_precioUnitario"].ToString()),
+                               A.dr["cIva"].ToString(),
                                double.Parse(A.dr["nIva"].ToString()),
                                0,
                                double.Parse(A.dr["i_precioUnitario"].ToString()),
-                               DateTime.Now.ToString("HH:MM:ss"));
+                               DateTime.Now.ToString("HH:mm:ss"));
             }
             A.conexion.Close();
             Totalizo();
@@ -95,6 +97,49 @@ namespace SisFact
             Dispose();
             Close();
         }
-        
+
+        private void btnGuradar_Click(object sender, EventArgs e)
+        {
+
+            if (LDFactura.Rows.Count == 0) {
+                MessageBox.Show( "Debe ingresar al menos un productos para crear una cuenta","Aviso...",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+
+            A.conexion.Open();
+            A.Transaccion = A.conexion.BeginTransaction();
+            try
+            {
+                A.Ejecuta_trans("exec INS_CUENTA @c_estado_cuenta = 1,@c_usuario = " + Acceso.c_usuario);
+                foreach (DataGridViewRow Fila in LDFactura.Rows)
+                {
+                    A.Ejecuta_trans("exec INS_DCUENTA " +
+                                    " @Indice = " + Fila.Cells["Item"].Value.ToString() +
+                                    ",@c_usuario = " + Acceso.c_usuario +
+                                    ",@c_piso = " + Acceso.c_piso +
+                                    ",@c_mesa = " + Acceso.c_mesa +
+                                    ",@c_mozo= " + Acceso.c_usuario +
+                                    ",@c_producto = " + Fila.Cells["c_producto"].Value.ToString() +
+                                    ",@c_iva = " + Fila.Cells["c_iva"].Value.ToString() +
+                                    ",@n_cantidad = " + Fila.Cells["Cant"].Value.ToString() +
+                                    ",@f_carga = '" + DateTime.Parse(Fila.Cells["Hora"].Value.ToString()).ToString("HH:MM:ss") + "'" +
+                                    ",@Punitario = " + Fila.Cells["PUnitario"].Value.ToString().Replace(".","").Replace(",",".") +
+                                    ",@PDescuento = " + Fila.Cells["Pdes"].Value.ToString().Replace(".", "").Replace(",", ".") +
+                                    ",@total =  " + Fila.Cells["Total"].Value.ToString().Replace(".", "").Replace(",", "."));
+                }
+
+                A.Transaccion.Commit();
+                MessageBox.Show("Cuenta procesada","Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Aviso", ex.Message);
+
+                A.Transaccion.Rollback();
+            }
+            A.conexion.Close();
+        }
     }
 }

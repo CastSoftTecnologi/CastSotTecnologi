@@ -64,7 +64,7 @@ namespace SisFact
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(169, 28);
-            this.txtClave.TabIndex = 3;
+            this.txtClave.TabIndex = 4;
             // 
             // LbUsuario
             // 
@@ -86,14 +86,14 @@ namespace SisFact
             this.txtUsuario.Location = new System.Drawing.Point(97, 21);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(169, 28);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 3;
             // 
             // brnAceptar
             // 
             this.brnAceptar.Location = new System.Drawing.Point(40, 197);
             this.brnAceptar.Name = "brnAceptar";
             this.brnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.brnAceptar.TabIndex = 4;
+            this.brnAceptar.TabIndex = 5;
             this.brnAceptar.Text = "Aceptar";
             this.brnAceptar.UseVisualStyleBackColor = true;
             this.brnAceptar.Click += new System.EventHandler(this.brnAceptar_Click);
@@ -103,7 +103,7 @@ namespace SisFact
             this.btnsalir.Location = new System.Drawing.Point(219, 197);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(75, 23);
-            this.btnsalir.TabIndex = 5;
+            this.btnsalir.TabIndex = 6;
             this.btnsalir.Text = "salir";
             this.btnsalir.UseVisualStyleBackColor = true;
             this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
@@ -150,7 +150,7 @@ namespace SisFact
             this.panel2.Location = new System.Drawing.Point(28, 77);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(281, 94);
-            this.panel2.TabIndex = 59;
+            this.panel2.TabIndex = 2;
             // 
             // LogeoCuenta
             // 
