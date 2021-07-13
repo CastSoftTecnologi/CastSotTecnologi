@@ -37,6 +37,7 @@ namespace SisFact
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmFacturacion F = new frmFacturacion();
+            F.Proceso = "ADD";
             F.ShowDialog();
             Dispose();
             Close();
@@ -46,6 +47,16 @@ namespace SisFact
                         ",@c_piso = " + Acceso.c_piso, "R");
 
             Lcuentas.DataSource = A.ds.Tables["R"];
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmFacturacion F = new frmFacturacion();
+            F.Proceso = "UPD";
+            Acceso.c_cuenta = int.Parse(Lcuentas.CurrentRow.Cells["c_cuenta"].Value.ToString());
+            F.ShowDialog();
+            Dispose();
+            Close();
         }
     }
 }

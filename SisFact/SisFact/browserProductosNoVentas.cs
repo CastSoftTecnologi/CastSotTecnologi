@@ -24,7 +24,7 @@ namespace SisFact
         }
 
         private void Cargar_Grilla() {
-            A.Consulta("select cProducto , xl_producto  from TPRODUCTO where m_venta = 0 " +
+            A.Consulta("select c_Producto , xl_producto  from TPRODUCTO where m_venta = 0 " +
                       (txtBusqueda.Text !=""? " AND xl_nombre like '%" + txtBusqueda.Text  + "%'":"")
                 , "R");
             Lproductos.DataSource = A.ds.Tables["R"];

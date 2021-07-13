@@ -40,7 +40,7 @@ namespace SisFact
         }
         public void buscar_Registros() {
 
-            string Sql = "select top 100 cProducto,x_producto,i_precioUnitario,(case when m_activo = 1 then 'SI' else 'NO' end) m_activo from TPRODUCTO";
+            string Sql = "select top 100 c_Producto,x_producto,i_precioUnitario,(case when m_activo = 1 then 'SI' else 'NO' end) m_activo from TPRODUCTO";
             if (txtBusqueda.Text != "") { 
                 Sql = Sql + " where " + Campo  + " like '%" + txtBusqueda.Text  + "%'";
             }
@@ -76,7 +76,7 @@ namespace SisFact
             FP.LbProceso.Text = titulo;
             if (Proceso == true) {
 
-                FP.txtCodigo.Text = LProductos.CurrentRow.Cells["cProducto"].Value.ToString();
+                FP.txtCodigo.Text = LProductos.CurrentRow.Cells["c_Producto"].Value.ToString();
             
             }
 

@@ -44,7 +44,7 @@ namespace SisFact
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.LProductos = new System.Windows.Forms.DataGridView();
-            this.cProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.x_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.i_precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m_activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -163,7 +163,7 @@ namespace SisFact
             this.LProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.LProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cProducto,
+            this.c_Producto,
             this.x_producto,
             this.i_precioUnitario,
             this.m_activo});
@@ -196,15 +196,15 @@ namespace SisFact
             this.LProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LProductos_CellContentClick);
             this.LProductos.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.LProductos_ColumnHeaderMouseClick);
             // 
-            // cProducto
+            // c_Producto
             // 
-            this.cProducto.DataPropertyName = "cProducto";
+            this.c_Producto.DataPropertyName = "c_Producto";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.cProducto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.cProducto.HeaderText = "Código";
-            this.cProducto.Name = "cProducto";
-            this.cProducto.ReadOnly = true;
-            this.cProducto.Width = 80;
+            this.c_Producto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.c_Producto.HeaderText = "Código";
+            this.c_Producto.Name = "c_Producto";
+            this.c_Producto.ReadOnly = true;
+            this.c_Producto.Width = 80;
             // 
             // x_producto
             // 
@@ -262,7 +262,7 @@ namespace SisFact
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtBusqueda;
         public System.Windows.Forms.DataGridView LProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c_Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn x_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn i_precioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn m_activo;

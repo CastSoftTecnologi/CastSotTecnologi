@@ -36,7 +36,7 @@ namespace SisFact
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Lproductos = new System.Windows.Forms.DataGridView();
-            this.cProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xl_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Lproductos)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +94,7 @@ namespace SisFact
             this.Lproductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Lproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Lproductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cProducto,
+            this.c_Producto,
             this.xl_producto});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -123,12 +123,12 @@ namespace SisFact
             this.Lproductos.TabIndex = 56;
             this.Lproductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Lproductos_CellDoubleClick);
             // 
-            // cProducto
+            // c_Producto
             // 
-            this.cProducto.DataPropertyName = "cProducto";
-            this.cProducto.HeaderText = "Código";
-            this.cProducto.Name = "cProducto";
-            this.cProducto.ReadOnly = true;
+            this.c_Producto.DataPropertyName = "c_Producto";
+            this.c_Producto.HeaderText = "Código";
+            this.c_Producto.Name = "c_Producto";
+            this.c_Producto.ReadOnly = true;
             // 
             // xl_producto
             // 
@@ -164,7 +164,7 @@ namespace SisFact
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Lproductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c_Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn xl_producto;
     }
 }

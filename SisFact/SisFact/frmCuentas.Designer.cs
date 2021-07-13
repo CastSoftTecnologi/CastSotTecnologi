@@ -34,14 +34,14 @@ namespace SisFact
             this.label1 = new System.Windows.Forms.Label();
             this.txtMoso = new System.Windows.Forms.TextBox();
             this.Lcuentas = new System.Windows.Forms.DataGridView();
+            this.c_cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.x_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.f_carga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPiso = new System.Windows.Forms.TextBox();
-            this.c_cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.x_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.f_carga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Lcuentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +108,28 @@ namespace SisFact
             this.Lcuentas.Size = new System.Drawing.Size(403, 224);
             this.Lcuentas.TabIndex = 102;
             // 
+            // c_cuenta
+            // 
+            this.c_cuenta.DataPropertyName = "c_cuenta";
+            this.c_cuenta.HeaderText = "N.Cuenta";
+            this.c_cuenta.Name = "c_cuenta";
+            this.c_cuenta.ReadOnly = true;
+            // 
+            // x_estado
+            // 
+            this.x_estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.x_estado.DataPropertyName = "x_estado";
+            this.x_estado.HeaderText = "Estado";
+            this.x_estado.Name = "x_estado";
+            this.x_estado.ReadOnly = true;
+            // 
+            // f_carga
+            // 
+            this.f_carga.DataPropertyName = "f_carga";
+            this.f_carga.HeaderText = "F.Carga";
+            this.f_carga.Name = "f_carga";
+            this.f_carga.ReadOnly = true;
+            // 
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -119,6 +141,7 @@ namespace SisFact
             this.btnModificar.TabIndex = 104;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -168,25 +191,6 @@ namespace SisFact
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(38, 25);
             this.txtPiso.TabIndex = 107;
-            // 
-            // c_cuenta
-            // 
-            this.c_cuenta.DataPropertyName = "c_cuenta";
-            this.c_cuenta.HeaderText = "N.Cuenta";
-            this.c_cuenta.Name = "c_cuenta";
-            // 
-            // x_estado
-            // 
-            this.x_estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.x_estado.DataPropertyName = "x_estado";
-            this.x_estado.HeaderText = "Estado";
-            this.x_estado.Name = "x_estado";
-            // 
-            // f_carga
-            // 
-            this.f_carga.DataPropertyName = "f_carga";
-            this.f_carga.HeaderText = "F.Carga";
-            this.f_carga.Name = "f_carga";
             // 
             // frmCuentas
             // 

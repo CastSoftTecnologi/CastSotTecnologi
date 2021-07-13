@@ -35,7 +35,7 @@ namespace SisFact
             }
         }
         private void Carga_Data(string Cod) {
-            A.Lectura("Select * from TProducto where cProducto = " + Cod);
+            A.Lectura("Select * from TProducto where c_Producto = " + Cod);
             if (A.dr.Read())
             {
                 txtNombre.Text = A.dr["xl_producto"].ToString();
@@ -55,7 +55,7 @@ namespace SisFact
             }
             A.conexion.Close();
 
-            A.Lectura("Select * from V_Formula_Productos where cProducto = " + txtCodigo.Text);
+            A.Lectura("Select * from V_Formula_Productos where c_Producto = " + txtCodigo.Text);
             while (A.dr.Read() == true) {
                 FProducto.Rows.Add(A.dr["codigo"].ToString(),A.dr["Descripcion"].ToString(),A.dr["Cantidad"].ToString());
             }
@@ -138,7 +138,7 @@ namespace SisFact
             }
             else
             {
-                sSql = "exec UPD_TPRODUCTO @cProducto = " + txtCodigo.Text + ",";
+                sSql = "exec UPD_TPRODUCTO @c_Producto = " + txtCodigo.Text + ",";
             }
 
 
@@ -171,7 +171,7 @@ namespace SisFact
             foreach (DataGridViewRow Fila in FProducto.Rows)
             {
                 A.Ejecuta("exec INS_TPRODUCTO_FORMULA " +
-                          " @cProducto = " + codprod +
+                          " @c_Producto = " + codprod +
                           ",@cProducto_Insumo = " + Fila.Cells["Codigo"].Value.ToString() +
                           ",@Cantidad = " + Fila.Cells["Cantidad"].Value.ToString());
             }

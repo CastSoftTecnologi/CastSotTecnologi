@@ -15,6 +15,7 @@ namespace SisFact
 
 
         Acceso A = new Acceso();
+        public string Proceso;
         public frmFacturacion()
         {
             InitializeComponent();
@@ -28,15 +29,32 @@ namespace SisFact
             if (Acceso.c_piso > 0) { 
                 LbMesaPiso.Text = "Mesa: " + Acceso.c_mesa + " - Piso: " + Acceso.c_piso;
             }
+            Carga_detalle_cuenta();
+        }
+        private void Carga_detalle_cuenta() {
+            A.Lectura("exec getDetalleCuenta @c_cuenta = " + Acceso.c_cuenta);
+            while (A.dr.Read()) {
+                LDFactura.Rows.Add(LDFactura.Rows.Count + 1,
+                           A.dr["c_Producto"].ToString(),
+                           A.dr["x_producto"].ToString(),
+                           1,
+                           double.Parse(A.dr["PUnitario"].ToString()),
+                           A.dr["c_Iva"].ToString(),
+                           double.Parse(A.dr["i_iva"].ToString()),
+                           0,
+                           double.Parse(A.dr["PUnitario"].ToString()),
+                           DateTime.Now.ToString("HH:mm:ss"));
+            }
+            A.conexion.Close();
         }
         private void Carga_Producto() {
-            A.Lectura("Select cProducto, x_producto from Tproducto where m_activo =1 and m_visible= 1");
+            A.Lectura("Select c_Producto, x_producto from Tproducto where m_activo =1 and m_visible= 1");
 
             Pproductos.Controls.Clear();
             while (A.dr.Read())
             {
                 Button btnProducto = new Button();
-                btnProducto.Name = A.dr["cProducto"].ToString();
+                btnProducto.Name = A.dr["c_Producto"].ToString();
                 btnProducto.Text = A.dr["x_producto"].ToString();
                 btnProducto.Height = 50;
                 btnProducto.Width = 100;
@@ -56,12 +74,12 @@ namespace SisFact
             Button btnProductos = sender as Button;
             Carga_Grilla_DFacturacion(int.Parse(btnProductos.Name.ToString()));
         }
-        private void Carga_Grilla_DFacturacion(int cProducto) {
+        private void Carga_Grilla_DFacturacion(int c_Producto) {
 
-            A.Lectura("exec GET_PRODUCTOS @cProducto = " + cProducto.ToString());
+            A.Lectura("exec GET_PRODUCTOS @c_Producto = " + c_Producto.ToString());
             if (A.dr.Read()) {
                 LDFactura.Rows.Add(LDFactura.Rows.Count + 1,
-                               A.dr["cProducto"].ToString(),
+                               A.dr["c_Producto"].ToString(),
                                A.dr["x_producto"].ToString(),
                                1,
                                double.Parse(A.dr["i_precioUnitario"].ToString()),
@@ -100,21 +118,34 @@ namespace SisFact
 
         private void btnGuradar_Click(object sender, EventArgs e)
         {
-
+            int c_cuenta = 0;
             if (LDFactura.Rows.Count == 0) {
                 MessageBox.Show( "Debe ingresar al menos un productos para crear una cuenta","Aviso...",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
 
-            A.conexion.Open();
-            A.Transaccion = A.conexion.BeginTransaction();
+
             try
             {
-                A.Ejecuta_trans("exec INS_CUENTA @c_estado_cuenta = 1,@c_usuario = " + Acceso.c_usuario);
+                
+                if (Proceso == "ADD")
+                {
+                    A.Lectura("exec INS_CUENTA @c_usuario = " + Acceso.c_usuario);
+                    if (A.dr.Read() && A.dr["exito"].ToString() == "TRUE") {
+                        c_cuenta = int.Parse(A.dr["idMensaje"].ToString());
+                    }
+                    A.conexion.Close();
+                }
+                else {
+                    c_cuenta = Acceso.c_cuenta;
+                    A.Ejecuta("Delete from Dcuenta where c_cuenta = " + Acceso.c_cuenta);
+                }
+
                 foreach (DataGridViewRow Fila in LDFactura.Rows)
                 {
-                    A.Ejecuta_trans("exec INS_DCUENTA " +
+                    A.Ejecuta("exec INS_DCUENTA " +
                                     " @Indice = " + Fila.Cells["Item"].Value.ToString() +
+                                    ",@c_cuenta = " + c_cuenta +
                                     ",@c_usuario = " + Acceso.c_usuario +
                                     ",@c_piso = " + Acceso.c_piso +
                                     ",@c_mesa = " + Acceso.c_mesa +
@@ -122,13 +153,12 @@ namespace SisFact
                                     ",@c_producto = " + Fila.Cells["c_producto"].Value.ToString() +
                                     ",@c_iva = " + Fila.Cells["c_iva"].Value.ToString() +
                                     ",@n_cantidad = " + Fila.Cells["Cant"].Value.ToString() +
-                                    ",@f_carga = '" + DateTime.Parse(Fila.Cells["Hora"].Value.ToString()).ToString("HH:MM:ss") + "'" +
-                                    ",@Punitario = " + Fila.Cells["PUnitario"].Value.ToString().Replace(".","").Replace(",",".") +
+                                    ",@Punitario = " + Fila.Cells["PUnitario"].Value.ToString().Replace(".", "").Replace(",", ".") +
                                     ",@PDescuento = " + Fila.Cells["Pdes"].Value.ToString().Replace(".", "").Replace(",", ".") +
-                                    ",@total =  " + Fila.Cells["Total"].Value.ToString().Replace(".", "").Replace(",", "."));
+                                    ",@total =  " + Fila.Cells["Total"].Value.ToString().Replace(".", "").Replace(",", ".")); ;
                 }
 
-                A.Transaccion.Commit();
+                
                 MessageBox.Show("Cuenta procesada","Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dispose();
                 Close();
@@ -137,7 +167,7 @@ namespace SisFact
             {
                 MessageBox.Show("Aviso", ex.Message);
 
-                A.Transaccion.Rollback();
+
             }
             A.conexion.Close();
         }
