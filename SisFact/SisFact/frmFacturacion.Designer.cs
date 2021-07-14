@@ -29,12 +29,12 @@ namespace SisFact
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pproductos = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,6 +60,7 @@ namespace SisFact
             this.Pdes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pcatalogo = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LDFactura)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,7 +70,7 @@ namespace SisFact
             // 
             this.Pproductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Pproductos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Pproductos.Location = new System.Drawing.Point(580, 107);
+            this.Pproductos.Location = new System.Drawing.Point(626, 105);
             this.Pproductos.Name = "Pproductos";
             this.Pproductos.Size = new System.Drawing.Size(473, 359);
             this.Pproductos.TabIndex = 19;
@@ -84,7 +85,7 @@ namespace SisFact
             this.panel1.Controls.Add(this.LDFactura);
             this.panel1.Location = new System.Drawing.Point(3, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(571, 440);
+            this.panel1.Size = new System.Drawing.Size(535, 440);
             this.panel1.TabIndex = 20;
             // 
             // label1
@@ -92,7 +93,7 @@ namespace SisFact
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(425, 366);
+            this.label1.Location = new System.Drawing.Point(359, 366);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 25);
             this.label1.TabIndex = 23;
@@ -104,7 +105,7 @@ namespace SisFact
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.txtTotal.Location = new System.Drawing.Point(454, 365);
+            this.txtTotal.Location = new System.Drawing.Point(416, 365);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(111, 31);
             this.txtTotal.TabIndex = 22;
@@ -116,7 +117,7 @@ namespace SisFact
             this.btnGuradar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuradar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuradar.ForeColor = System.Drawing.Color.Gray;
-            this.btnGuradar.Location = new System.Drawing.Point(196, 403);
+            this.btnGuradar.Location = new System.Drawing.Point(160, 403);
             this.btnGuradar.Name = "btnGuradar";
             this.btnGuradar.Size = new System.Drawing.Size(104, 25);
             this.btnGuradar.TabIndex = 19;
@@ -129,7 +130,7 @@ namespace SisFact
             this.btnsalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.ForeColor = System.Drawing.Color.Gray;
-            this.btnsalir.Location = new System.Drawing.Point(306, 403);
+            this.btnsalir.Location = new System.Drawing.Point(270, 403);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(104, 25);
             this.btnsalir.TabIndex = 20;
@@ -140,14 +141,14 @@ namespace SisFact
             // LDFactura
             // 
             this.LDFactura.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LDFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LDFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.LDFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LDFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Item,
@@ -164,7 +165,7 @@ namespace SisFact
             this.LDFactura.Name = "LDFactura";
             this.LDFactura.ReadOnly = true;
             this.LDFactura.RowHeadersWidth = 25;
-            this.LDFactura.Size = new System.Drawing.Size(562, 356);
+            this.LDFactura.Size = new System.Drawing.Size(524, 356);
             this.LDFactura.TabIndex = 2;
             this.LDFactura.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.LDFactura_RowsRemoved);
             // 
@@ -177,7 +178,7 @@ namespace SisFact
             this.panel2.Controls.Add(this.btnCambioMesa);
             this.panel2.Controls.Add(this.btnAnularCuenta);
             this.panel2.Controls.Add(this.btnCerrarCuenta);
-            this.panel2.Location = new System.Drawing.Point(580, 473);
+            this.panel2.Location = new System.Drawing.Point(626, 474);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(473, 73);
             this.panel2.TabIndex = 21;
@@ -287,10 +288,10 @@ namespace SisFact
             // 
             // Cant
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Cant.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle20.Format = "N2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.Cant.DefaultCellStyle = dataGridViewCellStyle20;
             this.Cant.HeaderText = "Cant.";
             this.Cant.Name = "Cant";
             this.Cant.ReadOnly = true;
@@ -298,10 +299,10 @@ namespace SisFact
             // 
             // PUnitario
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.PUnitario.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle21.Format = "N2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.PUnitario.DefaultCellStyle = dataGridViewCellStyle21;
             this.PUnitario.HeaderText = "P.Unitario";
             this.PUnitario.Name = "PUnitario";
             this.PUnitario.ReadOnly = true;
@@ -316,10 +317,10 @@ namespace SisFact
             // 
             // Iva
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Iva.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle22.Format = "N2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.Iva.DefaultCellStyle = dataGridViewCellStyle22;
             this.Iva.HeaderText = "Iva";
             this.Iva.Name = "Iva";
             this.Iva.ReadOnly = true;
@@ -327,10 +328,10 @@ namespace SisFact
             // 
             // Pdes
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Pdes.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle23.Format = "N2";
+            dataGridViewCellStyle23.NullValue = null;
+            this.Pdes.DefaultCellStyle = dataGridViewCellStyle23;
             this.Pdes.HeaderText = "P.Desc";
             this.Pdes.Name = "Pdes";
             this.Pdes.ReadOnly = true;
@@ -338,10 +339,10 @@ namespace SisFact
             // 
             // Total
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle24.Format = "N2";
+            dataGridViewCellStyle24.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle24;
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
@@ -352,13 +353,24 @@ namespace SisFact
             this.Hora.HeaderText = "Hora";
             this.Hora.Name = "Hora";
             this.Hora.ReadOnly = true;
+            this.Hora.Visible = false;
+            // 
+            // Pcatalogo
+            // 
+            this.Pcatalogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Pcatalogo.AutoScroll = true;
+            this.Pcatalogo.Location = new System.Drawing.Point(1105, 105);
+            this.Pcatalogo.Name = "Pcatalogo";
+            this.Pcatalogo.Size = new System.Drawing.Size(99, 442);
+            this.Pcatalogo.TabIndex = 26;
             // 
             // frmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1065, 559);
+            this.ClientSize = new System.Drawing.Size(1213, 559);
+            this.Controls.Add(this.Pcatalogo);
             this.Controls.Add(this.LbMesaPiso);
             this.Controls.Add(this.lbFecha);
             this.Controls.Add(this.panel2);
@@ -405,5 +417,6 @@ namespace SisFact
         private System.Windows.Forms.DataGridViewTextBoxColumn Pdes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
+        private System.Windows.Forms.FlowLayoutPanel Pcatalogo;
     }
 }
