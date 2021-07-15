@@ -62,13 +62,13 @@ namespace SisFact
             A.conexion.Close();
         }
         private void Carga_Combos() {
-            A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cCategoria, x_categoria from BCategoria", "R");
+            A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cCategoria, x_categoria from BCategoria where m_activo = 1 and m_visible = 1", "R");
             cboCategoria.DataSource = A.ds.Tables["R"];
             cboCategoria.DisplayMember = "Des";
             cboCategoria.ValueMember = "Codigo";
             A.conexion.Close();
 
-            A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cUnidad, x_Unidad from BUnidad", "R");
+            A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cUnidad, x_Unidad from BUnidad where m_activo = 1 and m_visible = 1", "R");
             cboUnidad.DataSource = A.ds.Tables["R"];
             cboUnidad.DisplayMember = "Des";
             cboUnidad.ValueMember = "Codigo";
@@ -80,7 +80,7 @@ namespace SisFact
             cboIVA.ValueMember = "Codigo";
             A.conexion.Close();
 
-            A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cMarca, x_marca Des from BMarca", "R");
+            A.Consulta("Select 0 Codigo, '<Seleccione>' Des UNION Select cMarca, x_marca Des from BMarca where m_activo = 1 and m_visible = 1", "R");
             cboMarca.DataSource = A.ds.Tables["R"];
             cboMarca.DisplayMember = "Des";
             cboMarca.ValueMember = "Codigo";

@@ -51,11 +51,10 @@ namespace SisFact
             A.conexion.Close();
         }
         private void Carga_Producto(int c_categoria = 0) {
-            string sql = "Select c_Producto, x_producto from Tproducto where m_activo =1 and m_visible= 1";
+            
+            string sql = "getProductoByCategoria " + c_categoria;
 
-            if (c_categoria > 0) {
-                sql = sql + " and cCategoria = " + c_categoria;
-            }
+
             A.Lectura(sql);
 
             Pproductos.Controls.Clear();
@@ -77,10 +76,8 @@ namespace SisFact
         }
 
         private void Carga_Catalago() {
-            A.Lectura("Select cCategoria, x_categoria from BCategoria");
+            A.Lectura("getCategorias");
             Pcatalogo.Controls.Clear();
-
-
 
             Button btnCatalogo1 = new Button();
             btnCatalogo1.Name = "0";
@@ -92,8 +89,6 @@ namespace SisFact
             btnCatalogo1.FlatStyle = FlatStyle.Flat;
             btnCatalogo1.Click += new EventHandler(btnCatalogo_Click);
             Pcatalogo.Controls.Add(btnCatalogo1);
-
-
 
 
             while (A.dr.Read()) {

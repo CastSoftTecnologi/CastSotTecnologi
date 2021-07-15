@@ -48,7 +48,7 @@ namespace SisFact
             cboPais.DisplayMember = "x_pais";
             A.conexion.Close();
 
-            A.Consulta("Select 0 c_rol, '<Seleccione>' x_rol UNION Select c_rol,x_rol from brol order by 1", "R");
+            A.Consulta("Select 0 c_rol, '<Seleccione>' x_rol UNION Select c_rol,x_rol from brol where m_activo = 1 and m_visible = 1 order by 1", "R");
             cboNivel.DataSource = A.ds.Tables["R"];
             cboNivel.ValueMember = "c_rol";
             cboNivel.DisplayMember = "x_rol";
