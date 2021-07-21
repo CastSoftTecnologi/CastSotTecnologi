@@ -29,12 +29,12 @@ namespace SisFact
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pproductos = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,14 +42,6 @@ namespace SisFact
             this.btnGuradar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
             this.LDFactura = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCambioMesa = new System.Windows.Forms.Button();
-            this.btnAnularCuenta = new System.Windows.Forms.Button();
-            this.btnCerrarCuenta = new System.Windows.Forms.Button();
-            this.lbFecha = new System.Windows.Forms.Label();
-            this.LbMesaPiso = new System.Windows.Forms.Label();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.x_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +52,16 @@ namespace SisFact
             this.Pdes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCambioMesa = new System.Windows.Forms.Button();
+            this.btnAnularCuenta = new System.Windows.Forms.Button();
+            this.btnCerrarCuenta = new System.Windows.Forms.Button();
+            this.lbFecha = new System.Windows.Forms.Label();
+            this.LbMesaPiso = new System.Windows.Forms.Label();
             this.Pcatalogo = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnPagoFacturacion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LDFactura)).BeginInit();
             this.panel2.SuspendLayout();
@@ -117,9 +118,9 @@ namespace SisFact
             this.btnGuradar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuradar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuradar.ForeColor = System.Drawing.Color.Gray;
-            this.btnGuradar.Location = new System.Drawing.Point(160, 403);
+            this.btnGuradar.Location = new System.Drawing.Point(156, 374);
             this.btnGuradar.Name = "btnGuradar";
-            this.btnGuradar.Size = new System.Drawing.Size(104, 25);
+            this.btnGuradar.Size = new System.Drawing.Size(72, 57);
             this.btnGuradar.TabIndex = 19;
             this.btnGuradar.Text = "Guardar";
             this.btnGuradar.UseVisualStyleBackColor = true;
@@ -130,9 +131,9 @@ namespace SisFact
             this.btnsalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.ForeColor = System.Drawing.Color.Gray;
-            this.btnsalir.Location = new System.Drawing.Point(270, 403);
+            this.btnsalir.Location = new System.Drawing.Point(234, 374);
             this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(104, 25);
+            this.btnsalir.Size = new System.Drawing.Size(72, 57);
             this.btnsalir.TabIndex = 20;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
@@ -141,14 +142,14 @@ namespace SisFact
             // LDFactura
             // 
             this.LDFactura.AllowUserToAddRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LDFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LDFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.LDFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LDFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Item,
@@ -169,18 +170,109 @@ namespace SisFact
             this.LDFactura.TabIndex = 2;
             this.LDFactura.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.LDFactura_RowsRemoved);
             // 
+            // Item
+            // 
+            this.Item.HeaderText = "Item";
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
+            this.Item.Width = 35;
+            // 
+            // c_producto
+            // 
+            this.c_producto.HeaderText = "c_producto";
+            this.c_producto.Name = "c_producto";
+            this.c_producto.ReadOnly = true;
+            this.c_producto.Visible = false;
+            // 
+            // x_descripcion
+            // 
+            this.x_descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.x_descripcion.HeaderText = "Descripción";
+            this.x_descripcion.Name = "x_descripcion";
+            this.x_descripcion.ReadOnly = true;
+            // 
+            // Cant
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Cant.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Cant.HeaderText = "Cant.";
+            this.Cant.Name = "Cant";
+            this.Cant.ReadOnly = true;
+            this.Cant.Width = 40;
+            // 
+            // PUnitario
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.PUnitario.DefaultCellStyle = dataGridViewCellStyle9;
+            this.PUnitario.HeaderText = "P.Unitario";
+            this.PUnitario.Name = "PUnitario";
+            this.PUnitario.ReadOnly = true;
+            this.PUnitario.Width = 75;
+            // 
+            // c_iva
+            // 
+            this.c_iva.HeaderText = "c_iva";
+            this.c_iva.Name = "c_iva";
+            this.c_iva.ReadOnly = true;
+            this.c_iva.Visible = false;
+            // 
+            // Iva
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Iva.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Iva.HeaderText = "Iva";
+            this.Iva.Name = "Iva";
+            this.Iva.ReadOnly = true;
+            this.Iva.Width = 40;
+            // 
+            // Pdes
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Pdes.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Pdes.HeaderText = "P.Desc";
+            this.Pdes.Name = "Pdes";
+            this.Pdes.ReadOnly = true;
+            this.Pdes.Width = 40;
+            // 
+            // Total
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 75;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            this.Hora.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnPagoFacturacion);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnCambioMesa);
             this.panel2.Controls.Add(this.btnAnularCuenta);
             this.panel2.Controls.Add(this.btnCerrarCuenta);
-            this.panel2.Location = new System.Drawing.Point(626, 474);
+            this.panel2.Location = new System.Drawing.Point(626, 481);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(473, 73);
+            this.panel2.Size = new System.Drawing.Size(473, 66);
             this.panel2.TabIndex = 21;
             // 
             // button2
@@ -188,9 +280,9 @@ namespace SisFact
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Gray;
-            this.button2.Location = new System.Drawing.Point(367, 4);
+            this.button2.Location = new System.Drawing.Point(315, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 57);
+            this.button2.Size = new System.Drawing.Size(72, 57);
             this.button2.TabIndex = 25;
             this.button2.Text = "Movimiento de Caja";
             this.button2.UseVisualStyleBackColor = true;
@@ -200,9 +292,9 @@ namespace SisFact
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Gray;
-            this.button1.Location = new System.Drawing.Point(276, 4);
+            this.button1.Location = new System.Drawing.Point(237, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 57);
+            this.button1.Size = new System.Drawing.Size(72, 57);
             this.button1.TabIndex = 24;
             this.button1.Text = "Unir Mesas";
             this.button1.UseVisualStyleBackColor = true;
@@ -212,9 +304,9 @@ namespace SisFact
             this.btnCambioMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCambioMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambioMesa.ForeColor = System.Drawing.Color.Gray;
-            this.btnCambioMesa.Location = new System.Drawing.Point(185, 4);
+            this.btnCambioMesa.Location = new System.Drawing.Point(159, 4);
             this.btnCambioMesa.Name = "btnCambioMesa";
-            this.btnCambioMesa.Size = new System.Drawing.Size(85, 57);
+            this.btnCambioMesa.Size = new System.Drawing.Size(72, 57);
             this.btnCambioMesa.TabIndex = 23;
             this.btnCambioMesa.Text = "Cambio de Mesa";
             this.btnCambioMesa.UseVisualStyleBackColor = true;
@@ -224,9 +316,9 @@ namespace SisFact
             this.btnAnularCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnularCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnularCuenta.ForeColor = System.Drawing.Color.Gray;
-            this.btnAnularCuenta.Location = new System.Drawing.Point(94, 4);
+            this.btnAnularCuenta.Location = new System.Drawing.Point(81, 4);
             this.btnAnularCuenta.Name = "btnAnularCuenta";
-            this.btnAnularCuenta.Size = new System.Drawing.Size(85, 57);
+            this.btnAnularCuenta.Size = new System.Drawing.Size(72, 57);
             this.btnAnularCuenta.TabIndex = 22;
             this.btnAnularCuenta.Text = "Anular Cuenta";
             this.btnAnularCuenta.UseVisualStyleBackColor = true;
@@ -238,7 +330,7 @@ namespace SisFact
             this.btnCerrarCuenta.ForeColor = System.Drawing.Color.Gray;
             this.btnCerrarCuenta.Location = new System.Drawing.Point(3, 4);
             this.btnCerrarCuenta.Name = "btnCerrarCuenta";
-            this.btnCerrarCuenta.Size = new System.Drawing.Size(85, 57);
+            this.btnCerrarCuenta.Size = new System.Drawing.Size(72, 57);
             this.btnCerrarCuenta.TabIndex = 21;
             this.btnCerrarCuenta.Text = "Cerrar Cuenta";
             this.btnCerrarCuenta.UseVisualStyleBackColor = true;
@@ -265,96 +357,6 @@ namespace SisFact
             this.LbMesaPiso.TabIndex = 25;
             this.LbMesaPiso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Item
-            // 
-            this.Item.HeaderText = "Item";
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            this.Item.Width = 35;
-            // 
-            // c_producto
-            // 
-            this.c_producto.HeaderText = "c_producto";
-            this.c_producto.Name = "c_producto";
-            this.c_producto.ReadOnly = true;
-            this.c_producto.Visible = false;
-            // 
-            // x_descripcion
-            // 
-            this.x_descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.x_descripcion.HeaderText = "Descripción";
-            this.x_descripcion.Name = "x_descripcion";
-            this.x_descripcion.ReadOnly = true;
-            // 
-            // Cant
-            // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle20.Format = "N2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.Cant.DefaultCellStyle = dataGridViewCellStyle20;
-            this.Cant.HeaderText = "Cant.";
-            this.Cant.Name = "Cant";
-            this.Cant.ReadOnly = true;
-            this.Cant.Width = 40;
-            // 
-            // PUnitario
-            // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle21.Format = "N2";
-            dataGridViewCellStyle21.NullValue = null;
-            this.PUnitario.DefaultCellStyle = dataGridViewCellStyle21;
-            this.PUnitario.HeaderText = "P.Unitario";
-            this.PUnitario.Name = "PUnitario";
-            this.PUnitario.ReadOnly = true;
-            this.PUnitario.Width = 75;
-            // 
-            // c_iva
-            // 
-            this.c_iva.HeaderText = "c_iva";
-            this.c_iva.Name = "c_iva";
-            this.c_iva.ReadOnly = true;
-            this.c_iva.Visible = false;
-            // 
-            // Iva
-            // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle22.Format = "N2";
-            dataGridViewCellStyle22.NullValue = null;
-            this.Iva.DefaultCellStyle = dataGridViewCellStyle22;
-            this.Iva.HeaderText = "Iva";
-            this.Iva.Name = "Iva";
-            this.Iva.ReadOnly = true;
-            this.Iva.Width = 40;
-            // 
-            // Pdes
-            // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle23.Format = "N2";
-            dataGridViewCellStyle23.NullValue = null;
-            this.Pdes.DefaultCellStyle = dataGridViewCellStyle23;
-            this.Pdes.HeaderText = "P.Desc";
-            this.Pdes.Name = "Pdes";
-            this.Pdes.ReadOnly = true;
-            this.Pdes.Width = 40;
-            // 
-            // Total
-            // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle24.Format = "N2";
-            dataGridViewCellStyle24.NullValue = null;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle24;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 75;
-            // 
-            // Hora
-            // 
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
-            this.Hora.Visible = false;
-            // 
             // Pcatalogo
             // 
             this.Pcatalogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -363,6 +365,19 @@ namespace SisFact
             this.Pcatalogo.Name = "Pcatalogo";
             this.Pcatalogo.Size = new System.Drawing.Size(99, 442);
             this.Pcatalogo.TabIndex = 26;
+            // 
+            // btnPagoFacturacion
+            // 
+            this.btnPagoFacturacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPagoFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagoFacturacion.ForeColor = System.Drawing.Color.Gray;
+            this.btnPagoFacturacion.Location = new System.Drawing.Point(393, 4);
+            this.btnPagoFacturacion.Name = "btnPagoFacturacion";
+            this.btnPagoFacturacion.Size = new System.Drawing.Size(72, 57);
+            this.btnPagoFacturacion.TabIndex = 26;
+            this.btnPagoFacturacion.Text = "Facturar";
+            this.btnPagoFacturacion.UseVisualStyleBackColor = true;
+            this.btnPagoFacturacion.Click += new System.EventHandler(this.btnPagoFacturacion_Click);
             // 
             // frmFacturacion
             // 
@@ -418,5 +433,6 @@ namespace SisFact
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
         private System.Windows.Forms.FlowLayoutPanel Pcatalogo;
+        private System.Windows.Forms.Button btnPagoFacturacion;
     }
 }

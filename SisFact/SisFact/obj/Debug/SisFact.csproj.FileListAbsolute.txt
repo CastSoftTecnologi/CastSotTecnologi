@@ -52,3 +52,5 @@ D:\SoftCast\SisFact\SisFact\SisFact\obj\Debug\SisFact.csproj.CopyComplete
 D:\SoftCast\SisFact\SisFact\SisFact\obj\Debug\SisFact.exe
 D:\SoftCast\SisFact\SisFact\SisFact\obj\Debug\SisFact.pdb
 D:\SoftCast\SisFact\SisFact\SisFact\obj\Debug\SisFact.csprojAssemblyReference.cache
+C:\Desarrollo\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmPagos.resources
+D:\SoftCast\SisFact\SisFact\SisFact\obj\Debug\SisFact.frmPagos.resources

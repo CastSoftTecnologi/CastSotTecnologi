@@ -41,21 +41,19 @@ namespace SisFact
                            A.dr["c_Producto"].ToString(),
                            A.dr["x_producto"].ToString(),
                            1,
-                           double.Parse(A.dr["PUnitario"].ToString()),
-                           A.dr["c_Iva"].ToString(),
-                           double.Parse(A.dr["i_iva"].ToString()),
+                           double.Parse(A.dr["i_Pventa"].ToString()),
+                           A.dr["nIva"].ToString(),
+                           double.Parse(A.dr["niva"].ToString()),
                            0,
-                           double.Parse(A.dr["PUnitario"].ToString()),
+                           double.Parse(A.dr["Total"].ToString()),
                            DateTime.Now.ToString("HH:mm:ss"));
             }
             A.conexion.Close();
+            Totalizo();
         }
         private void Carga_Producto(int c_categoria = 0) {
             
-            string sql = "getProductoByCategoria " + c_categoria;
-
-
-            A.Lectura(sql);
+            A.Lectura("getProductoByCategoria " + c_categoria);
 
             Pproductos.Controls.Clear();
             while (A.dr.Read())
@@ -156,6 +154,7 @@ namespace SisFact
         {
             Acceso.c_mesa = 0;
             Acceso.c_piso = 0;
+            Acceso.c_cuenta = 0;
             Dispose();
             Close();
         }
@@ -174,7 +173,7 @@ namespace SisFact
                 
                 if (Proceso == "ADD")
                 {
-                    A.Lectura("exec INS_CUENTA @c_usuario = " + Acceso.c_usuario);
+                    A.Lectura("exec INS_TCUENTA @c_usuario = " + Acceso.c_usuario);
                     if (A.dr.Read() && A.dr["exito"].ToString() == "TRUE") {
                         c_cuenta = int.Parse(A.dr["idMensaje"].ToString());
                     }
@@ -189,17 +188,16 @@ namespace SisFact
                 {
                     A.Ejecuta("exec INS_DCUENTA " +
                                     " @Indice = " + Fila.Cells["Item"].Value.ToString() +
-                                    ",@c_cuenta = " + c_cuenta +
+                                    ",@c_cuenta = " + Acceso.c_cuenta +
                                     ",@c_usuario = " + Acceso.c_usuario +
                                     ",@c_piso = " + Acceso.c_piso +
                                     ",@c_mesa = " + Acceso.c_mesa +
                                     ",@c_mozo= " + Acceso.c_usuario +
                                     ",@c_producto = " + Fila.Cells["c_producto"].Value.ToString() +
-                                    ",@c_iva = " + Fila.Cells["c_iva"].Value.ToString() +
+                                    ",@c_iva = " + Fila.Cells["c_iva"].Value.ToString().Replace(".", "").Replace(",", ".") +
                                     ",@n_cantidad = " + Fila.Cells["Cant"].Value.ToString() +
-                                    ",@Punitario = " + Fila.Cells["PUnitario"].Value.ToString().Replace(".", "").Replace(",", ".") +
-                                    ",@PDescuento = " + Fila.Cells["Pdes"].Value.ToString().Replace(".", "").Replace(",", ".") +
-                                    ",@total =  " + Fila.Cells["Total"].Value.ToString().Replace(".", "").Replace(",", ".")); ;
+                                    ",@i_Punitario = " + Fila.Cells["PUnitario"].Value.ToString().Replace(".", "").Replace(",", ".") +
+                                    ",@p_Descuento = " + Fila.Cells["Pdes"].Value.ToString().Replace(".", "").Replace(",", "."));
                 }
 
                 
@@ -214,6 +212,17 @@ namespace SisFact
 
             }
             A.conexion.Close();
+        }
+
+        private void btnPagoFacturacion_Click(object sender, EventArgs e)
+        {
+            double vtotal = double.Parse(txtTotal.Text);
+            if (Acceso.c_cuenta > 0 & vtotal > 0) { 
+                frmPagos F = new frmPagos();
+                F.txtNcuenta.Text = Acceso.c_cuenta.ToString();
+                F.txtMonto.Text = txtTotal.Text; 
+                F.ShowDialog();
+            }
         }
     }
 }

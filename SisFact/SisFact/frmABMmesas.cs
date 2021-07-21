@@ -48,7 +48,7 @@ namespace SisFact
                 CmdMesas.Name = A.dr["mesa"].ToString();
                 CmdMesas.Text = A.dr["x_mesa"].ToString();
                 CmdMesas.Height = int.Parse(A.dr["Alto"].ToString());
-                CmdMesas.Width = int.Parse(A.dr["Ancho"].ToString());   // CmdMesas As New Button()
+                CmdMesas.Width = int.Parse(A.dr["Ancho"].ToString());  
 
                 CmdMesas.Location = new Point(int.Parse(A.dr["X"].ToString()), int.Parse(A.dr["Y"].ToString()));
                 CmdMesas.BackgroundImage = image;
