@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<SoftCast>  
+  <Parameters>  
+    <User>sa</User>  
+    <Password>hiper574dark*</Password>
+    <DataBase>CastDb</DataBase>	  
+  </Parameters>  
+</SoftCast> 

@@ -36,5 +36,10 @@ namespace SisFact
             cmbFormaPago.ValueMember = "c_forma_pago";
             
         }
+
+        private void btnProcesar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
