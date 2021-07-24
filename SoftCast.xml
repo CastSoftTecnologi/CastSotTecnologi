@@ -4,5 +4,6 @@
     <User>sa</User>  
     <Password>hiper574dark*</Password>
     <DataBase>CastDb</DataBase>	  
+    <Source>HIPERDARK</Source>
   </Parameters>  
 </SoftCast> 
