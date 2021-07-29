@@ -41,5 +41,43 @@ namespace SisFact
         {
 
         }
+
+        private void cmbFormaPago_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbFormaPago_SelectedValueChanged(object sender, EventArgs e)
+
+        {
+            try
+            {
+                if (A.IsNumeric(cmbFormaPago.SelectedValue.ToString()) == false)
+                {
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+            
+            
+                A.Consulta("exec GET_ENtidad @c_forma_pago = " + cmbFormaPago.SelectedValue, "R");
+                cmbEntidad.DataSource = A.ds.Tables["R"];
+                cmbEntidad.DisplayMember = "x_entidad";
+                cmbEntidad.ValueMember = "c_entidad";
+
+                if (cmbEntidad.Items.Count > 0)
+                {
+                    cmbEntidad.Enabled = true;
+
+                }
+                else
+                {
+                    cmbEntidad.Enabled = false;
+                }
+        }
     }
 }

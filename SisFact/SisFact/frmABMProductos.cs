@@ -132,51 +132,63 @@ namespace SisFact
                 return;
             }
 
-            if (txtCodigo.Text == "")
+            try
             {
-                sSql = "exec INS_TPRODUCTO ";
-            }
-            else
-            {
-                sSql = "exec UPD_TPRODUCTO @c_Producto = " + txtCodigo.Text + ",";
-            }
-
-
-            A.Lectura(sSql + 
-            "  @xl_producto     = '" + txtNombre.Text + "'" +
-            ", @x_producto      = '" + txtNombreCorto.Text + "'" +
-            ", @i_precioUnitario = " + txtPrecioU.Text.Replace(".","").Replace(",",".") +
-            ", @cCategoria       = " + cboCategoria.SelectedValue.ToString() +
-            ", @cUnidaMedida     = " + cboUnidad.SelectedValue.ToString() +
-            ", @cMarca           = " + cboMarca.SelectedValue.ToString() +
-            ", @c_usuario        = " + Acceso.c_usuario.ToString() +
-            ", @m_activo         = " + (chkActivo.Checked == true?"1":"0") +
-            ", @m_visible        = " + (chkVisible.Checked == true?"1":"0") +
-            ", @m_venta          = " + (chkVenta.Checked  == true?"1":"0") +
-            ", @m_formula        = " + (chkFormula.Checked == true ? "1" : "0") +
-            ", @cBarra           = '" + txtcBarra.Text + "'" +
-            ", @cIva             = " + cboIVA.SelectedValue.ToString() +
-            ", @nUnidadesMin     = " + int.Parse(txtStockMin.Text) +
-            ", @nFactornumerico  = " + int.Parse(txtNfactnum.Text));
-            if (A.dr.Read()) {
-                if (A.dr["exito"].ToString() != "TRUE") {
-                    return;
+                if (txtCodigo.Text == "")
+                {
+                    sSql = "exec INS_TPRODUCTO ";
                 }
-                codprod = A.dr["Codigo"].ToString();
+                else
+                {
+                    sSql = "exec UPD_TPRODUCTO @c_Producto = " + txtCodigo.Text + ",";
+                }
+
+
+                A.Lectura(sSql +
+                "  @xl_producto     = '" + txtNombre.Text + "'" +
+                ", @x_producto      = '" + txtNombreCorto.Text + "'" +
+                ", @i_precioUnitario = " + txtPrecioU.Text.Replace(".", "").Replace(",", ".") +
+                ", @cCategoria       = " + cboCategoria.SelectedValue.ToString() +
+                ", @cUnidaMedida     = " + cboUnidad.SelectedValue.ToString() +
+                ", @cMarca           = " + cboMarca.SelectedValue.ToString() +
+                ", @c_usuario        = " + Acceso.c_usuario.ToString() +
+                ", @m_activo         = " + (chkActivo.Checked == true ? "1" : "0") +
+                ", @m_visible        = " + (chkVisible.Checked == true ? "1" : "0") +
+                ", @m_venta          = " + (chkVenta.Checked == true ? "1" : "0") +
+                ", @m_formula        = " + (chkFormula.Checked == true ? "1" : "0") +
+                ", @cBarra           = '" + txtcBarra.Text + "'" +
+                ", @cIva             = " + cboIVA.SelectedValue.ToString() +
+                ", @nUnidadesMin     = " + int.Parse(txtStockMin.Text) +
+                ", @nFactornumerico  = " + int.Parse(txtNfactnum.Text));
+                if (A.dr.Read())
+                {
+                    if (A.dr["exito"].ToString() != "TRUE")
+                    {
+                        return;
+                    }
+                    codprod = A.dr["Codigo"].ToString();
+                }
+                A.conexion.Close();
+
+                A.Ejecuta("DEL_TPRODUCTO_FORMULA " + codprod);
+
+                foreach (DataGridViewRow Fila in FProducto.Rows)
+                {
+                    A.Ejecuta("exec INS_TPRODUCTO_FORMULA " +
+                              " @c_Producto = " + codprod +
+                              ",@cProducto_Insumo = " + Fila.Cells["Codigo"].Value.ToString() +
+                              ",@Cantidad = " + Fila.Cells["Cantidad"].Value.ToString());
+                }
+
+                MessageBox.Show("Datos Gargados", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
-            A.conexion.Close();
-
-            A.Ejecuta("DEL_TPRODUCTO_FORMULA " + codprod);
-
-            foreach (DataGridViewRow Fila in FProducto.Rows)
+            catch (Exception)
             {
-                A.Ejecuta("exec INS_TPRODUCTO_FORMULA " +
-                          " @c_Producto = " + codprod +
-                          ",@cProducto_Insumo = " + Fila.Cells["Codigo"].Value.ToString() +
-                          ",@Cantidad = " + Fila.Cells["Cantidad"].Value.ToString());
+                A.conexion.Close();
+                MessageBox.Show("Error interno en la carga de Productos ", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            MessageBox.Show("Datos Gargados","Aviso...",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
             frmProductos FP = Owner as frmProductos;//Este permite actulizar la grilla haciendo que padre acepte la peticion de hijo
             FP.buscar_Registros();//esta funcion es de Padre frmProductos pero la peticion de viene de frmABMProductos
             Dispose();

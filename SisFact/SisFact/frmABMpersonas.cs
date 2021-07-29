@@ -138,49 +138,58 @@ namespace SisFact
                 return;
             }
 
-
-            if (txtCodigo.Text == "")
+            try
             {
-                sSql = "exec INS_BPERSONA ";
+                if (txtCodigo.Text == "")
+                {
+                    sSql = "exec INS_BPERSONA ";
+                }
+                else
+                {
+                    sSql = "exec UPD_BPERSONA @c_persona = " + txtCodigo.Text + ",";
+                }
+
+                A.Lectura(sSql +
+                  "@c_tipo_persona	    = " + tpersona +
+                  ",@x_nombre			= '" + txtNombre.Text + "'" +
+                  ",@x_apellido		    = '" + txtApellido.Text + "'" +
+                  ",@x_nombre_fantasia  = '" + txtNombreFantacias.Text + "'" +
+                  ",@c_tipo_documento	= " + cboDoc.SelectedValue.ToString() +
+                  ",@n_documento		= " + txtNroDoc.Text +
+                  ",@f_nacimiento		= '" + Fnacimiento.Value.ToString("yyyyMMdd") + "'" +
+                  ",@t_sexo			    = '" + (cboSexo.Text == "<Seleccione>" ? "Null" : cboSexo.Text) + "'" +
+                  ",@c_nacionalidad	    = " + (int.Parse(cboPais.SelectedValue.ToString()) == 0 ? "NULL" : cboPais.SelectedValue.ToString()) +
+                  ",@b_esUsuario		= " + (tpersona == 1 ? 1 : 0) +
+                  ",@xc_usuario		    = '" + txtUsuario.Text + "'" +
+                  ",@x_password		    = '" + txtClave.Text + "'" +
+                  ",@c_rol				= " + (int.Parse(cboNivel.SelectedValue.ToString()) == 0 ? "NULL" : cboNivel.SelectedValue.ToString()) +
+                  ",@c_estado = " + (chkActivo.Checked == true ? 1 : 0));
+
+                if (A.dr.Read())
+                {
+                    Proceso = A.dr[0].ToString() == "1" ? true : false;
+                }
+
+               
             }
-            else
+            catch (Exception)
             {
-                sSql = "exec UPD_BPERSONA @c_persona = " + txtCodigo.Text + ",";
+                MessageBox.Show("Error Interno no se cargaron los datos", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Proceso = false;
             }
-
-            A.Lectura(sSql +
-              "@c_tipo_persona	    = " + tpersona +
-              ",@x_nombre			= '" + txtNombre.Text + "'" +
-              ",@x_apellido		    = '" + txtApellido.Text + "'" +
-              ",@x_nombre_fantasia  = '" + txtNombreFantacias.Text + "'" +
-              ",@c_tipo_documento	= " + cboDoc.SelectedValue.ToString() +
-              ",@n_documento		= " + txtNroDoc.Text + 
-              ",@f_nacimiento		= '" + Fnacimiento.Value.ToString("yyyyMMdd") + "'" +
-              ",@t_sexo			    = '" + (cboSexo.Text == "<Seleccione>" ? "Null" : cboSexo.Text) + "'" +
-              ",@c_nacionalidad	    = " + (int.Parse(cboPais.SelectedValue.ToString()) == 0 ? "NULL" : cboPais.SelectedValue.ToString()) +
-              ",@b_esUsuario		= " + (tpersona == 1 ? 1 : 0) +
-              ",@xc_usuario		    = '" + txtUsuario.Text + "'" +
-              ",@x_password		    = '" + txtClave.Text + "'" +
-              ",@c_rol				= " + (int.Parse(cboNivel.SelectedValue.ToString()) == 0 ? "NULL" : cboNivel.SelectedValue.ToString()) +
-              ",@c_estado = " + (chkActivo.Checked == true ? 1 : 0));
-
-            if (A.dr.Read()) {
-                Proceso = A.dr[0].ToString() == "1" ? true : false;
-            }
-
             A.conexion.Close();
+
+
             if (Proceso == true)
             {
                 MessageBox.Show("Datos Gargados", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmPersonas FP = Owner as frmPersonas;//Este permite actulizar la grilla haciendo que padre acepte la peticion de hijo
-                FP.buscar_Registros();//esta funcion es de Padre frmPersonas pero la peticion de viene de frmABMProductos
-                Dispose();
-                Close();
+
             }
-            else
-            {
-                MessageBox.Show("Error Interno no se cargaron los datos", "Aviso...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            frmPersonas FP = Owner as frmPersonas;//Este permite actulizar la grilla haciendo que padre acepte la peticion de hijo
+            FP.buscar_Registros();//esta funcion es de Padre frmPersonas pero la peticion de viene de frmABMProductos
+            Dispose();
+            Close();
+
         }
         private void Carga_Data(int Cod)
         {
